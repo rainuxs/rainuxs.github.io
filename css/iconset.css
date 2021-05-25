@@ -1,18 +1,18 @@
 @font-face {
   font-family: 'arzhu';
-  src: url('https://cdn.jsdelivr.net/gh/caibhh/CDN@master/font/Regular.ttf');
+  src: url('https://cdn.jsdelivr.net/gh/caibhh/CDN@master/font/arzhu.ttf');
   /* 修改成你的字体 */
   font-display: swap
 }
 
 h1#site-title {
-  font-family: Regular !important
+  font-family: arzhu !important
 }
 
 span#subtitle {
-  font-family: Regular !important
+  font-family: arzhu !important
 }
 
 a#site-name {
-  font-family: Regular !important
+  font-family: arzhu !important
 }
