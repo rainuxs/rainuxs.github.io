@@ -1,0 +1,234 @@
+﻿---
+title: 前端面试基本---理解 “类“和 “对象“
+type: "tags"
+tags: ["ES6","类","Web","对象","JavaScript","Class"]
+---
+
+**Code is never die !**
+
+### 1. 对象
+
+对象是由属性和方法组成的：是一个无序键值对的集合,指的是一个具体的事物
+
+- 属性：事物的特征，在对象中用属性来表示（常用名词）
+- 方法：事物的行为，在对象中用方法来表示（常用动词）
+
+### 2. 类
+
+#### 2.1 类介绍
+
+- 在 ES6 中新增加了类的概念，可以使用 class 关键字声明一个类，之后以这个类来实例化对象。
+
+- 类抽象了对象的公共部分，它泛指某一大类（class）对象特指某一个，通过类实例化一个具体的对象
+
+- 类，对象，面向对象**总结：**
+
+  **类**抽象了对象的公共部分，它泛指某一大类（class） 
+
+  **对象**特指某一个，通过类实例化一个具体的对象 
+
+  **面向对象**的思维特点:  
+
+  1. 抽取（抽象）对象共用的属性和行为组织(封装)成一个类(模板) 
+  2. 对类进行实例化, 获取类的对象
+     1. 实例：实际的例子，对象
+     2. 实例化：通过类的构造函数，来创建对象，实例
+
+#### 2.2 创建类  
+
+```javascript
+//步骤1 定义类：使用class关键字
+class name {
+  // class body
+}     
+//步骤2 创建实例：使用定义的类创建实例  注意new关键字
+var xx = new name();     
+
+
+// *****例子：
+
+// 1. 创建类 class  创建一个 明星类
+class Star {
+}
+
+// 2. 利用类创建对象 new
+var ldh = new Star();
+```
+
+问题：
+
+但是这么创建的对象，没有属性和方法呀，怎么办？
+
+需要用到**构造函数**。
+
+#### 2.3 类创建添加属性和方法
+
+##### 1. 构造函数介绍
+
+- constructor() 方法是类的构造函数(默认方法)，用于传递参数,返回实例对象
+- 通过 new 命令生成对象实例时，自动调用该方法
+- 如果没有显示定义, 类内部会自动给我们创建一个constructor() 
+- **构造函数的作用：给对象添加（构造）属性**
+
+##### 2. 构造函数添加属性
+
+- 语法：
+
+```js
+//步骤1 在类中定义构造函数constructor，函数名固定
+class Person {
+  constructor(name,age) {//定义形参
+      this.name = name;//将形参赋值给this对象的对应属性
+      this.age = age;
+    }
+}       
+
+//步骤2 在实例化对象的时候，传递实参
+var ldh = new Person('刘德华', 18); //这里的实参默认传递给Person类中的constructor
+console.log(ldh.name);//刘德华
+```
+
+**注意事项:**
+
+1. 通过class 关键字创建类，类名我们还是习惯性定义首字母大写
+2. 类里面有个constructor 函数，可以接受传递过来的参数，同时返回实例对象
+3. constructor 函数 只要 new 生成实例时，就会自动调用这个函数，如果我们不写这个函数,类也会自动生成这个函数
+4. 生成实例 new 不能省略
+5. 语法规范, 创建类 类名后面不要加小括号,生成实例 类名后面加小括号, 构造函数不需要加function
+
+##### 3. 类中添加方法  
+
+- 语法
+
+```js
+//步骤1 添加普通方法
+class Person {
+  constructor(name,age) {  
+      this.name = name;
+      this.age = age;
+      this.btn = ...
+      this.btn.onclick = this.say;
+      // this.btn.onclick(); --- this.btn.say()
+       this.btn.onclick = function(){
+    
+         console.log(this.name + '你好');
+    }
+    }//------------------------------------------->注意,方法与方法之间不需要添加逗号
+   say() {
+      console.log(this.name + '你好');
+   }
+var say = function(){
+    
+     console.log(this.name + '你好');
+}
+}       
+
+//步骤2  通过对象调用方法
+var ldh = new Person('刘德华', 18); 
+ldh.say()   
+```
+
+**注意事项**：        
+
+1. 我们类里面所有的函数不需要写function 
+2. **多个函数方法之间不需要添加逗号分隔**
+
+#### 2.4 类的继承 
+
+- 现实中的继承：子承父业，比如我们都继承了父亲的姓。 
+- 程序中的继承：子类可以继承父类的一些属性和方法。
+- **类的继承：为了复用代码**
+- 语法
+
+```js
+// 父类
+class Father{   
+} 
+
+// 子类继承父类
+class  Son extends Father {  
+}       
+```
+
+- 示例
+
+```js
+class Father {
+      constructor(surname) {
+        this.surname= surname;
+      }
+      say() {
+        console.log('你的姓是' + this.surname);
+       }
+}
+
+class Son extends Father{  // 这样子类就继承了父类的属性和方法
+    
+}
+var damao= new Son('刘');
+damao.say();      //结果为 你的姓是刘
+```
+
+- 补充：
+
+```js
+ // 1. Son如果只是要继承父类的方法，什么都不用写
+class Father {
+    constructor() {
+
+    }
+    money() {
+        console.log(100);
+
+    }
+}
+class Son extends Father {
+
+}
+var son = new Son();
+son.money();
+// 2. Son如果要在父类的基础之上做扩展，就可以重写方法（重新书写）
+// Son可以扩展属性，也可以扩展方法
+class Father {
+     constructor(x, y) {
+         this.x = x;
+         this.y = y;
+     }
+     sum() {
+         console.log(this.x + this.y);
+
+     }
+ }
+class Son extends Father {
+    // (1)重写父类的构造函数 (主要是为了扩展属性)
+    constructor(x, y, z) {
+        super(x, y); //调用了父类中的构造函数
+        //相当于：
+        // Father(x,y);
+        //相当于：
+        // this.x = x; //调用父类的构造函数，让父类帮助Son添加x，y属性
+        // this.y = y;
+        this.z = z; // son新增的属性，需要自己处理
+    };
+    //（2） 自己新增的方法
+    sum2() {
+        console.log(this.x + this.y + this.z);
+    };
+    //（3）重写父类的普通方法
+    sum() {
+        // console.log(this.x + this.y);
+        //既然要重写，肯定是要与父亲不一样，所以，改为以下需求
+        //求 x  到 y 的和
+    }
+}
+var son = new Son(1, 2, 3);
+son.sum2();
+son.sum();
+```
+
+- 重写：
+  - 什么是重写：重新定义父类继承过来的方法 
+  - 什么时候重写：子类要对父类方法进行扩展时，就可以重写方法
+
+**Ending...**
+
