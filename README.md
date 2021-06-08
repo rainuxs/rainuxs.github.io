@@ -1,2 +1,3 @@
 # rainuxs.github.io
-[Rainux](https://rainux.com)
+This is [Rainux's](https://rainux.com) blog !
+我的博客
