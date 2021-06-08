@@ -1,6 +1,6 @@
 # Rainux
 
-This is [Rainux's](https://rainux.com) blog !
+This is [Rainux's](https://rainux.top) blog !
 
 前端工程师一小枚 原则：**享受美好生活 -- 认真对待事情**
 
