@@ -1,2 +1,2 @@
 # rainuxs.github.io
-[Rainux](www.baidu.com)
+[Rainux](https://rainux.com)
