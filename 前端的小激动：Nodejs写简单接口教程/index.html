@@ -48,10 +48,10 @@
 <meta property="article:published_time" content="2022-08-12T04:15:18.691Z">
 <meta property="article:modified_time" content="2022-08-12T04:15:18.692Z">
 <meta property="article:author" content="Rainux">
-<meta property="article:tag" content="Node">
-<meta property="article:tag" content="Nodejs">
 <meta property="article:tag" content="Web">
 <meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="Node">
+<meta property="article:tag" content="Nodejs">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/20210421212539769.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80OTkxODY1Nw==,size_16,color_FFFFFF,t_70">
   
@@ -97,7 +97,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"rainuxs.github.io","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/friend_404.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"rainuxs.github.io","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -329,67 +329,67 @@
 <p>这里我演示的是nodejs+mysql，别的数据库也类似。</p>
 <p>首先我们需要做两件事，下载nodejs和mysql安装，这些基本知识略过。</p>
 <p>接着新建一个文件夹，在此文件夹下打开cms,或者vscode的终端，输入node init初始化一个项目，输入一些基本信息。</p>
-<p>然后我们还需要安装以下包到–save下<br><img src="https://img-blog.csdnimg.cn/20210421212539769.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80OTkxODY1Nw==,size_16,color_FFFFFF,t_70" srcset="/img/friend_404.gif" lazyload alt="在这里插入图片描述"></p>
+<p>然后我们还需要安装以下包到–save下<br><img src="https://img-blog.csdnimg.cn/20210421212539769.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80OTkxODY1Nw==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"></p>
 <p>express和mysql这两个包是最主要的，稍后再讲其他包的作用。</p>
 <p>在这里我要阐明一个事实，这里的mysql是操作mysql数据库的一个js插件，并不是数据库软件，npm下载的包都是一些js的插件包。</p>
 <p>好了，接下来和我一步步向下操作就可以了。</p>
 <p>在文件夹下新建一个index.js文件，当然别的名字也可以，这个文件是你整个程序的入口。</p>
-<p>键入以下代码：<br><img src="https://img-blog.csdnimg.cn/20210421212554444.png" srcset="/img/friend_404.gif" lazyload alt="在这里插入图片描述"></p>
+<p>键入以下代码：<br><img src="https://img-blog.csdnimg.cn/20210421212554444.png" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"></p>
 <p>80代表的是你的端口号，然后在终端或者cms输入node index.js，在浏览器里打开localhost就可以看到了，或者127.0.0.1也行，如果是别的端口号需要加上端口号，当然现在是什么也没有，因为我们还没有写接口。</p>
 <p>接下来我们写一个get接口，返回一个‘hello world’字符串</p>
-<p><img src="https://img-blog.csdnimg.cn/20210421212618745.png" srcset="/img/friend_404.gif" lazyload alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20210421212618745.png" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"></p>
 <p>res.json这个方法是以json对象的形式返回去，还有以下方法</p>
 <p>res.send以页面的方式返回去</p>
 <p>res.download以文件的方式返回去，前端请求会下载此文件</p>
 <p>别的方法这里就不在一一阐明了，可以打出res.然后使用vscode的语法提醒查看下面的方法即可，或者查看文档看解释。</p>
 <p>在这里插入图片描述</p>
-<p>接下来我们返回一个页面：<br><img src="https://img-blog.csdnimg.cn/20210421212708273.png" srcset="/img/friend_404.gif" lazyload alt="在这里插入图片描述"></p>
+<p>接下来我们返回一个页面：<br><img src="https://img-blog.csdnimg.cn/20210421212708273.png" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"></p>
 <p>可以看到localhost页面上出现了我们预期的结果</p>
-<p><img src="https://img-blog.csdnimg.cn/20210421212720613.png" srcset="/img/friend_404.gif" lazyload alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20210421212720613.png" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"></p>
 <p>到了这里想必你们已经发现问题了，我每次改动一下都要重新跑程序，这不符合人体工程学，说的一点没错，我无法容忍，你萌呢？</p>
 <p>想必你们在前面也发现了pageage.json里有这么一句话</p>
-<p><img src="https://img-blog.csdnimg.cn/20210421212744222.png" srcset="/img/friend_404.gif" lazyload alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20210421212744222.png" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"></p>
 <p>scripts的作用就是自己定义脚本命令，在这下面定义的所有命令都可以使用npm run xxx来运行，可以省略run。里面运行的应该是node index.js才对，但是这里我们使用了一个插件，hotnode，这个插件可以让你的node程序热更新，要全局安装这个插件，不然找不到命令。</p>
 <p>npm install -g hotnode</p>
 <p>然后我们就可以npm start运行我们的程序了，所有基于node的程序跑起来都是两步，npm install,安装所有插件，npm start运行程序，如果跑不起来，那么这个项目一定不是一个好项目，我通常如此告诫我的弟子，我们一定要站在巨人的肩上。</p>
 <p>做到这里，我们接下来就可以愉快的开发了。</p>
-<p>接下来我们试试post方法<br><img src="https://img-blog.csdnimg.cn/2021042121281019.png" srcset="/img/friend_404.gif" lazyload alt="在这里插入图片描述"></p>
+<p>接下来我们试试post方法<br><img src="https://img-blog.csdnimg.cn/2021042121281019.png" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"></p>
 <p>post不支持浏览器直接访问，这个时候要用postman软件</p>
-<p><img src="https://img-blog.csdnimg.cn/20210421212952436.png" srcset="/img/friend_404.gif" lazyload alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20210421212952436.png" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"></p>
 <p>依然符合我们的预期。</p>
 <p>可以把路径改为/login，/test进行尝试，这里就不再演示了。</p>
 <p>也可以试试app.all方法，这个方法支持所有请求方式，不必每个请求都写好几遍了。</p>
 <p>想必大家已经想到了，我要做登录拦截难道每个接口里都要写一遍吗。</p>
 <p>答案是当然不用的，接口的第一个参数可以用正则表达，我们这么写：</p>
-<p><img src="https://img-blog.csdnimg.cn/20210421213005400.png" srcset="/img/friend_404.gif" lazyload alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20210421213005400.png" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"></p>
 <p>我们使用<em>来匹配所有路径，这个时候请求test,会先经过</em>，被<em>拦截返回了</em>**，</p>
 <p>我们可以在内部判断来进行操作：</p>
-<p><img src="https://img-blog.csdnimg.cn/20210421213057425.png" srcset="/img/friend_404.gif" lazyload alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20210421213057425.png" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"></p>
 <p>如果未登录，返回未登录，否则，继续向下匹配，回调函数接收三个参数，最后一个是next,继续向下执行，*路径一定要写在最上面，不然会先被test捕捉到，test没有执行next,*就会捕捉不到请求。</p>
 <p>这时候就可以设置login的值来看路径localhost/test下的返回值了。</p>
 <p>那么有参数的情况呢，我们先引入一下中间件，如果没有安装可以先npm安装</p>
-<p><img src="https://img-blog.csdnimg.cn/20210421213113364.png" srcset="/img/friend_404.gif" lazyload alt="在这里插入图片描述">接下来我们请求一下<img src="https://img-blog.csdnimg.cn/20210421213239895.png" srcset="/img/friend_404.gif" lazyload alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20210421213113364.png" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述">接下来我们请求一下<img src="https://img-blog.csdnimg.cn/20210421213239895.png" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"></p>
 <p>？后面的表单参数会放到req.query里，路径上的参数会放到req.params里，json参数会放到req.body里，可以任意选择一种参数传递即可，路径以:开头表示此路径作为参数的意思。</p>
 <p>前后端联调的时候经常碰到跨域的问题，我们可以使用cors插件解决，</p>
-<p><img src="https://img-blog.csdnimg.cn/20210421213305263.png" srcset="/img/friend_404.gif" lazyload alt="在这里插入图片描述"><br>以上提到的跨域和参数都可以自己进行处理，利用路径自己提取参数，在*路径的请求的请求体req里自己加上跨域允许的header，但我希望你们可以使用插件，保证代码的简洁性，同时</p>
+<p><img src="https://img-blog.csdnimg.cn/20210421213305263.png" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"><br>以上提到的跨域和参数都可以自己进行处理，利用路径自己提取参数，在*路径的请求的请求体req里自己加上跨域允许的header，但我希望你们可以使用插件，保证代码的简洁性，同时</p>
 <p>我经常告诉我的弟子，我们一定要站在巨人的肩上。</p>
 <p>好了，接下来我们开始连接数据库，从数据库里拿一条数据出来返回给前端。</p>
 <p>引入mysql插件，我们先在mysql里新建一个表students，存入以下数据：</p>
-<p><img src="https://img-blog.csdnimg.cn/20210421213357899.png" srcset="/img/friend_404.gif" lazyload alt="在这里插入图片描述"><br>然后使用mysql插件连接数据库</p>
-<p><img src="https://img-blog.csdnimg.cn/20210421213432681.png" srcset="/img/friend_404.gif" lazyload alt="在这里插入图片描述"></p>
-<p>option里都是连接数据库的基本配置，更多参数可以查看文档，我们请求一下localhost/login看看<br><img src="https://img-blog.csdnimg.cn/20210421213445548.png" srcset="/img/friend_404.gif" lazyload alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20210421213357899.png" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"><br>然后使用mysql插件连接数据库</p>
+<p><img src="https://img-blog.csdnimg.cn/20210421213432681.png" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"></p>
+<p>option里都是连接数据库的基本配置，更多参数可以查看文档，我们请求一下localhost/login看看<br><img src="https://img-blog.csdnimg.cn/20210421213445548.png" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"></p>
 <p>真的返回了我们存在数据库的数据，我好激动啊，大业终于完成了。</p>
 <p>是的，conn.query就是执行一条sql语句，在回调函数里返回结果。</p>
 <p>结果可以用构造函数封装，这样就不用每次都写一推没用的字段了。</p>
 <p>如果你在此处这样做：</p>
-<p><img src="https://img-blog.csdnimg.cn/20210421213459690.png" srcset="/img/friend_404.gif" lazyload alt="在这里插入图片描述"><br>那么这个不妥的，第一次没有问题，第二次不行了，说是关闭了数据库无法继续查询，因为connect()并不能重连数据库，你需要重新建立一条新连接，所以不建议使用conn.end()断开数据库。</p>
-<p>如果莫名其妙断了呢，我们就需要就重连机制，断了数据库会触发error事件，我们这样处理：<br><img src="https://img-blog.csdnimg.cn/20210421213510771.png" srcset="/img/friend_404.gif" lazyload alt="在这里插入图片描述"><br>监听error事件，如果err.code返回了以上字符，那么我们就重新发起连接，直到连接成功。</p>
+<p><img src="https://img-blog.csdnimg.cn/20210421213459690.png" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"><br>那么这个不妥的，第一次没有问题，第二次不行了，说是关闭了数据库无法继续查询，因为connect()并不能重连数据库，你需要重新建立一条新连接，所以不建议使用conn.end()断开数据库。</p>
+<p>如果莫名其妙断了呢，我们就需要就重连机制，断了数据库会触发error事件，我们这样处理：<br><img src="https://img-blog.csdnimg.cn/20210421213510771.png" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"><br>监听error事件，如果err.code返回了以上字符，那么我们就重新发起连接，直到连接成功。</p>
 <p>做到这里，想必大家已经想到了，这是单线程的，并发量高的时候会不会顶不住，会的，所以我们要上连接池。</p>
-<p>连接池与连接相似，做以下处理：<br><img src="https://img-blog.csdnimg.cn/20210421213526757.png" srcset="/img/friend_404.gif" lazyload alt="在这里插入图片描述"></p>
+<p>连接池与连接相似，做以下处理：<br><img src="https://img-blog.csdnimg.cn/20210421213526757.png" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"></p>
 <p>建立连接池比连接多了几个参数，这里罗列了常用的三个，其它参数可以查看文档。这个时候我们使用连接池处理请求。conn.release()的意思是释放连接池的意思，用完就要释放给别的请求使用，也可以直接使用连接池，具体区别我还不知道，我猜应该是直接使用连接池就是这个线程专门为这个请求服务，不用别的也不释放，可以用于常用接口，可以减少取连接池的操作。</p>
 <p>做到这里我们大部分工作已经做完了，想必大家一定又想到了什么，我如果有一千个接口，难道要在一个文件里写一千个吗。</p>
 <p>这当然是不妥的，比较难维护，所以我们要拆分模块，使用express.Router()这个api。</p>
-<p>我们将连接数据库的文件单独抽离<br><img src="https://img-blog.csdnimg.cn/20210421213546143.png" srcset="/img/friend_404.gif" lazyload alt="在这里插入图片描述"><br>导出常用的pool,Result,router,app模块，然后在子模块：<br><img src="https://img-blog.csdnimg.cn/2021042121371535.png" srcset="/img/friend_404.gif" lazyload alt="在这里插入图片描述"><br>然后在入口：<br><img src="https://img-blog.csdnimg.cn/20210421213701140.png" srcset="/img/friend_404.gif" lazyload alt="在这里插入图片描述"><br>看看是不是简洁多了，要注意一点，引入的子模块要放到全局监听<em>的下面，不然又会无法匹配到</em>，app.use的第一个参数代表下发到那个目录，内部子模块的/相当于app.use的第一个参数，接下来请求一下/和/login试试吧。</p>
+<p>我们将连接数据库的文件单独抽离<br><img src="https://img-blog.csdnimg.cn/20210421213546143.png" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"><br>导出常用的pool,Result,router,app模块，然后在子模块：<br><img src="https://img-blog.csdnimg.cn/2021042121371535.png" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"><br>然后在入口：<br><img src="https://img-blog.csdnimg.cn/20210421213701140.png" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"><br>看看是不是简洁多了，要注意一点，引入的子模块要放到全局监听<em>的下面，不然又会无法匹配到</em>，app.use的第一个参数代表下发到那个目录，内部子模块的/相当于app.use的第一个参数，接下来请求一下/和/login试试吧。</p>
 <p><strong>Ending</strong></p>
 
                 
@@ -403,13 +403,13 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Node/">#Node</a>
-      
-        <a href="/tags/Nodejs/">#Nodejs</a>
-      
         <a href="/tags/Web/">#Web</a>
       
         <a href="/tags/JavaScript/">#JavaScript</a>
+      
+        <a href="/tags/Node/">#Node</a>
+      
+        <a href="/tags/Nodejs/">#Nodejs</a>
       
     </div>
   
@@ -569,7 +569,7 @@
     <div class="footer-inner">
   
     <div class="footer-content">
-       Hi, welcome to <a href="https://rainuxs.github.io/" style="text-decoration:none">Rainux blog</a> ! <div><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41019702002937" target="_blank" style="text-decoration:none"><img class="icp-icon" src="/img/beian.png" srcset="/img/friend_404.gif" lazyload><span>豫公网安备 41019702002937号</span></a></div> 
+       Hi, welcome to <a href="https://rainuxs.github.io/" style="text-decoration:none">Rainux blog</a> ! <div><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41019702002937" target="_blank" style="text-decoration:none"><img class="icp-icon" src="/img/beian.png" srcset="/img/loading.gif" lazyload><span>豫公网安备 41019702002937号</span></a></div> 
     </div>
   
   

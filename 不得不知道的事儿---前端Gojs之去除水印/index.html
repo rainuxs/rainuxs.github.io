@@ -30,9 +30,9 @@
 <meta property="article:published_time" content="2022-08-12T04:15:18.683Z">
 <meta property="article:modified_time" content="2022-08-12T04:15:18.683Z">
 <meta property="article:author" content="Rainux">
+<meta property="article:tag" content="Vue">
 <meta property="article:tag" content="Web">
 <meta property="article:tag" content="JavaScript">
-<meta property="article:tag" content="Vue">
 <meta property="article:tag" content="Gojs">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/20210422215938389.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80OTkxODY1Nw==,size_16,color_FFFFFF,t_70">
@@ -79,7 +79,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"rainuxs.github.io","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/friend_404.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"rainuxs.github.io","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -306,7 +306,7 @@
             
               <div class="markdown-body">
                 
-                <p><strong>Code is never die !</strong><br>刚开始是这个样子的，带有水印，显得特别难看，太影响界面了吧 ！<img src="https://img-blog.csdnimg.cn/20210422215938389.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80OTkxODY1Nw==,size_16,color_FFFFFF,t_70" srcset="/img/friend_404.gif" lazyload alt="在这里插入图片描述"><br>打开你项目引入的go.js文件，然后甭管其他的，直接<strong>ctrl+f</strong> 然后复制这段文字<code>5da73c80a36755dc038e4972187c3cae51fd22</code>，然后就能查找到图中所示位置了<br><img src="https://img-blog.csdnimg.cn/20210422220215420.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80OTkxODY1Nw==,size_16,color_FFFFFF,t_70" srcset="/img/friend_404.gif" lazyload alt="在这里插入图片描述"><br>此时就是从b[c]开始的内容，一直到if(…)这里，全部注释掉！直接<strong>ctrl+s</strong>保存，本来将信将疑，然而奇迹般地就出现了下图：<br><img src="https://img-blog.csdnimg.cn/20210422220220523.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80OTkxODY1Nw==,size_16,color_FFFFFF,t_70" srcset="/img/friend_404.gif" lazyload alt="在这里插入图片描述"><br> 附记录：<br> 今天发现这个地方可能长得不太一样，不过影响不大，都差不多，而且效果都能显示出来（以下亲测）<br> <img src="https://img-blog.csdnimg.cn/202104241736355.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80OTkxODY1Nw==,size_16,color_FFFFFF,t_70" srcset="/img/friend_404.gif" lazyload alt="在这里插入图片描述"><br><strong>Ending…</strong></p>
+                <p><strong>Code is never die !</strong><br>刚开始是这个样子的，带有水印，显得特别难看，太影响界面了吧 ！<img src="https://img-blog.csdnimg.cn/20210422215938389.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80OTkxODY1Nw==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"><br>打开你项目引入的go.js文件，然后甭管其他的，直接<strong>ctrl+f</strong> 然后复制这段文字<code>5da73c80a36755dc038e4972187c3cae51fd22</code>，然后就能查找到图中所示位置了<br><img src="https://img-blog.csdnimg.cn/20210422220215420.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80OTkxODY1Nw==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"><br>此时就是从b[c]开始的内容，一直到if(…)这里，全部注释掉！直接<strong>ctrl+s</strong>保存，本来将信将疑，然而奇迹般地就出现了下图：<br><img src="https://img-blog.csdnimg.cn/20210422220220523.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80OTkxODY1Nw==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"><br> 附记录：<br> 今天发现这个地方可能长得不太一样，不过影响不大，都差不多，而且效果都能显示出来（以下亲测）<br> <img src="https://img-blog.csdnimg.cn/202104241736355.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80OTkxODY1Nw==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"><br><strong>Ending…</strong></p>
 
                 
               </div>
@@ -319,11 +319,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
+        <a href="/tags/Vue/">#Vue</a>
+      
         <a href="/tags/Web/">#Web</a>
       
         <a href="/tags/JavaScript/">#JavaScript</a>
-      
-        <a href="/tags/Vue/">#Vue</a>
       
         <a href="/tags/Gojs/">#Gojs</a>
       
@@ -491,7 +491,7 @@
     <div class="footer-inner">
   
     <div class="footer-content">
-       Hi, welcome to <a href="https://rainuxs.github.io/" style="text-decoration:none">Rainux blog</a> ! <div><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41019702002937" target="_blank" style="text-decoration:none"><img class="icp-icon" src="/img/beian.png" srcset="/img/friend_404.gif" lazyload><span>豫公网安备 41019702002937号</span></a></div> 
+       Hi, welcome to <a href="https://rainuxs.github.io/" style="text-decoration:none">Rainux blog</a> ! <div><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41019702002937" target="_blank" style="text-decoration:none"><img class="icp-icon" src="/img/beian.png" srcset="/img/loading.gif" lazyload><span>豫公网安备 41019702002937号</span></a></div> 
     </div>
   
   
