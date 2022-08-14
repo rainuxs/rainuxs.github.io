@@ -24,11 +24,11 @@
 <meta property="og:description" content="Header： 首创不易，还请大家不吝指导赐教，Code is never die！ ps:本着让更多人不止解决问题，更能够学到一点点方法的目的，内容有点赘述，还请耐心。 今天在修改项目时，偶然碰到了innerHTML部分知识的使用。直击问题：根据后台返回数据的个数循环动态添加dom元素，并且对dom元素进行相应的操作（例如：添加、编辑dom元素等） 12345678for (let i &#x3D; 0;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-08-12T04:15:18.681Z">
-<meta property="article:modified_time" content="2022-08-12T04:15:18.682Z">
+<meta property="article:modified_time" content="2022-08-14T07:32:29.466Z">
 <meta property="article:author" content="Rainux">
-<meta property="article:tag" content="Vue">
 <meta property="article:tag" content="Web">
 <meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary_large_image">
   
   
@@ -287,6 +287,21 @@
   <div class="row nomargin-x">
     <div class="side-col d-none d-lg-block col-lg-2">
       
+  <aside class="sidebar category-bar" style="margin-right: -1rem">
+    
+
+
+
+
+
+<div class="category-list">
+  
+  
+</div>
+
+
+  </aside>
+
 
     </div>
 
@@ -325,11 +340,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Vue/">#Vue</a>
-      
         <a href="/tags/Web/">#Web</a>
       
         <a href="/tags/JavaScript/">#JavaScript</a>
+      
+        <a href="/tags/Vue/">#Vue</a>
       
     </div>
   
@@ -400,6 +415,34 @@
             </div>
 
             
+  <article id="comments" lazyload>
+    
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.4.17/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"fW3q5WG7pFToTqTLLKdzr574-gzGzoHsz","appKey":"gqGmBLPen7vYa524PBFUqDEq","pageSize":10,"avatar":"monsterid","lang":"zh-CN","placeholder":"Please leave your footprints","guest_info":"nick,mail","recordIP":true,"serverURLs":null,"bg":null,"emojiCDN":null,"enableQQ":false,"requiredFields":"nick,mail","visitor":true,"option":null},
+          {
+            el: "#valine",
+            path: 
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
           </article>
         </div>
       </div>

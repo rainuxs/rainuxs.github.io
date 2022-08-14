@@ -14,13 +14,13 @@
     
     <tags>
       
-      <tag>Web</tag>
-      
-      <tag>JavaScript</tag>
-      
       <tag>Node</tag>
       
       <tag>Nodejs</tag>
+      
+      <tag>Web</tag>
+      
+      <tag>JavaScript</tag>
       
     </tags>
     
@@ -39,13 +39,13 @@
     
     <tags>
       
-      <tag>Web</tag>
-      
-      <tag>JavaScript</tag>
-      
       <tag>Node</tag>
       
       <tag>Nodejs</tag>
+      
+      <tag>Web</tag>
+      
+      <tag>JavaScript</tag>
       
     </tags>
     
@@ -64,13 +64,13 @@
     
     <tags>
       
-      <tag>Web</tag>
-      
-      <tag>JavaScript</tag>
-      
       <tag>Node</tag>
       
       <tag>Nodejs</tag>
+      
+      <tag>Web</tag>
+      
+      <tag>JavaScript</tag>
       
     </tags>
     
@@ -89,13 +89,13 @@
     
     <tags>
       
-      <tag>Vue3</tag>
-      
-      <tag>Vue</tag>
-      
       <tag>Web</tag>
       
       <tag>JavaScript</tag>
+      
+      <tag>Vue3</tag>
+      
+      <tag>Vue</tag>
       
     </tags>
     
@@ -114,36 +114,13 @@
     
     <tags>
       
-      <tag>Vue</tag>
-      
       <tag>Web</tag>
       
       <tag>JavaScript</tag>
+      
+      <tag>Vue</tag>
       
       <tag>Gojs</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>原生JavaScript封装颠倒数组元素</title>
-    <link href="/%E5%8E%9F%E7%94%9FJavaScript%E5%B0%81%E8%A3%85%E9%A2%A0%E5%80%92%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0/"/>
-    <url>/%E5%8E%9F%E7%94%9FJavaScript%E5%B0%81%E8%A3%85%E9%A2%A0%E5%80%92%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0/</url>
-    
-    <content type="html"><![CDATA[<p><strong>Header：</strong> 原创不易，还请大家不吝指导赐教，Code is never die！</p><p>ps：本着让更多人不止解决问题，更能够学到一点点方法的目的。</p><p>今天给大家分享一下JavaScript原生代码封装reverse()方法。<br>直接上代码：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 利用封装函数翻转任意数组</span><br>   <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">changeArr</span>(<span class="hljs-params">arr</span>) </span>&#123;<br>   <span class="hljs-keyword">var</span> newArr = [];<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = arr.length - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) &#123;<br>newArr[newArr.length] = arr[i];<br>&#125;<br><span class="hljs-keyword">return</span> newArr;<br>   &#125;<br>   <span class="hljs-keyword">var</span> arr1 = changeArr([<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>, <span class="hljs-number">9</span>]);<br>   <span class="hljs-built_in">console</span>.log(arr1); <span class="hljs-comment">// [9, 6, 4, 3, 1]</span><br>   <span class="hljs-keyword">var</span> arr2 = changeArr([<span class="hljs-string">&#x27;red&#x27;</span>, <span class="hljs-string">&#x27;green&#x27;</span>, <span class="hljs-string">&#x27;purple&#x27;</span>, <span class="hljs-string">&#x27;blue&#x27;</span>]);<br>   <span class="hljs-built_in">console</span>.log(arr2); <span class="hljs-comment">// [&quot;blue&quot;, &quot;purple&quot;, &quot;green&quot;, &quot;red&quot;]</span><br></code></pre></td></tr></table></figure><p><strong>Ending…</strong><br>好啦，简单明了，自己封装有时候也并不麻烦，相反还可以根据一些实际的特殊需求自己设计，刺激而满满的成就感。还望各位支持一下~~~</p>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>Vue</tag>
-      
-      <tag>Web</tag>
-      
-      <tag>JavaScript</tag>
       
     </tags>
     
@@ -162,11 +139,34 @@
     
     <tags>
       
+      <tag>Web</tag>
+      
+      <tag>JavaScript</tag>
+      
       <tag>Vue</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>原生JavaScript封装颠倒数组元素</title>
+    <link href="/%E5%8E%9F%E7%94%9FJavaScript%E5%B0%81%E8%A3%85%E9%A2%A0%E5%80%92%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0/"/>
+    <url>/%E5%8E%9F%E7%94%9FJavaScript%E5%B0%81%E8%A3%85%E9%A2%A0%E5%80%92%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0/</url>
+    
+    <content type="html"><![CDATA[<p><strong>Header：</strong> 原创不易，还请大家不吝指导赐教，Code is never die！</p><p>ps：本着让更多人不止解决问题，更能够学到一点点方法的目的。</p><p>今天给大家分享一下JavaScript原生代码封装reverse()方法。<br>直接上代码：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 利用封装函数翻转任意数组</span><br>   <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">changeArr</span>(<span class="hljs-params">arr</span>) </span>&#123;<br>   <span class="hljs-keyword">var</span> newArr = [];<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = arr.length - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) &#123;<br>newArr[newArr.length] = arr[i];<br>&#125;<br><span class="hljs-keyword">return</span> newArr;<br>   &#125;<br>   <span class="hljs-keyword">var</span> arr1 = changeArr([<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>, <span class="hljs-number">9</span>]);<br>   <span class="hljs-built_in">console</span>.log(arr1); <span class="hljs-comment">// [9, 6, 4, 3, 1]</span><br>   <span class="hljs-keyword">var</span> arr2 = changeArr([<span class="hljs-string">&#x27;red&#x27;</span>, <span class="hljs-string">&#x27;green&#x27;</span>, <span class="hljs-string">&#x27;purple&#x27;</span>, <span class="hljs-string">&#x27;blue&#x27;</span>]);<br>   <span class="hljs-built_in">console</span>.log(arr2); <span class="hljs-comment">// [&quot;blue&quot;, &quot;purple&quot;, &quot;green&quot;, &quot;red&quot;]</span><br></code></pre></td></tr></table></figure><p><strong>Ending…</strong><br>好啦，简单明了，自己封装有时候也并不麻烦，相反还可以根据一些实际的特殊需求自己设计，刺激而满满的成就感。还望各位支持一下~~~</p>]]></content>
+    
+    
+    
+    <tags>
       
       <tag>Web</tag>
       
       <tag>JavaScript</tag>
+      
+      <tag>Vue</tag>
       
     </tags>
     
@@ -185,11 +185,11 @@
     
     <tags>
       
-      <tag>Vue</tag>
-      
       <tag>Web</tag>
       
       <tag>JavaScript</tag>
+      
+      <tag>Vue</tag>
       
     </tags>
     
@@ -320,11 +320,11 @@
     
     <tags>
       
-      <tag>Vue</tag>
-      
       <tag>Web</tag>
       
       <tag>JavaScript</tag>
+      
+      <tag>Vue</tag>
       
       <tag>Gojs</tag>
       
@@ -345,11 +345,11 @@
     
     <tags>
       
-      <tag>Vue</tag>
-      
       <tag>Web</tag>
       
       <tag>JavaScript</tag>
+      
+      <tag>Vue</tag>
       
     </tags>
     
