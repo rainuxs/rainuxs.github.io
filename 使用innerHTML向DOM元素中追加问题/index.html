@@ -16,15 +16,15 @@
   <meta name="author" content="Rainux">
   <meta name="keywords" content="前端；生活；美好；">
   
-    <meta name="description" content="Header： 首创不易，还请大家不吝指导赐教，Code is never die！ ps:本着让更多人不止解决问题，更能够学到一点点方法的目的，内容有点赘述，还请耐心。 今天在修改项目时，偶然碰到了innerHTML部分知识的使用。直击问题：根据后台返回数据的个数循环动态添加dom元素，并且对dom元素进行相应的操作（例如：添加、编辑dom元素等） 12345678for (let i &#x3D; 0;">
+    <meta name="description" content="Header： 首创不易，还请大家不吝指导赐教，Code is never die！ ps:本着让更多人不止解决问题，更能够学到一点点方法的目的，内容有点赘述，还请耐心。 今天在修改项目时，偶然碰到了 innerHTML 部分知识的使用。直击问题：根据后台返回数据的个数循环动态添加 dom 元素，并且对 dom 元素进行相应的操作（例如：添加、编辑 dom 元素等） 12345678for (le">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用innerHTML向DOM元素中追加问题">
 <meta property="og:url" content="https://rainuxs.github.io/rainuxs.github.io/%E4%BD%BF%E7%94%A8innerHTML%E5%90%91DOM%E5%85%83%E7%B4%A0%E4%B8%AD%E8%BF%BD%E5%8A%A0%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="Rainux">
-<meta property="og:description" content="Header： 首创不易，还请大家不吝指导赐教，Code is never die！ ps:本着让更多人不止解决问题，更能够学到一点点方法的目的，内容有点赘述，还请耐心。 今天在修改项目时，偶然碰到了innerHTML部分知识的使用。直击问题：根据后台返回数据的个数循环动态添加dom元素，并且对dom元素进行相应的操作（例如：添加、编辑dom元素等） 12345678for (let i &#x3D; 0;">
+<meta property="og:description" content="Header： 首创不易，还请大家不吝指导赐教，Code is never die！ ps:本着让更多人不止解决问题，更能够学到一点点方法的目的，内容有点赘述，还请耐心。 今天在修改项目时，偶然碰到了 innerHTML 部分知识的使用。直击问题：根据后台返回数据的个数循环动态添加 dom 元素，并且对 dom 元素进行相应的操作（例如：添加、编辑 dom 元素等） 12345678for (le">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-08-12T04:15:18.681Z">
-<meta property="article:modified_time" content="2022-08-14T07:32:29.466Z">
+<meta property="article:modified_time" content="2022-08-15T08:54:21.380Z">
 <meta property="article:author" content="Rainux">
 <meta property="article:tag" content="Web">
 <meta property="article:tag" content="JavaScript">
@@ -287,21 +287,6 @@
   <div class="row nomargin-x">
     <div class="side-col d-none d-lg-block col-lg-2">
       
-  <aside class="sidebar category-bar" style="margin-right: -1rem">
-    
-
-
-
-
-
-<div class="category-list">
-  
-  
-</div>
-
-
-  </aside>
-
 
     </div>
 
@@ -317,17 +302,20 @@
                 
                 <p><strong>Header：</strong> 首创不易，还请大家不吝指导赐教，Code is never die！</p>
 <p>ps:本着让更多人不止解决问题，更能够学到一点点方法的目的，内容有点赘述，还请耐心。</p>
-<p>今天在修改项目时，偶然碰到了innerHTML部分知识的使用。<br><strong>直击问题：</strong><br>根据后台返回数据的个数循环动态添加dom元素，并且对dom元素进行相应的操作（例如：添加、编辑dom元素等）</p>
+<p>今天在修改项目时，偶然碰到了 innerHTML 部分知识的使用。<br><strong>直击问题：</strong><br>根据后台返回数据的个数循环动态添加 dom 元素，并且对 dom 元素进行相应的操作（例如：添加、编辑 dom 元素等）</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; This.dataList.length; i++) &#123;<br>    <span class="hljs-comment">// 此处为每个div添加一个id（为简洁直接以i作为id）</span><br>	dom.innerHTML += <span class="hljs-string">`&lt;div id=<span class="hljs-subst">$&#123;i&#125;</span> style=&quot;width:200px;height:200px;&quot;&gt;&lt;/div&gt;`</span>;<br>	<span class="hljs-keyword">let</span> domItem = <span class="hljs-built_in">document</span>.getElementById(i);<br>	<span class="hljs-comment">// 此处以添加一个echarts图表为例；</span><br>	domItem.myChart = echarts.init(domItem);<br>	......<br>&#125;<br></code></pre></td></tr></table></figure>
-<p><strong>问题阐述：</strong><br>这是一段很常规的代码，但是当真正渲染时会发现，当有两个（及以上）的数量时，最终只会展现最后一个可视化部分，而前面的部分dom元素也存在，但就是无法显示出来。</p>
-<p><strong>初步想法：</strong><br>① 一开始更多的想的是可视化的数据出现了问题，用过echarts的朋友都知道，数据不准确会导致这种情况。在反复各种打印控制台log各种数据后发现，各类数据都一一打印出来。所以，数据部分导致的设想Pass掉了。<br>② 考虑的是初始化echarts时，也就是上面代码中的<code>domItem</code>，因为每次循环使用同一个变量，后面的可能会把前面的覆盖，导致前面可视化图形展示不出来。后面通过对象赋予不同变量<code>domItem[i]</code> 然而发现，并没有什么作用，原因猜测是当前面的可视化初始化–&gt;完成，已经完成了本轮图形化的构建，当第二次循环使用的话相当于用了一个“新”的变量，所以这个不是主要原因。所以，也Pass掉了。</p>
-<p><strong>最终原因：</strong><br>后面瞪着代码看，然后瞪着代码看，然后再瞪着代码看，最终跟着循环走了第一圈，发现当第一次可视化完成之后，来到第二次可视化，关键来了！<code>dom.innerHTML +=...... </code>其实也就是<code>dom.innerHTML = dom.innerHTML +......</code> 这个过程，相当于前面我第一次完成的echarts构建，在这里就是<code>dom.innerHTML +</code> +号前面的部分，又重新绘制了一遍，那么问题就浮出了水面，会导致已经可视化完成的第一个图表，再进行第二轮可视化时发生了 <strong>重绘</strong> 整个dom元素，所以前面已然完成的可视化，又将被“打回原形”，变成了一个空壳子，而第二次的可视化正常，以此类推…所以最终只会显示最后一个可视化（真实创建并渲染完成显示）</p>
-<p><strong>解决办法：</strong><br>① 针对上述这种需要进行操作的类型，既然会发生重绘，那我何不将计就计，等你各种重绘完成之后，我再去给你每个盒子进行操作呢。这就好比于下课的时候大家都在吵闹，你去制止A同学，A不说话了，当你再去制止B，会发现A继续和大家吵闹，而B不说了，往复循环，最后发现让他们吵闹去吧，一上课大家就立马安静了。这里的上课就类比于重绘完成，一切就绪，就可以一个一个的去批评啦，哈哈哈…..例子稍微一点点牵强，不过意思到了。<br>代码也非常简单</p>
+
+<p><strong>问题阐述：</strong><br>这是一段很常规的代码，但是当真正渲染时会发现，当有两个（及以上）的数量时，最终只会展现最后一个可视化部分，而前面的部分 dom 元素也存在，但就是无法显示出来。</p>
+<p><strong>初步想法：</strong><br>① 一开始更多的想的是可视化的数据出现了问题，用过 echarts 的朋友都知道，数据不准确会导致这种情况。在反复各种打印控制台 log 各种数据后发现，各类数据都一一打印出来。所以，数据部分导致的设想 Pass 掉了。<br>② 考虑的是初始化 echarts 时，也就是上面代码中的<code>domItem</code>，因为每次循环使用同一个变量，后面的可能会把前面的覆盖，导致前面可视化图形展示不出来。后面通过对象赋予不同变量<code>domItem[i]</code> 然而发现，并没有什么作用，原因猜测是当前面的可视化初始化–&gt;完成，已经完成了本轮图形化的构建，当第二次循环使用的话相当于用了一个“新”的变量，所以这个不是主要原因。所以，也 Pass 掉了。</p>
+<p><strong>最终原因：</strong><br>后面瞪着代码看，然后瞪着代码看，然后再瞪着代码看，最终跟着循环走了第一圈，发现当第一次可视化完成之后，来到第二次可视化，关键来了！<code>dom.innerHTML +=...... </code>其实也就是<code>dom.innerHTML = dom.innerHTML +......</code> 这个过程，相当于前面我第一次完成的 echarts 构建，在这里就是<code>dom.innerHTML +</code> +号前面的部分，又重新绘制了一遍，那么问题就浮出了水面，会导致已经可视化完成的第一个图表，再进行第二轮可视化时发生了 <strong>重绘</strong> 整个 dom 元素，所以前面已然完成的可视化，又将被“打回原形”，变成了一个空壳子，而第二次的可视化正常，以此类推…所以最终只会显示最后一个可视化（真实创建并渲染完成显示）</p>
+<p><strong>解决办法：</strong><br>① 针对上述这种需要进行操作的类型，既然会发生重绘，那我何不将计就计，等你各种重绘完成之后，我再去给你每个盒子进行操作呢。这就好比于下课的时候大家都在吵闹，你去制止 A 同学，A 不说话了，当你再去制止 B，会发现 A 继续和大家吵闹，而 B 不说了，往复循环，最后发现让他们吵闹去吧，一上课大家就立马安静了。这里的上课就类比于重绘完成，一切就绪，就可以一个一个的去批评啦，哈哈哈…..例子稍微一点点牵强，不过意思到了。<br>代码也非常简单</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">//孩子创建过程，随便重绘</span><br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; This.dataList.length; i++) &#123;<br>	dom.innerHTML += <span class="hljs-string">`&lt;div id=<span class="hljs-subst">$&#123;i&#125;</span> style=&quot;width:200px;height:200px;&quot;&gt;&lt;/div&gt;`</span>;<br>&#125;<br><span class="hljs-comment">// 创建完成了，不会再重绘了..后续操作</span><br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; This.dataList.length; i++) &#123;<br>	<span class="hljs-keyword">let</span> domItem = <span class="hljs-built_in">document</span>.getElementById(i);<br>	<span class="hljs-comment">// 此处以添加一个echarts图表为例；</span><br>	domItem.myChart = echarts.init(domItem);<br>	......<br>&#125;<br></code></pre></td></tr></table></figure>
-<p>②当你需要循环添加的dom元素内容单一、固定格式的元素时，也可以选择appendChild来解决重绘问题。具体见代码</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 给body添加dom元素</span><br><span class="hljs-keyword">var</span> dom=<span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&#x27;h1&#x27;</span>);<br>dom.className=<span class="hljs-string">&#x27;test&#x27;</span>;<br>dom.innerHTML=<span class="hljs-string">&#x27;Hello,Rain&#x27;</span>;<br><span class="hljs-built_in">document</span>.body.appendChild(dom);<br></code></pre></td></tr></table></figure>
+
+<p>② 当你需要循环添加的 dom 元素内容单一、固定格式的元素时，也可以选择 appendChild 来解决重绘问题。具体见代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 给body添加dom元素</span><br><span class="hljs-keyword">var</span> dom = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&#x27;h1&#x27;</span>);<br>dom.className = <span class="hljs-string">&#x27;test&#x27;</span>;<br>dom.innerHTML = <span class="hljs-string">&#x27;Hello,Rain&#x27;</span>;<br><span class="hljs-built_in">document</span>.body.appendChild(dom);<br></code></pre></td></tr></table></figure>
+
 <p>这样也避免了重绘问题。</p>
-<p><strong>Ending…</strong><br>好啦，首创怀着激动的心啰里啰唆竟然码了2k，问题不是特别难理解，主要的是想要给大家分享拿到问题的整个流程和想法，如有个别地方表述不当或您有疑问，咱们讨论区相互学习哦，还望各位支持一下哦~</p>
+<p><strong>Ending…</strong><br>好啦，首创怀着激动的心啰里啰唆竟然码了 2k，问题不是特别难理解，主要的是想要给大家分享拿到问题的整个流程和想法，如有个别地方表述不当或您有疑问，咱们讨论区相互学习哦，还望各位支持一下哦~</p>
 
                 
               </div>
@@ -335,6 +323,27 @@
             <hr/>
             <div>
               <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Web/" class="category-chain-item">Web</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
   
   
     <div class="post-meta">

@@ -16,15 +16,15 @@
   <meta name="author" content="Rainux">
   <meta name="keywords" content="前端；生活；美好；">
   
-    <meta name="description" content="Header： 原创不易，还请大家不吝指导赐教，Code is never die！ ps：本着让更多人不止解决问题，更能够学到一点点方法的目的。 今天给大家分享一下JavaScript中最实用的方法之一——reverse()。 一、简单用法相信身为前端工程师或者正在成为前端工程师的小伙伴都对它并不陌生，甚至非常熟悉，主要作用就是用于颠倒数组中元素的顺序，这里举个例子： 1234var arrDa">
+    <meta name="description" content="Header： 原创不易，还请大家不吝指导赐教，Code is never die！ ps：本着让更多人不止解决问题，更能够学到一点点方法的目的。 今天给大家分享一下 JavaScript 中最实用的方法之一——reverse()。 一、简单用法相信身为前端工程师或者正在成为前端工程师的小伙伴都对它并不陌生，甚至非常熟悉，主要作用就是用于颠倒数组中元素的顺序，这里举个例子： 1234var arr">
 <meta property="og:type" content="article">
 <meta property="og:title" content="reverse()使用方法及常见问题">
 <meta property="og:url" content="https://rainuxs.github.io/rainuxs.github.io/reverse()%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E5%8F%8A%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="Rainux">
-<meta property="og:description" content="Header： 原创不易，还请大家不吝指导赐教，Code is never die！ ps：本着让更多人不止解决问题，更能够学到一点点方法的目的。 今天给大家分享一下JavaScript中最实用的方法之一——reverse()。 一、简单用法相信身为前端工程师或者正在成为前端工程师的小伙伴都对它并不陌生，甚至非常熟悉，主要作用就是用于颠倒数组中元素的顺序，这里举个例子： 1234var arrDa">
+<meta property="og:description" content="Header： 原创不易，还请大家不吝指导赐教，Code is never die！ ps：本着让更多人不止解决问题，更能够学到一点点方法的目的。 今天给大家分享一下 JavaScript 中最实用的方法之一——reverse()。 一、简单用法相信身为前端工程师或者正在成为前端工程师的小伙伴都对它并不陌生，甚至非常熟悉，主要作用就是用于颠倒数组中元素的顺序，这里举个例子： 1234var arr">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-08-12T04:15:18.687Z">
-<meta property="article:modified_time" content="2022-08-14T07:32:12.018Z">
+<meta property="article:modified_time" content="2022-08-15T08:53:50.538Z">
 <meta property="article:author" content="Rainux">
 <meta property="article:tag" content="Web">
 <meta property="article:tag" content="JavaScript">
@@ -287,21 +287,6 @@
   <div class="row nomargin-x">
     <div class="side-col d-none d-lg-block col-lg-2">
       
-  <aside class="sidebar category-bar" style="margin-right: -1rem">
-    
-
-
-
-
-
-<div class="category-list">
-  
-  
-</div>
-
-
-  </aside>
-
 
     </div>
 
@@ -317,23 +302,26 @@
                 
                 <p><strong>Header：</strong> 原创不易，还请大家不吝指导赐教，Code is never die！</p>
 <p>ps：本着让更多人不止解决问题，更能够学到一点点方法的目的。</p>
-<p>今天给大家分享一下JavaScript中最实用的方法之一——reverse()。</p>
+<p>今天给大家分享一下 JavaScript 中最实用的方法之一——reverse()。</p>
 <h4 id="一、简单用法"><a href="#一、简单用法" class="headerlink" title="一、简单用法"></a>一、简单用法</h4><p>相信身为前端工程师或者正在成为前端工程师的小伙伴都对它并不陌生，甚至非常熟悉，主要作用就是用于颠倒数组中元素的顺序，这里举个例子：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> arrData = [<span class="hljs-string">&quot;I&quot;</span>,<span class="hljs-string">&quot;like&quot;</span>,<span class="hljs-string">&quot;your&quot;</span>,<span class="hljs-string">&quot;voice&quot;</span>]<br><span class="hljs-built_in">console</span>.log(arrData) <span class="hljs-comment">// [&quot;I&quot;,&quot;like&quot;,&quot;your&quot;,&quot;voice&quot;]</span><br><span class="hljs-keyword">var</span> arrData2 = [<span class="hljs-string">&quot;I&quot;</span>,<span class="hljs-string">&quot;like&quot;</span>,<span class="hljs-string">&quot;your&quot;</span>,<span class="hljs-string">&quot;voice&quot;</span>]<br><span class="hljs-built_in">console</span>.log(arrData2.reverse()) <span class="hljs-comment">// [&quot;voice&quot;,&quot;your&quot;,&quot;like&quot;,&quot;I&quot;,]</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> arrData = [<span class="hljs-string">&#x27;I&#x27;</span>, <span class="hljs-string">&#x27;like&#x27;</span>, <span class="hljs-string">&#x27;your&#x27;</span>, <span class="hljs-string">&#x27;voice&#x27;</span>];<br><span class="hljs-built_in">console</span>.log(arrData); <span class="hljs-comment">// [&quot;I&quot;,&quot;like&quot;,&quot;your&quot;,&quot;voice&quot;]</span><br><span class="hljs-keyword">var</span> arrData2 = [<span class="hljs-string">&#x27;I&#x27;</span>, <span class="hljs-string">&#x27;like&#x27;</span>, <span class="hljs-string">&#x27;your&#x27;</span>, <span class="hljs-string">&#x27;voice&#x27;</span>];<br><span class="hljs-built_in">console</span>.log(arrData2.reverse()); <span class="hljs-comment">// [&quot;voice&quot;,&quot;your&quot;,&quot;like&quot;,&quot;I&quot;,]</span><br></code></pre></td></tr></table></figure>
+
 <p>这就是最简单的例子，能够使数组元素顺序发生变化，从而满足前端项目的需要。</p>
 <h4 id="二、理解含义"><a href="#二、理解含义" class="headerlink" title="二、理解含义"></a>二、理解含义</h4><p>当然本篇小记并不是简单记一下流水账，说一下定义而已。重点在于讲一下颠倒数组元素之后发生的那些事儿。且听后面慢慢分析~~<br>接着上面的这个例子来说，</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> arrData = [<span class="hljs-string">&quot;I&quot;</span>,<span class="hljs-string">&quot;like&quot;</span>,<span class="hljs-string">&quot;your&quot;</span>,<span class="hljs-string">&quot;voice&quot;</span>]<br><span class="hljs-comment">//第一次 arrData</span><br><span class="hljs-built_in">console</span>.log(arrData) <span class="hljs-comment">// [&quot;I&quot;,&quot;like&quot;,&quot;your&quot;,&quot;voice&quot;]</span><br><span class="hljs-comment">//reverse()</span><br><span class="hljs-built_in">console</span>.log(arrData.reverse()) <span class="hljs-comment">// [&quot;voice&quot;,&quot;your&quot;,&quot;like&quot;,&quot;I&quot;]</span><br><span class="hljs-comment">//第一次 arrData</span><br><span class="hljs-built_in">console</span>.log(arrData) <span class="hljs-comment">// [&quot;voice&quot;,&quot;your&quot;,&quot;like&quot;,&quot;I&quot;]</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> arrData = [<span class="hljs-string">&#x27;I&#x27;</span>, <span class="hljs-string">&#x27;like&#x27;</span>, <span class="hljs-string">&#x27;your&#x27;</span>, <span class="hljs-string">&#x27;voice&#x27;</span>];<br><span class="hljs-comment">//第一次 arrData</span><br><span class="hljs-built_in">console</span>.log(arrData); <span class="hljs-comment">// [&quot;I&quot;,&quot;like&quot;,&quot;your&quot;,&quot;voice&quot;]</span><br><span class="hljs-comment">//reverse()</span><br><span class="hljs-built_in">console</span>.log(arrData.reverse()); <span class="hljs-comment">// [&quot;voice&quot;,&quot;your&quot;,&quot;like&quot;,&quot;I&quot;]</span><br><span class="hljs-comment">//第一次 arrData</span><br><span class="hljs-built_in">console</span>.log(arrData); <span class="hljs-comment">// [&quot;voice&quot;,&quot;your&quot;,&quot;like&quot;,&quot;I&quot;]</span><br></code></pre></td></tr></table></figure>
+
 <p>如前面所述，定义了两个变量分别单独打印原变量和<code>reverse()</code>后的数据都是正常的，但这里，打印同一个数据时就出现了“意外惊喜”，为什么第一次打印的<code>arrData</code>和第二次打印的<code>arrData</code>不一样呢？原因就在于：reverse()方法改变原数组，而不创建新数组。什么意思呢，我们分析一下整个过程：</p>
-<p>①第一次正常打印<code>arrData</code>数据，也就是定义的值；</p>
-<p>②第二步打印<code>arrData.reverse()</code>，同样是正常的颠倒数组元素打印。这里颠倒所发生的行为是颠倒然后打印出来，<strong>但是</strong> 随之改变的是 <code>arrData = [&quot;voice&quot;,&quot;your&quot;,&quot;like&quot;,&quot;I&quot;]</code>；</p>
-<p>③第二次打印arrData，不言而喻，上一步<code>arrData.reverse()</code>已然改变了数据，故第二次打印的是改变后的数据。</p>
+<p>① 第一次正常打印<code>arrData</code>数据，也就是定义的值；</p>
+<p>② 第二步打印<code>arrData.reverse()</code>，同样是正常的颠倒数组元素打印。这里颠倒所发生的行为是颠倒然后打印出来，<strong>但是</strong> 随之改变的是 <code>arrData = [&quot;voice&quot;,&quot;your&quot;,&quot;like&quot;,&quot;I&quot;]</code>；</p>
+<p>③ 第二次打印 arrData，不言而喻，上一步<code>arrData.reverse()</code>已然改变了数据，故第二次打印的是改变后的数据。</p>
 <h4 id="三、深入使用"><a href="#三、深入使用" class="headerlink" title="三、深入使用"></a>三、深入使用</h4><p>代码的世界如此美妙。接下来再进一步升华用法，不要走开，依然精彩…</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> arrData = [<span class="hljs-string">&quot;I&quot;</span>,<span class="hljs-string">&quot;like&quot;</span>,<span class="hljs-string">&quot;your&quot;</span>,<span class="hljs-string">&quot;voice&quot;</span>]<br><span class="hljs-comment">// 第一种方式</span><br><span class="hljs-built_in">console</span>.log(arrData + arrData.reverse()) <span class="hljs-comment">// voice,your,like,Ivoice,your,like,I</span><br><br><span class="hljs-keyword">var</span> arrData2 = [<span class="hljs-string">&quot;I&quot;</span>,<span class="hljs-string">&quot;like&quot;</span>,<span class="hljs-string">&quot;your&quot;</span>,<span class="hljs-string">&quot;voice&quot;</span>]<br><span class="hljs-comment">// 第二种方式</span><br><span class="hljs-built_in">console</span>.log(arrData2 + <span class="hljs-string">&quot;~&quot;</span> + arrData2.reverse()) <span class="hljs-comment">// I,like,your,voice~voice,your,like,I</span><br></code></pre></td></tr></table></figure>
-<p>我只是简单的在中间多加了一个字符串<code>~</code>，出现了两种截然不同的结果是为什么呢？其实还是万变不离其宗，深入理解：<strong>reverse()方法改变原数组，而不创建新数组</strong>  接下来逐个分析</p>
-<p>第一种方式：定义arrData，打印时拿到变量arrData，然后再拿到变量arrData.reverse()，此时会修改原定义的arrData，所以打印时的变量arrData就随之改变，此时<code>+</code>两边都是数组会被强制转换为字符串，然后拼接，最后一起打印出来，即出现代码中所示结果；</p>
-<p>第二种方式：定义arrData，打印括号内拿到变量arrData，然后执行<code>+&quot;~&quot;</code>(这里需要知道，代码执行顺序都是从左至右)，这里变量arrData会被强制转化为字符串String类型，然后再拿到变量arrData.reverse()（此时前面已经被强制转化String类型，所以不会再受后面影响），接下来就是字符串<code>&quot;I,like,your,voice~&quot;+arrData.reverse()</code>，也会转化为字符串然后拼接，最后打印出来。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> arrData = [<span class="hljs-string">&#x27;I&#x27;</span>, <span class="hljs-string">&#x27;like&#x27;</span>, <span class="hljs-string">&#x27;your&#x27;</span>, <span class="hljs-string">&#x27;voice&#x27;</span>];<br><span class="hljs-comment">// 第一种方式</span><br><span class="hljs-built_in">console</span>.log(arrData + arrData.reverse()); <span class="hljs-comment">// voice,your,like,Ivoice,your,like,I</span><br><br><span class="hljs-keyword">var</span> arrData2 = [<span class="hljs-string">&#x27;I&#x27;</span>, <span class="hljs-string">&#x27;like&#x27;</span>, <span class="hljs-string">&#x27;your&#x27;</span>, <span class="hljs-string">&#x27;voice&#x27;</span>];<br><span class="hljs-comment">// 第二种方式</span><br><span class="hljs-built_in">console</span>.log(arrData2 + <span class="hljs-string">&#x27;~&#x27;</span> + arrData2.reverse()); <span class="hljs-comment">// I,like,your,voice~voice,your,like,I</span><br></code></pre></td></tr></table></figure>
+
+<p>我只是简单的在中间多加了一个字符串<code>~</code>，出现了两种截然不同的结果是为什么呢？其实还是万变不离其宗，深入理解：<strong>reverse()方法改变原数组，而不创建新数组</strong> 接下来逐个分析</p>
+<p>第一种方式：定义 arrData，打印时拿到变量 arrData，然后再拿到变量 arrData.reverse()，此时会修改原定义的 arrData，所以打印时的变量 arrData 就随之改变，此时<code>+</code>两边都是数组会被强制转换为字符串，然后拼接，最后一起打印出来，即出现代码中所示结果；</p>
+<p>第二种方式：定义 arrData，打印括号内拿到变量 arrData，然后执行<code>+&quot;~&quot;</code>(这里需要知道，代码执行顺序都是从左至右)，这里变量 arrData 会被强制转化为字符串 String 类型，然后再拿到变量 arrData.reverse()（此时前面已经被强制转化 String 类型，所以不会再受后面影响），接下来就是字符串<code>&quot;I,like,your,voice~&quot;+arrData.reverse()</code>，也会转化为字符串然后拼接，最后打印出来。</p>
 <p><strong>总结：</strong> 字符串不会被“策反”而发生改变，而变量会随变量值是什么，它就跟着是什么。</p>
-<p><strong>Ending…</strong><br>好啦，又一次地怀着激动的心啰里啰唆竟然码了2k，主要的是想要给大家分享拿到问题的整个流程和想法，咱们讨论区相互学习，还望各位支持一下~~~</p>
+<p><strong>Ending…</strong><br>好啦，又一次地怀着激动的心啰里啰唆竟然码了 2k，主要的是想要给大家分享拿到问题的整个流程和想法，咱们讨论区相互学习，还望各位支持一下~~~</p>
 
                 
               </div>
@@ -341,6 +329,27 @@
             <hr/>
             <div>
               <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Web/" class="category-chain-item">Web</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
   
   
     <div class="post-meta">
@@ -405,9 +414,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/%E5%8E%9F%E7%94%9FJavaScript%E5%B0%81%E8%A3%85%E5%8E%BB%E9%99%A4%E6%95%B0%E7%BB%84%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0%E7%9A%84%E5%8E%BB%E9%87%8D%E5%87%BD%E6%95%B0/" title="原生JavaScript封装去除数组重复元素的去重函数">
+                      <a href="/%E5%8E%9F%E7%94%9FJavaScript%E5%B0%81%E8%A3%85%E9%A2%A0%E5%80%92%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0/" title="原生JavaScript封装颠倒数组元素">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">原生JavaScript封装去除数组重复元素的去重函数</span>
+                        <span class="hidden-mobile">原生JavaScript封装颠倒数组元素</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     

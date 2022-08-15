@@ -16,18 +16,18 @@
   <meta name="author" content="Rainux">
   <meta name="keywords" content="前端；生活；美好；">
   
-    <meta name="description" content="Code is never die ! 通常如果数据过多，我们会将数据单独拉出来存储到一个单独的js文件中，然后通过外部js引入进来使用数据。 目前比较简单而且用的比较多的是ES6语法规范的exports&amp;import方法。使用方法是： 1234567&#x2F;&#x2F; 外部定义dataList.jsexports.dataList &#x3D; &amp;#123;  	uname &#x3D; &amp;#x27;Rain&amp;#x27;">
+    <meta name="description" content="Code is never die ! 通常如果数据过多，我们会将数据单独拉出来存储到一个单独的 js 文件中，然后通过外部 js 引入进来使用数据。 目前比较简单而且用的比较多的是 ES6 语法规范的exports&amp;import方法。使用方法是： 1234567&#x2F;&#x2F; 外部定义dataList.jsexports.dataList &#x3D; &amp;#123;  	uname &#x3D; &amp;#x27;Rain">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在html的js中获取外部js中的多个变量和数据">
 <meta property="og:url" content="https://rainuxs.github.io/rainuxs.github.io/%E5%9C%A8html%E7%9A%84js%E4%B8%AD%E8%8E%B7%E5%8F%96%E5%A4%96%E9%83%A8js%E4%B8%AD%E7%9A%84%E5%A4%9A%E4%B8%AA%E5%8F%98%E9%87%8F%E5%92%8C%E6%95%B0%E6%8D%AE/index.html">
 <meta property="og:site_name" content="Rainux">
-<meta property="og:description" content="Code is never die ! 通常如果数据过多，我们会将数据单独拉出来存储到一个单独的js文件中，然后通过外部js引入进来使用数据。 目前比较简单而且用的比较多的是ES6语法规范的exports&amp;import方法。使用方法是： 1234567&#x2F;&#x2F; 外部定义dataList.jsexports.dataList &#x3D; &amp;#123;  	uname &#x3D; &amp;#x27;Rain&amp;#x27;">
+<meta property="og:description" content="Code is never die ! 通常如果数据过多，我们会将数据单独拉出来存储到一个单独的 js 文件中，然后通过外部 js 引入进来使用数据。 目前比较简单而且用的比较多的是 ES6 语法规范的exports&amp;import方法。使用方法是： 1234567&#x2F;&#x2F; 外部定义dataList.jsexports.dataList &#x3D; &amp;#123;  	uname &#x3D; &amp;#x27;Rain">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20210422100907549.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20210422102329101.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80OTkxODY1Nw==,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20210422102350124.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80OTkxODY1Nw==,size_16,color_FFFFFF,t_70">
 <meta property="article:published_time" content="2022-08-12T04:15:18.684Z">
-<meta property="article:modified_time" content="2022-08-14T07:31:59.443Z">
+<meta property="article:modified_time" content="2022-08-15T08:54:14.343Z">
 <meta property="article:author" content="Rainux">
 <meta property="article:tag" content="Web">
 <meta property="article:tag" content="JavaScript">
@@ -294,21 +294,6 @@
   <div class="row nomargin-x">
     <div class="side-col d-none d-lg-block col-lg-2">
       
-  <aside class="sidebar category-bar" style="margin-right: -1rem">
-    
-
-
-
-
-
-<div class="category-list">
-  
-  
-</div>
-
-
-  </aside>
-
 
     </div>
 
@@ -323,21 +308,24 @@
               <div class="markdown-body">
                 
                 <p><strong>Code is never die !</strong></p>
-<p>通常如果数据过多，我们会将数据单独拉出来存储到一个单独的js文件中，然后通过外部js引入进来使用数据。</p>
-<p>目前比较简单而且用的比较多的是ES6语法规范的<code>exports&amp;import</code>方法。<br>使用方法是：</p>
+<p>通常如果数据过多，我们会将数据单独拉出来存储到一个单独的 js 文件中，然后通过外部 js 引入进来使用数据。</p>
+<p>目前比较简单而且用的比较多的是 ES6 语法规范的<code>exports&amp;import</code>方法。<br>使用方法是：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 外部定义dataList.js</span><br><span class="hljs-built_in">exports</span>.dataList = &#123;<br>  	uname = <span class="hljs-string">&#x27;Rain&#x27;</span>,<br>    uage = <span class="hljs-string">&#x27;18&#x27;</span>,<br>    year = <span class="hljs-string">&#x27;2021-04-22 09:30&#x27;</span>,<br>    hometown = <span class="hljs-string">&#x27;China&#x27;</span>,<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript">使用数据的index.html文件<br>&lt;script&gt;<br>	<span class="hljs-keyword">import</span> &#123; dataList &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./data.js&#x27;</span>;<br>	<span class="hljs-built_in">console</span>.log(dataList);<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
-<p>当然在项目中使用完全没有任何问题，但是当你测试或者单独两个文件这样使用的话就会出现问题，因为这种方法是ES6语法规范下的方法，在普通的JS中是使用的JavaScript语法，所以肯定会出现“不适”的问题出现，就是下面这个啦！<br><img src="https://img-blog.csdnimg.cn/20210422100907549.png" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"><br>“无法在模块外部使用import语句”，意思就是说导入文件是ES6模块化语法，而浏览器并不支持ES6语法。就是这个问题导致的错误。</p>
-<p>看到网上很多人给出的解决方法是：在script 标签中加入type=”module”属性<br>然而，不管是看评论还是自己亲身测试发现，然而并没有什么用处，依然会报错！！！</p>
-<p>其实刚刚开头也说了在项目中使用较多，为什么在项目中可以正常使用呢？其实这里所说的意思是，默认你的项目配置了webpack包，然后在webpack配置文件中初始化配置一下：<code>module.exports = &#123; mode: &#39;development&#39; // mode 用来指定构建模式 &#125;</code>  然后是启动webpack项目打包，将原本的js文件改为dist目录下的main.js文件使用，这里就可以正常使用<code>exports&amp;import</code>方法！</p>
-<p>这是在项目中使用，当然不会有什么问题，但有人说了我自己测试一些数据，或者自己学习练习，小demo中使用，难道还得打包……那岂不是大材小用，这里讲一下原生js、html的方法：在html的js中获取外部js中的多个变量值。<br>首先上代码：<br>HTML文件部分</p>
+
+<p>当然在项目中使用完全没有任何问题，但是当你测试或者单独两个文件这样使用的话就会出现问题，因为这种方法是 ES6 语法规范下的方法，在普通的 JS 中是使用的 JavaScript 语法，所以肯定会出现“不适”的问题出现，就是下面这个啦！<br><img src="https://img-blog.csdnimg.cn/20210422100907549.png" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"><br>“无法在模块外部使用 import 语句”，意思就是说导入文件是 ES6 模块化语法，而浏览器并不支持 ES6 语法。就是这个问题导致的错误。</p>
+<p>看到网上很多人给出的解决方法是：在 script 标签中加入 type=”module”属性<br>然而，不管是看评论还是自己亲身测试发现，然而并没有什么用处，依然会报错！！！</p>
+<p>其实刚刚开头也说了在项目中使用较多，为什么在项目中可以正常使用呢？其实这里所说的意思是，默认你的项目配置了 webpack 包，然后在 webpack 配置文件中初始化配置一下：<code>module.exports = &#123; mode: &#39;development&#39; // mode 用来指定构建模式 &#125;</code> 然后是启动 webpack 项目打包，将原本的 js 文件改为 dist 目录下的 main.js 文件使用，这里就可以正常使用<code>exports&amp;import</code>方法！</p>
+<p>这是在项目中使用，当然不会有什么问题，但有人说了我自己测试一些数据，或者自己学习练习，小 demo 中使用，难道还得打包……那岂不是大材小用，这里讲一下原生 js、html 的方法：在 html 的 js 中获取外部 js 中的多个变量值。<br>首先上代码：<br>HTML 文件部分</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs javascript">&lt;!DOCTYPE html&gt;<br><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span></span><br><span class="xml">	<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span></span><br><span class="xml">		<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span> /&gt;</span></span><br><span class="xml">		<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;X-UA-Compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;IE=edge&quot;</span> /&gt;</span></span><br><span class="xml">		<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span> /&gt;</span></span><br><span class="xml">		<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span></span><br><span class="xml">	<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></span><br><span class="xml">	<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span><br><span class="xml">		<span class="hljs-comment">&lt;!-- 引入定义数据的js文件 --&gt;</span></span><br><span class="xml">		<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./data.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="xml">		<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="javascript"><span class="xml">			<span class="hljs-comment">// 直接使用js文件方法获取数据</span></span></span><br><span class="javascript"><span class="xml">			<span class="hljs-keyword">var</span> dataList = dataList();</span></span><br><span class="javascript"><span class="xml">			<span class="hljs-built_in">console</span>.log(dataList);</span></span><br><span class="javascript"><span class="xml">		</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="xml">	<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span><br><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
-<p>所引用的data.js文件</p>
+
+<p>所引用的 data.js 文件</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">dataList</span>(<span class="hljs-params"></span>) </span>&#123;<br>	<span class="hljs-keyword">var</span> uname = <span class="hljs-string">&#x27;Rain&#x27;</span>;<br>	<span class="hljs-keyword">var</span> uage = <span class="hljs-string">&#x27;18&#x27;</span>;<br>	<span class="hljs-keyword">var</span> year = <span class="hljs-string">&#x27;2021-04-22 09:30&#x27;</span>;<br>	<span class="hljs-keyword">var</span> hometown = <span class="hljs-string">&#x27;China&#x27;</span>;<br>	<span class="hljs-comment">// 这里可以return两种类型数据：对象  数组 （按需求）</span><br>	<span class="hljs-keyword">return</span> &#123; uname, uage, year, hometown &#125;;<br>	<span class="hljs-comment">// return [uname, uage, year, hometown];</span><br>&#125;<br></code></pre></td></tr></table></figure>
-<p>展示下控制台分别打印的数据情况以及测试情况（大家见图即理解）<br>①返回数组<br><img src="https://img-blog.csdnimg.cn/20210422102329101.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80OTkxODY1Nw==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"><br>②返回对象</p>
+
+<p>展示下控制台分别打印的数据情况以及测试情况（大家见图即理解）<br>① 返回数组<br><img src="https://img-blog.csdnimg.cn/20210422102329101.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80OTkxODY1Nw==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"><br>② 返回对象</p>
 <p><img src="https://img-blog.csdnimg.cn/20210422102350124.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80OTkxODY1Nw==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"><br>如上图大家所见，可以对数据进行遍历等等等操作，方便大家测试，当然在正式项目中也可以使用呀，个人感觉不是特别麻烦，主要是不会报错啦！！！</p>
-<p><strong>Ending：</strong> 坚持写下去，前端的魅力无法言说，努力做自己认为对的事！ </p>
+<p><strong>Ending：</strong> 坚持写下去，前端的魅力无法言说，努力做自己认为对的事！</p>
 
                 
               </div>
@@ -345,6 +333,27 @@
             <hr/>
             <div>
               <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Web/" class="category-chain-item">Web</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
   
   
     <div class="post-meta">
