@@ -1,27 +1,26 @@
 ﻿---
 title: Gojs组件------前端图形化插件之利器
-type: "tags"
-tags: ["Gojs","Vue","Web","JavaScript"]
-
-
+type: 'tags'
+tags: ['Gojs', 'Vue', 'Web', 'JavaScript']
+categories: ['Web']
 ---
 
 **Code is never die！**
 
-
-
 # 前言
 
-使用jsPlumb这个组件本身还不错，使用方便、入门简单、轻量级，但是使用一段时间下来，发现一些弊病，比如组件不太稳定，初始进入页面的时候连线的样式有时会乱掉，刷新页面之后才能恢复正常，而且连线样式比较单一，容易让人产生视觉疲劳，加之最近公司在大力推行所谓的“工业4.0”，除了对自动化控制要求的提高之外，对这种图形化界面的要求也随之提高，所以单纯的jsPlumb组件效果已经不能满足日益发展的公司业务。基于以上种种，最终找到了Gojs组件，它效果强大、api丰富，唯一的不足就是这个组件是一个收费组件，可是在天朝，嘘...这是个不能说的秘密！
+使用 jsPlumb 这个组件本身还不错，使用方便、入门简单、轻量级，但是使用一段时间下来，发现一些弊病，比如组件不太稳定，初始进入页面的时候连线的样式有时会乱掉，刷新页面之后才能恢复正常，而且连线样式比较单一，容易让人产生视觉疲劳，加之最近公司在大力推行所谓的“工业 4.0”，除了对自动化控制要求的提高之外，对这种图形化界面的要求也随之提高，所以单纯的 jsPlumb 组件效果已经不能满足日益发展的公司业务。基于以上种种，最终找到了 Gojs 组件，它效果强大、api 丰富，唯一的不足就是这个组件是一个收费组件，可是在天朝，嘘...这是个不能说的秘密！
+
 # 一、组件效果预览
+
 先来两个炫酷点的效果：
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210420173655509.gif)
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210420173716399.gif)
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210420173731858.gif)
-就最下面两个效果而言，就是jsPlumb无法实现的，可是这种效果在MES系统里面是很吸引人的，尤其是一些流程性的业务，用这种效果实现让可以一眼就感觉高大上了。并且咋一眼看上去，你根本都不相信这是一个web页面的效果。
+就最下面两个效果而言，就是 jsPlumb 无法实现的，可是这种效果在 MES 系统里面是很吸引人的，尤其是一些流程性的业务，用这种效果实现让可以一眼就感觉高大上了。并且咋一眼看上去，你根本都不相信这是一个 web 页面的效果。
 
- 其他效果示例：
- ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210420173759992.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80OTkxODY1Nw==,size_16,color_FFFFFF,t_70)
+其他效果示例：
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210420173759992.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80OTkxODY1Nw==,size_16,color_FFFFFF,t_70)
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/2021042017381095.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80OTkxODY1Nw==,size_16,color_FFFFFF,t_70)
 可折叠的树：
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210420173834649.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80OTkxODY1Nw==,size_16,color_FFFFFF,t_70)
@@ -31,187 +30,210 @@ tags: ["Gojs","Vue","Web","JavaScript"]
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210420173900441.gif)
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210420173914283.gif)
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210420173924320.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80OTkxODY1Nw==,size_16,color_FFFFFF,t_70)
-想抢visio的饭碗吗？
+想抢 visio 的饭碗吗？
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210420174031610.gif)
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210420174050114.gif)
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210420174101683.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80OTkxODY1Nw==,size_16,color_FFFFFF,t_70)
 更多示例可查看[GoJS](https://gojs.net/latest/samples/index.html)
 
 # 二、初次接触
+
 老规矩，还是先来个入门教程。
 
 源码下载：[https://github.com/NorthwoodsSoftware/GoJS](https://github.com/NorthwoodsSoftware/GoJS)
 
-api详情：[https://gojs.net/latest/api/index.html](https://gojs.net/latest/api/index.html)
+api 详情：[https://gojs.net/latest/api/index.html](https://gojs.net/latest/api/index.html)
 
 示例地址：[https://gojs.net/latest/samples/index.html](https://gojs.net/latest/samples/index.html)
 
-## 1、Gojs简介
-GoJS是一个功能丰富的JS库，在Web浏览器和平台上可实现自定义交互图和复杂的可视化效果，它用自定义模板和布局组件简化了节点、链接和分组等复杂的JS图表，给用户交互提供了许多先进的功能，如拖拽、复制、粘贴、文本编辑、工具提示、上下文菜单、自动布局、模板、数据绑定和模型、事务状态和撤销管理、调色板、概述、事件处理程序、命令和自定义操作的扩展工具系统。无需切换服务器和插件，GoJS就能实现用户互动并在浏览器中完全运行，呈现HTML5 Canvas元素或SVG，也不用服务器端请求。 GoJS不依赖于任何JS库或框架（例如bootstrap、jquery等），可与任何HTML或JS框架配合工作，甚至可以不用框架。
+## 1、Gojs 简介
+
+GoJS 是一个功能丰富的 JS 库，在 Web 浏览器和平台上可实现自定义交互图和复杂的可视化效果，它用自定义模板和布局组件简化了节点、链接和分组等复杂的 JS 图表，给用户交互提供了许多先进的功能，如拖拽、复制、粘贴、文本编辑、工具提示、上下文菜单、自动布局、模板、数据绑定和模型、事务状态和撤销管理、调色板、概述、事件处理程序、命令和自定义操作的扩展工具系统。无需切换服务器和插件，GoJS 就能实现用户互动并在浏览器中完全运行，呈现 HTML5 Canvas 元素或 SVG，也不用服务器端请求。 GoJS 不依赖于任何 JS 库或框架（例如 bootstrap、jquery 等），可与任何 HTML 或 JS 框架配合工作，甚至可以不用框架。
+
 ## 2、使用入门
+
 （1）文件引用
 
 ```javascript
 <script src="gojs/go-debug_ok.js"></script>
 ```
 
-可以用cdn上面的最新版本，也可以引用本地down下来的文件。如果是开发，可以引用debug版本的js，正式运行的时候引用正式的js，这个无需多讲。
+可以用 cdn 上面的最新版本，也可以引用本地 down 下来的文件。如果是开发，可以引用 debug 版本的 js，正式运行的时候引用正式的 js，这个无需多讲。
 
 （2）创建画布
 
-随便定义一个html元素，作为我们的画布
+随便定义一个 html 元素，作为我们的画布
 
 ```javascript
 <div id="myDiagramDiv" style="margin:auto;width:300px; height:300px; background-color:#ddd;"></div>
 ```
 
-然后使用gojs的api初始化画布
+然后使用 gojs 的 api 初始化画布
 
 ```javascript
-		//创建画布
-        var objGo = go.GraphObject.make;
-        var myDiagram = objGo(go.Diagram, "myDiagramDiv",
-            {
-                //模型图的中心位置所在坐标
-                initialContentAlignment: go.Spot.Center,
-                
-                //允许用户操作图表的时候使用Ctrl-Z撤销和Ctrl-Y重做快捷键
-                "undoManager.isEnabled": true,
-                
-                //不运行用户改变图表的规模
-                allowZoom: false,
+//创建画布
+var objGo = go.GraphObject.make;
+var myDiagram = objGo(go.Diagram, 'myDiagramDiv', {
+	//模型图的中心位置所在坐标
+	initialContentAlignment: go.Spot.Center,
 
-                //画布上面是否出现网格
-                "grid.visible": true,
+	//允许用户操作图表的时候使用Ctrl-Z撤销和Ctrl-Y重做快捷键
+	'undoManager.isEnabled': true,
 
-                //允许在画布上面双击的时候创建节点
-                "clickCreatingTool.archetypeNodeData": { text: "Node" },
+	//不运行用户改变图表的规模
+	allowZoom: false,
 
-                //允许使用ctrl+c、ctrl+v复制粘贴
-                "commandHandler.copiesTree": true,  
+	//画布上面是否出现网格
+	'grid.visible': true,
 
-                //允许使用delete键删除节点
-                "commandHandler.deletesTree": true, 
+	//允许在画布上面双击的时候创建节点
+	'clickCreatingTool.archetypeNodeData': { text: 'Node' },
 
-                // dragging for both move and copy
-                "draggingTool.dragsTree": true,  
-            });    
+	//允许使用ctrl+c、ctrl+v复制粘贴
+	'commandHandler.copiesTree': true,
+
+	//允许使用delete键删除节点
+	'commandHandler.deletesTree': true,
+
+	// dragging for both move and copy
+	'draggingTool.dragsTree': true,
+});
 ```
-官方示例用的`$`符号作为变量，博主觉得`$`符号太敏感，还是换个名字吧~以上几个参数都是博主摘选的，更多初始化画布的参数请参考官方api下图：
+
+官方示例用的`$`符号作为变量，博主觉得`$`符号太敏感，还是换个名字吧~以上几个参数都是博主摘选的，更多初始化画布的参数请参考官方 api 下图：
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210420174518606.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80OTkxODY1Nw==,size_16,color_FFFFFF,t_70)
 3）创建模型数据（Model）
 
 接着上面的代码，我们增加如下几行
 
 ```javascript
-var myModel = objGo(go.Model);//创建Model对象
-        // model中的数据每一个js对象都代表着一个相应的模型图中的元素
-        myModel.nodeDataArray = [
-            { key: "工厂" },
-            { key: "车间" },
-            { key: "工人" },
-            { key: "岗位" },
-        ];
-        myDiagram.model = myModel; //将模型数据绑定到画布图上
+var myModel = objGo(go.Model); //创建Model对象
+// model中的数据每一个js对象都代表着一个相应的模型图中的元素
+myModel.nodeDataArray = [{ key: '工厂' }, { key: '车间' }, { key: '工人' }, { key: '岗位' }];
+myDiagram.model = myModel; //将模型数据绑定到画布图上
 ```
+
 效果预览![在这里插入图片描述](https://img-blog.csdnimg.cn/20210420174604965.gif)
 4）创建节点（Node）
 
 上面有了画布和节点数据，只是有了一个雏形，但是还没有任何的图形化效果。我们加入一些效果试试
 
-在gojs里面给我们提供了几种模型节点的可选项：
+在 gojs 里面给我们提供了几种模型节点的可选项：
 
 [Shape](https://gojs.net/latest/intro/shapes.html):形状——Rectangle（矩形）、RoundedRectangle（圆角矩形），Ellipse（椭圆形），Triangle（三角形），Diamond（菱形），Circle（圆形）等
 [TextBlock](https://gojs.net/latest/intro/textblocks.html):文本域（可编辑）
 [Picture](https://gojs.net/latest/intro/pictures.html):图片
-[Panel](https://gojs.net/latest/intro/panels.html):容器来保存其他Node的集合 
-默认的节点模型代码只是由一个TextBlock组件构建成
+[Panel](https://gojs.net/latest/intro/panels.html):容器来保存其他 Node 的集合
+默认的节点模型代码只是由一个 TextBlock 组件构建成
 我们增加如下一段代码：
 
 ```javascript
 // 定义一个简单的节点模板
-        myDiagram.nodeTemplate =
-            objGo(go.Node, "Horizontal",//横向布局的面板
-                // 节点淡蓝色背景
-                { background: "#44CCFF" },
-                objGo(go.Shape,
-                    "RoundedRectangle", //定义形状，这是圆角矩形
-                    { /* Shape的参数。宽高颜色等等*/figure: "Club", width: 40, height: 60, margin: 4, fill: 'red' },
-                    // 绑定 Shape.figure属性为Node.data.fig的值，Model对象可以通过Node.data.fig 获取和设置Shape.figure（修改形状）
-                    new go.Binding("figure", "fig"), new go.Binding('fill', 'fill2')),
-                objGo(go.TextBlock,
-                    "Default Text",  // 默认文本
-                    // 设置字体大小颜色以及边距
-                    { margin: 12, stroke: "white", font: "bold 16px sans-serif" },
-                    //绑定TextBlock.text 属性为Node.data.name的值，Model对象可以通过Node.data.name获取和设置TextBlock.text
-                    new go.Binding("text", "name"))
-            );
+myDiagram.nodeTemplate = objGo(
+	go.Node,
+	'Horizontal', //横向布局的面板
+	// 节点淡蓝色背景
+	{ background: '#44CCFF' },
+	objGo(
+		go.Shape,
+		'RoundedRectangle', //定义形状，这是圆角矩形
+		{
+			/* Shape的参数。宽高颜色等等*/ figure: 'Club',
+			width: 40,
+			height: 60,
+			margin: 4,
+			fill: 'red',
+		},
+		// 绑定 Shape.figure属性为Node.data.fig的值，Model对象可以通过Node.data.fig 获取和设置Shape.figure（修改形状）
+		new go.Binding('figure', 'fig'),
+		new go.Binding('fill', 'fill2')
+	),
+	objGo(
+		go.TextBlock,
+		'Default Text', // 默认文本
+		// 设置字体大小颜色以及边距
+		{ margin: 12, stroke: 'white', font: 'bold 16px sans-serif' },
+		//绑定TextBlock.text 属性为Node.data.name的值，Model对象可以通过Node.data.name获取和设置TextBlock.text
+		new go.Binding('text', 'name')
+	)
+);
 
-        var myModel = objGo(go.Model);//创建Model对象
-        // model中的数据每一个js对象都代表着一个相应的模型图中的元素
-        myModel.nodeDataArray = [
-            { name: "工厂", fig: 'YinYang', fill2: 'blue' },
-            { name: "车间", fig: 'Peace', fill2: 'red' },
-            { name: "工人", fig: 'NotAllowed', fill2: 'green' },
-            { name: "岗位", fig: 'Fragile', fill2: 'yellow' },
-        ];
-        myDiagram.model = myModel; //将模型数据绑定到画布图上
+var myModel = objGo(go.Model); //创建Model对象
+// model中的数据每一个js对象都代表着一个相应的模型图中的元素
+myModel.nodeDataArray = [
+	{ name: '工厂', fig: 'YinYang', fill2: 'blue' },
+	{ name: '车间', fig: 'Peace', fill2: 'red' },
+	{ name: '工人', fig: 'NotAllowed', fill2: 'green' },
+	{ name: '岗位', fig: 'Fragile', fill2: 'yellow' },
+];
+myDiagram.model = myModel; //将模型数据绑定到画布图上
 ```
-代码释疑：以上我们给画布对象定义了两种节点模板，一种是文本节点，另一种是形状节点（Node）。在形状节点中，我们定义了数据模型的通用节点样式，就是这一段代码 
+
+代码释疑：以上我们给画布对象定义了两种节点模板，一种是文本节点，另一种是形状节点（Node）。在形状节点中，我们定义了数据模型的通用节点样式，就是这一段代码
 
 ```javascript
 { /* Shape的参数。宽高颜色等等*/figure: "Club", width: 40, height: 60, margin: 4, fill: 'red' },
 ```
-**然后通过 `new go.Binding("figure", "fig")`方法将模板里面的属性映射到数据实例中，比如这里模板里面的figure属性定义的是Club，如果在我们的数据里面定义fig属性，那么它就会覆盖模板里面的figure的默认值。同样，fill和fill2也是通过同样的原理去区别模板中的样式和实例中的实际样式的！**
-注：更多figure属性的取值详见 [这里](https://gojs.net/latest/extensions/Figures.js)
+
+**然后通过 `new go.Binding("figure", "fig")`方法将模板里面的属性映射到数据实例中，比如这里模板里面的 figure 属性定义的是 Club，如果在我们的数据里面定义 fig 属性，那么它就会覆盖模板里面的 figure 的默认值。同样，fill 和 fill2 也是通过同样的原理去区别模板中的样式和实例中的实际样式的！**
+注：更多 figure 属性的取值详见 [这里](https://gojs.net/latest/extensions/Figures.js)
 效果如下：
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210420175144453.gif)
 由此可见我们数据里面的属性会覆盖模板的原始属性，如果是新增的节点，由于没有自定义数据属性，所以呈现到界面上面的时候就是模板里面的原生样式！
 
 （5）节点连线
 
-有了上面的基础，我们可以在画布上面画出我们想要的图形效果了，可是还没有连线。我们知道连线是建立在节点模型的上面的，于是乎我们的Model又分为了以下三种类型：
+有了上面的基础，我们可以在画布上面画出我们想要的图形效果了，可是还没有连线。我们知道连线是建立在节点模型的上面的，于是乎我们的 Model 又分为了以下三种类型：
 
 Model：最基本的（不带连线，如上面的例子）
 GraphLinksModel ：高级点的动态连线图
 TreeModel：树形图的模型（从例子看好像用的不多）
-GraphLinksModel中为model.nodeDataArray提供model.linkDataArray为node节点连线保存数据模型信息，其实也是的一个JSON数组对象，每个线条都有两个属性 “to” 和 “from” 即Node节点的“key”值，两个属性代表两个key表示两个节点间的连线。
+GraphLinksModel 中为 model.nodeDataArray 提供 model.linkDataArray 为 node 节点连线保存数据模型信息，其实也是的一个 JSON 数组对象，每个线条都有两个属性 “to” 和 “from” 即 Node 节点的“key”值，两个属性代表两个 key 表示两个节点间的连线。
 
-我们上面已经写过最基本的Model的例子了，我们再来个带连线的Model的示例
+我们上面已经写过最基本的 Model 的例子了，我们再来个带连线的 Model 的示例
 
 ```javascript
 var myModel = objGo(go.GraphLinksModel);
-        myModel.nodeDataArray =
-            [
-                { key: "aaa" ,name: "工厂" },
-                { key: "bbb" ,name: "车间"},
-                { key: "ccc" ,name: "车间" }
-            ];
-        myModel.linkDataArray =
-            [
-                { from: "aaa", to: "bbb" },
-                { from: "bbb", to: "ccc" }
-            ];
-        myDiagram.model = myModel;
+myModel.nodeDataArray = [
+	{ key: 'aaa', name: '工厂' },
+	{ key: 'bbb', name: '车间' },
+	{ key: 'ccc', name: '车间' },
+];
+myModel.linkDataArray = [
+	{ from: 'aaa', to: 'bbb' },
+	{ from: 'bbb', to: 'ccc' },
+];
+myDiagram.model = myModel;
 ```
+
 效果如下：
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210420175221785.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80OTkxODY1Nw==,size_16,color_FFFFFF,t_70)
-学习了Model、GraphLinksModel，还剩下一种TreeModel树节点的模型，这个博主不打算做详细介绍，有兴趣可以直接查看官网。
+学习了 Model、GraphLinksModel，还剩下一种 TreeModel 树节点的模型，这个博主不打算做详细介绍，有兴趣可以直接查看官网。
+
 # 三、综合效果
-关于综合效果，博主不打算将gojs的api逐个翻个遍了，这样太耗时间，伤不起，只是将官方示例中的部分源码截取出来供大家参考。有需要的再细究！
+
+关于综合效果，博主不打算将 gojs 的 api 逐个翻个遍了，这样太耗时间，伤不起，只是将官方示例中的部分源码截取出来供大家参考。有需要的再细究！
+
 ## 1、自定义流程的使用
+
 效果如下：
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210420175330889.gif)
-建议各位copy代码，在本地看到效果，然后再根据实际需求去研究它的api，这样才不会太盲目而花费太多时间。
+建议各位 copy 代码，在本地看到效果，然后再根据实际需求去研究它的 api，这样才不会太盲目而花费太多时间。
+
 ## 2、工业流程图
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210420175534446.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80OTkxODY1Nw==,size_16,color_FFFFFF,t_70)
 
 # 四、总结
-本文根据js的一些基础用法做了简单介绍，今天就先到这里，以后有问题了再来跟大家分享。如果你的项目里面也有这种业务需求，可以用起来试试！需要说明一点，如果您的公司不缺钱，建议使用正版授权的组件，毕竟尊重作者的劳动成果很重要！
+
+本文根据 js 的一些基础用法做了简单介绍，今天就先到这里，以后有问题了再来跟大家分享。如果你的项目里面也有这种业务需求，可以用起来试试！需要说明一点，如果您的公司不缺钱，建议使用正版授权的组件，毕竟尊重作者的劳动成果很重要！
 
 本文原创出处：http://www.cnblogs.com/landeanfen/
-# 五、附三中①②代码
+
+# 五、附三中 ①② 代码
+
 ①
+
 ```javascript
 <!DOCTYPE html>
 <html>
@@ -551,6 +573,7 @@ var myModel = objGo(go.GraphLinksModel);
 </body>
 </html>
 ```
+
 ②
 
 ```javascript
@@ -725,4 +748,3 @@ var myModel = objGo(go.GraphLinksModel);
 </body>
 </html>
 ```
-
