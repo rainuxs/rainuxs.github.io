@@ -941,9 +941,9 @@
             
               <a href="/tags/JavaScript/">#JavaScript</a>
             
-              <a href="/tags/Vue/">#Vue</a>
-            
               <a href="/tags/Vue3/">#Vue3</a>
+            
+              <a href="/tags/Vue/">#Vue</a>
             
           </div>
         
@@ -1072,7 +1072,7 @@
       
         jQuery.ajax({
           type: 'GET',
-          url: 'v1.hitokoto.cn',
+          url: 'https://v1.hitokoto.cn',
           headers: {},
           dataType: 'json',
           success: function(result) {
@@ -1096,7 +1096,7 @@
           },
           error: function(xhr, status, error) {
             if (error) {
-              console.error('Failed to request v1.hitokoto.cn:', error);
+              console.error('Failed to request https://v1.hitokoto.cn:', error);
             }
             typing(text);
           }
