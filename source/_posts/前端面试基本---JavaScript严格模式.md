@@ -1,8 +1,9 @@
 ﻿---
 title: 前端面试基本---JavaScript严格模式
-type: "tags"
-tags: ["严格模式","Web","JavaScript"]
-
+type: 'tags'
+tags: ['严格模式', 'Web', 'JavaScript']
+categories: ['Web']
+date: 2022-05-08 16:00:00
 ---
 
 **Code is never die !**
@@ -10,10 +11,10 @@ tags: ["严格模式","Web","JavaScript"]
 ### 1.0 什么是严格模式
 
 - JavaScript 除了提供正常模式外，还提供了**严格模式**（strict mode）。
-- ES5 的严格模式是采用具有限制性 JavaScript变体的一种方式，即在严格的条件下运行 JS 代码。
+- ES5 的严格模式是采用具有限制性 JavaScript 变体的一种方式，即在严格的条件下运行 JS 代码。
 - 严格模式在 IE10 以上版本的浏览器中才会被支持，旧版本浏览器中会被忽略。
 
-- 严格模式对正常的 JavaScript 语义做了一些更改： 
+- 严格模式对正常的 JavaScript 语义做了一些更改：
   - 1.消除了 Javascript 语法的一些不合理、不严谨之处，减少了一些怪异行为。
   - 2.消除代码运行的一些不安全之处，保证代码运行的安全。
   - 3.提高编译器效率，增加运行速度。
@@ -37,7 +38,7 @@ tags: ["严格模式","Web","JavaScript"]
            var num = 10;
     　　　　function fn() {}
     })();
-    //或者 
+    //或者
     <script>
       　"use strict"; //当前script标签开启了严格模式
     </script>
@@ -48,41 +49,40 @@ tags: ["严格模式","Web","JavaScript"]
 
 - 情况二：为函数开启严格模式
 
-  - 要给某个函数开启严格模式，需要把“use strict”;  (或 'use strict'; ) 声明放在函数体所有语句之前。
+  - 要给某个函数开启严格模式，需要把“use strict”; (或 'use strict'; ) 声明放在函数体所有语句之前。
 
     ```js
-    function fn(){
-    　　"use strict";//当前fn函数开启了严格模式
-    　　return "123";
-    } 
-    
+    function fn() {
+    	'use strict'; //当前fn函数开启了严格模式
+    	return '123';
+    }
     ```
 
 ### 3.0 严格模式中的变化
 
 严格模式对 Javascript 的语法和行为，都做了一些改变。
 
-1. 变量规定 
+1. 变量规定
 
-   ① 在正常模式中，如果一个变量没有声明就赋值，默认是全局变量。严格模式禁止这种用法，变量都必须先用 
+   ① 在正常模式中，如果一个变量没有声明就赋值，默认是全局变量。严格模式禁止这种用法，变量都必须先用
 
-   var 命令声明，然后再使用。 
+   var 命令声明，然后再使用。
 
    ② 严禁删除已经声明变量。例如，delete x; 语法是错误的。
 
-2. 严格模式下 this 指向问题 
+2. 严格模式下 this 指向问题
 
-   ① 以前在全局作用域函数中的 this 指向 window 对象。 
+   ① 以前在全局作用域函数中的 this 指向 window 对象。
 
-   ② **严格模式下全局作用域中函数中的 this 是 undefined。** 
+   ② **严格模式下全局作用域中函数中的 this 是 undefined。**
 
-   ③ 以前构造函数时不加 new也可以 调用,当普通函数，this 指向全局对象 
+   ③ 以前构造函数时不加 new 也可以 调用,当普通函数，this 指向全局对象
 
-   ④ 严格模式下,如果 构造函数不加new调用, this 指向的是undefined 如果给他赋值则 会报错 
+   ④ 严格模式下,如果 构造函数不加 new 调用, this 指向的是 undefined 如果给他赋值则 会报错
 
-   ⑤ new 实例化的构造函数指向创建的对象实例。 
+   ⑤ new 实例化的构造函数指向创建的对象实例。
 
-   ⑥ 定时器 this 还是指向 window 。 
+   ⑥ 定时器 this 还是指向 window 。
 
    ⑦ 事件、对象还是指向调用者。
 
@@ -111,7 +111,7 @@ tags: ["严格模式","Web","JavaScript"]
     // // Star();
     // var ldh = new Star();
     // console.log(ldh.sex);
-    // 5. 定时器 this 还是指向 window 
+    // 5. 定时器 this 还是指向 window
     // setTimeout(function() {
     //     console.log(this);
 
@@ -127,6 +127,7 @@ tags: ["严格模式","Web","JavaScript"]
     function fn() {}
 </script>
 ```
+
 [更多严格模式要求点击参考](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Strict_mode)
 
 **Ending...**

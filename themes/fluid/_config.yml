@@ -30,7 +30,7 @@ tab_title_separator: " - "
 
 # 强制所有链接升级为 HTTPS（适用于图片等资源出现 HTTP 混入报错）
 # Force all links to be HTTPS (applicable to HTTP mixed error)
-force_https: false
+force_https: true
 
 # 代码块的增强配置
 # Enhancements to code blocks
@@ -95,7 +95,7 @@ fun_features:
 
     # 是否循环播放效果
     # If true, loop animation
-    loop: false
+    loop: true
 
     # 在指定页面开启，不填则在所有页面开启
     # Enable in specified page, all pages by default
@@ -250,7 +250,7 @@ web_analytics:  # 网页访问统计
   # 百度统计的 Key，值需要获取下方链接中 `hm.js?` 后边的字符串
   # Baidu analytics, get the string behind `hm.js?`
   # See: https://tongji.baidu.com/sc-web/10000033910/home/site/getjs?siteId=13751376
-  baidu:
+  baidu: 63db8f33b048363f4e66f2747e8abd8b
 
   # Google 统计的 Tracking ID
   # Google analytics, set Tracking ID
@@ -282,11 +282,11 @@ web_analytics:  # 网页访问统计
   # LeanCloud 计数统计，可用于 PV UV 展示，如果 `web_analytics: enable` 没有开启，PV UV 展示只会查询不会增加
   # LeanCloud count statistics, which can be used for PV UV display. If `web_analytics: enable` is false, PV UV display will only query and not increase
   leancloud:
-    app_id:
-    app_key:
+    app_id: fW3q5WG7pFToTqTLLKdzr574-gzGzoHsz
+    app_key: gqGmBLPen7vYa524PBFUqDEq
     # REST API 服务器地址，国际版不填
     # Only the Chinese mainland users need to set
-    server_url:
+    server_url: https://fw3q5wg7.lc-cn-n1-shared.com
     # 统计页面时获取路径的属性
     # Get the attribute of the page path during statistics
     path: window.location.pathname
@@ -349,6 +349,9 @@ navbar:
     - { key: "archive", link: "/archives/", icon: "iconfont icon-archive-fill" }
     - { key: "category", link: "/categories/", icon: "iconfont icon-category-fill" }
     - { key: "tag", link: "/tags/", icon: "iconfont icon-tags-fill" }
+    - { key: "music", link: "/musics/", icon: "iconfont icon-music-fill" }
+    - { key: "video", link: "/videos/", icon: "iconfont icon-video-fill" }
+    - { key: "tool", link: "/tools/", icon: "iconfont icon-tool-fill" }
     - { key: "about", link: "/about/", icon: "iconfont icon-user-fill" }
     #- { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
 
@@ -430,12 +433,14 @@ footer:
   # 展示网站的 PV、UV 统计数
   # Display website PV and UV statistics
   statistics:
-    enable: false
+    enable: true
 
     # 统计数据来源，使用 leancloud 需要设置 `web_analytics: leancloud` 中的参数；使用 busuanzi 不需要额外设置，但是有时不稳定，另外本地运行时 busuanzi 显示统计数据很大属于正常现象，部署后会正常
     # Data source. If use leancloud, you need to set the parameter in `web_analytics: leancloud`
     # Options: busuanzi | leancloud
-    source: "busuanzi"
+    source: "leancloud"
+    pv_format: "总访问量 {} 次"  # 显示的文本，{}是数字的占位符（必须包含)，下同
+    uv_format: "总访客数 {} 人"
 
   # 国内大陆服务器的备案信息
   # For Chinese mainland website policy, other areas keep disable
@@ -486,7 +491,7 @@ index:
 
       # 请求地址
       # Request url
-      url: ""
+      url: "v1.hitokoto.cn"
 
       # 请求方法
       # Request method
@@ -499,7 +504,7 @@ index:
 
       # 从请求结果获取字符串的取值字段，最终必须是一个字符串，例如返回结果为 {"data": {"author": "fluid", "content": "An elegant theme"}}, 则取值字段为 ['data', 'content']；如果返回是列表则自动选择第一项
       # The value field of the string obtained from the response. For example, the response content is {"data": {"author": "fluid", "content": "An elegant theme"}}, the expected `keys: ['data','content']`; if the return is a list, the first item is automatically selected
-      keys: []
+      keys: ['hitokoto']
 
   # 自动截取文章摘要
   # Auto extract post
