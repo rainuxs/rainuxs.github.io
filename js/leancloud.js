@@ -160,12 +160,9 @@
     }
   }
 
-  // var appId = CONFIG.web_analytics.leancloud.app_id;
-  // var appKey = CONFIG.web_analytics.leancloud.app_key;
-  // var serverUrl = CONFIG.web_analytics.leancloud.server_url;
-  var appId = CONFIG.web_analytics.leancloud.appId;
-  var appKey = CONFIG.web_analytics.leancloud.appKey;
-  var serverUrl = CONFIG.web_analytics.leancloud.serverURLs;
+  var appId = CONFIG.web_analytics.leancloud.app_id;
+  var appKey = CONFIG.web_analytics.leancloud.app_key;
+  var serverUrl = CONFIG.web_analytics.leancloud.server_url;
 
   if (!appId) {
     throw new Error("LeanCloud appId is empty");
