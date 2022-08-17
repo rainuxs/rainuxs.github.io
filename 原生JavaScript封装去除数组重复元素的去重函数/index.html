@@ -478,27 +478,27 @@
             
   <article id="comments" lazyload>
     
-  <div id="valine"></div>
-  <script type="text/javascript">
-    Fluid.utils.loadComments('#valine', function() {
-      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js/Valine.min.js', function() {
-        var options = Object.assign(
-          {"appId":"fW3q5WG7pFToTqTLLKdzr574-gzGzoHsz","appKey":"gqGmBLPen7vYa524PBFUqDEq","pageSize":10,"avatar":"monsterid","lang":"zh-CN","placeholder":"Please leave your footprints","meta":["nick","mail"],"recordIP":true,"serverURLs":null,"bg":null,"emojiCDN":null,"enableQQ":false,"requiredFields":["nick","mail"],"visitor":true,"option":null},
-          {
-            el: "#valine",
-            path: 
-          }
-        )
-        new Valine(options);
-        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
-          var imgSelector = '#valine .vcontent img:not(.vemoji)';
-          Fluid.plugins.imageCaption(imgSelector);
-          Fluid.plugins.fancyBox(imgSelector);
-        })
-      });
+<div id="valine"></div>
+<script type="text/javascript">
+  Fluid.utils.loadComments('#valine', function() {
+    Fluid.utils.createScript('https://lib.baomitu.com/valine/1.4.17/Valine.min.js', function() {
+      var options = Object.assign(
+        {"appId":"fW3q5WG7pFToTqTLLKdzr574-gzGzoHsz","appKey":"gqGmBLPen7vYa524PBFUqDEq","pageSize":10,"avatar":"monsterid","lang":"zh-CN","placeholder":"Please leave your footprints","meta":["nick","mail"],"recordIP":true,"serverURLs":"https://fw3q5wg7.lc-cn-n1-shared.com","bg":null,"emojiCDN":null,"enableQQ":false,"requiredFields":["nick","mail"],"visitor":true,"option":null},
+        {
+          el: "#valine",
+          path: 
+        }
+      )
+      new Valine(options);
+      Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+        var imgSelector = '#valine .vcontent img:not(.vemoji)';
+        Fluid.plugins.imageCaption(imgSelector);
+        Fluid.plugins.fancyBox(imgSelector);
+      })
     });
-  </script>
-  <noscript>Please enable JavaScript to view the comments</noscript>
+  });
+</script>
+<noscript>Please enable JavaScript to view the comments</noscript>
 
 
   </article>
