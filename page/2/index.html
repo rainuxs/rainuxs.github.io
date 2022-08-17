@@ -12,6 +12,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
   <meta name="theme-color" content="#2f4154">
   <meta name="author" content="Rainux">
   <meta name="keywords" content="前端；生活；美好；">
@@ -63,7 +65,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"rainuxs.github.io","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"rainuxs.github.io","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"63db8f33b048363f4e66f2747e8abd8b","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"fW3q5WG7pFToTqTLLKdzr574-gzGzoHsz","app_key":"gqGmBLPen7vYa524PBFUqDEq","server_url":"https://fw3q5wg7.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -75,7 +77,18 @@
   
 
   
-
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?63db8f33b048363f4e66f2747e8abd8b";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
   
 
   
@@ -86,6 +99,10 @@
 
   
 
+  
+
+  
+    
   
 
 
@@ -170,6 +187,42 @@
           
           
             <li class="nav-item">
+              <a class="nav-link" href="/musics/">
+                <i class="iconfont icon-music-fill"></i>
+                音乐
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/videos/">
+                <i class="iconfont icon-video-fill"></i>
+                视频
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tools/">
+                <i class="iconfont icon-tool-fill"></i>
+                工具
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
               <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
                 关于
@@ -241,6 +294,596 @@
     
     
       <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/%E5%9C%A8html%E7%9A%84js%E4%B8%AD%E8%8E%B7%E5%8F%96%E5%A4%96%E9%83%A8js%E4%B8%AD%E7%9A%84%E5%A4%9A%E4%B8%AA%E5%8F%98%E9%87%8F%E5%92%8C%E6%95%B0%E6%8D%AE/" target="_self">
+          <img src="/img/pexels-sabeel-ahammed-68357.jpg" srcset="/img/loading.gif" lazyload alt="在html的js中获取外部js中的多个变量和数据">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/%E5%9C%A8html%E7%9A%84js%E4%B8%AD%E8%8E%B7%E5%8F%96%E5%A4%96%E9%83%A8js%E4%B8%AD%E7%9A%84%E5%A4%9A%E4%B8%AA%E5%8F%98%E9%87%8F%E5%92%8C%E6%95%B0%E6%8D%AE/" target="_self">
+          在html的js中获取外部js中的多个变量和数据
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/%E5%9C%A8html%E7%9A%84js%E4%B8%AD%E8%8E%B7%E5%8F%96%E5%A4%96%E9%83%A8js%E4%B8%AD%E7%9A%84%E5%A4%9A%E4%B8%AA%E5%8F%98%E9%87%8F%E5%92%8C%E6%95%B0%E6%8D%AE/" target="_self">
+        <div>
+          Code is never die ! 通常如果数据过多，我们会将数据单独拉出来存储到一个单独的 js 文件中，然后通过外部 js 引入进来使用数据。 目前比较简单而且用的比较多的是 ES6 语法规范的exports&amp;import方法。使用方法是： 1234567&#x2F;&#x2F; 外部定义dataList.jsexports.dataList &#x3D; &amp;#123;  	uname &#x3D; &amp;#x27;Rain
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-11-15 19:00" pubdate>
+              2021-11-15
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Web/" class="category-chain-item">Web</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Web/">#Web</a>
+            
+              <a href="/tags/JavaScript/">#JavaScript</a>
+            
+              <a href="/tags/HTML/">#HTML</a>
+            
+              <a href="/tags/%E5%B0%81%E8%A3%85/">#封装</a>
+            
+              <a href="/tags/Import/">#Import</a>
+            
+              <a href="/tags/Script/">#Script</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/%E6%9C%80%E5%B8%B8%E8%A7%81%E7%9A%84%E5%89%8D%E7%AB%AF%E5%B0%8F%E6%A1%88%E4%BE%8B---%E7%AD%9B%E9%80%89%E5%95%86%E5%93%81/" target="_self">
+          <img src="/img/pexels-sabeel-ahammed-68357.jpg" srcset="/img/loading.gif" lazyload alt="最常见的前端小案例---筛选商品">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/%E6%9C%80%E5%B8%B8%E8%A7%81%E7%9A%84%E5%89%8D%E7%AB%AF%E5%B0%8F%E6%A1%88%E4%BE%8B---%E7%AD%9B%E9%80%89%E5%95%86%E5%93%81/" target="_self">
+          最常见的前端小案例---筛选商品
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/%E6%9C%80%E5%B8%B8%E8%A7%81%E7%9A%84%E5%89%8D%E7%AB%AF%E5%B0%8F%E6%A1%88%E4%BE%8B---%E7%AD%9B%E9%80%89%E5%95%86%E5%93%81/" target="_self">
+        <div>
+          Code is never die ! 1.0 定义数组对象数据1234567891011121314151617var data &#x3D; [&amp;#123;            id: 1，            pname: &amp;#x27;小米&amp;#x27;，            price: 3999        &amp;#125;， &amp;#123;            id: 2，
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-09-20 20:00" pubdate>
+              2021-09-20
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Web/" class="category-chain-item">Web</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Web/">#Web</a>
+            
+              <a href="/tags/JavaScript/">#JavaScript</a>
+            
+              <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">#面向对象</a>
+            
+              <a href="/tags/%E7%AD%9B%E9%80%89/">#筛选</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/%E4%B8%8D%E5%BE%97%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E4%BA%8B%E5%84%BF---%E5%89%8D%E7%AB%AFGojs%E4%B9%8B%E5%8E%BB%E9%99%A4%E6%B0%B4%E5%8D%B0/" target="_self">
+          <img src="/img/pexels-sabeel-ahammed-68357.jpg" srcset="/img/loading.gif" lazyload alt="不得不知道的事儿---前端Gojs之去除水印">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/%E4%B8%8D%E5%BE%97%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E4%BA%8B%E5%84%BF---%E5%89%8D%E7%AB%AFGojs%E4%B9%8B%E5%8E%BB%E9%99%A4%E6%B0%B4%E5%8D%B0/" target="_self">
+          不得不知道的事儿---前端Gojs之去除水印
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/%E4%B8%8D%E5%BE%97%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E4%BA%8B%E5%84%BF---%E5%89%8D%E7%AB%AFGojs%E4%B9%8B%E5%8E%BB%E9%99%A4%E6%B0%B4%E5%8D%B0/" target="_self">
+        <div>
+          Code is never die !刚开始是这个样子的，带有水印，显得特别难看，太影响界面了吧 ！打开你项目引入的 go.js 文件，然后甭管其他的，直接ctrl+f 然后复制这段文字5da73c80a36755dc038e4972187c3cae51fd22，然后就能查找到图中所示位置了此时就是从 b[c]开始的内容，一直到 if(…)这里，全部注释掉！直接ctrl+s保存，本来将信将疑，然而
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-08-25 12:00" pubdate>
+              2021-08-25
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Web/" class="category-chain-item">Web</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Web/">#Web</a>
+            
+              <a href="/tags/JavaScript/">#JavaScript</a>
+            
+              <a href="/tags/Gojs/">#Gojs</a>
+            
+              <a href="/tags/Vue/">#Vue</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/%E5%89%8D%E7%AB%AF%E7%9A%84%E5%B0%8F%E6%BF%80%E5%8A%A8%EF%BC%9ANodejs%E5%86%99%E7%AE%80%E5%8D%95%E6%8E%A5%E5%8F%A3%E6%95%99%E7%A8%8B/" target="_self">
+          <img src="/img/pexels-sabeel-ahammed-68357.jpg" srcset="/img/loading.gif" lazyload alt="前端的小激动：Nodejs写简单接口教程">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/%E5%89%8D%E7%AB%AF%E7%9A%84%E5%B0%8F%E6%BF%80%E5%8A%A8%EF%BC%9ANodejs%E5%86%99%E7%AE%80%E5%8D%95%E6%8E%A5%E5%8F%A3%E6%95%99%E7%A8%8B/" target="_self">
+          前端的小激动：Nodejs写简单接口教程
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/%E5%89%8D%E7%AB%AF%E7%9A%84%E5%B0%8F%E6%BF%80%E5%8A%A8%EF%BC%9ANodejs%E5%86%99%E7%AE%80%E5%8D%95%E6%8E%A5%E5%8F%A3%E6%95%99%E7%A8%8B/" target="_self">
+        <div>
+          Code is never die ! 写前端的朋友不知道如何拓展自己在后端的能力，那么 nodejs 是你的不二选择，废话不多说，直接进入正题。 这里我演示的是 nodejs+mysql，别的数据库也类似。 首先我们需要做两件事，下载 nodejs 和 mysql 安装，这些基本知识略过。 接着新建一个文件夹，在此文件夹下打开 cms,或者 vscode 的终端，输入 node init 初始化
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-08-19 19:00" pubdate>
+              2021-08-19
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Web-Node/" class="category-chain-item">Web&amp;Node</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Node/">#Node</a>
+            
+              <a href="/tags/Nodejs/">#Nodejs</a>
+            
+              <a href="/tags/Web/">#Web</a>
+            
+              <a href="/tags/JavaScript/">#JavaScript</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/Gojs%E7%BB%84%E4%BB%B6------%E5%89%8D%E7%AB%AF%E5%9B%BE%E5%BD%A2%E5%8C%96%E6%8F%92%E4%BB%B6%E4%B9%8B%E5%88%A9%E5%99%A8/" target="_self">
+          <img src="/img/pexels-sabeel-ahammed-68357.jpg" srcset="/img/loading.gif" lazyload alt="Gojs组件------前端图形化插件之利器">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/Gojs%E7%BB%84%E4%BB%B6------%E5%89%8D%E7%AB%AF%E5%9B%BE%E5%BD%A2%E5%8C%96%E6%8F%92%E4%BB%B6%E4%B9%8B%E5%88%A9%E5%99%A8/" target="_self">
+          Gojs组件------前端图形化插件之利器
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/Gojs%E7%BB%84%E4%BB%B6------%E5%89%8D%E7%AB%AF%E5%9B%BE%E5%BD%A2%E5%8C%96%E6%8F%92%E4%BB%B6%E4%B9%8B%E5%88%A9%E5%99%A8/" target="_self">
+        <div>
+          Code is never die！ 前言使用 jsPlumb 这个组件本身还不错，使用方便、入门简单、轻量级，但是使用一段时间下来，发现一些弊病，比如组件不太稳定，初始进入页面的时候连线的样式有时会乱掉，刷新页面之后才能恢复正常，而且连线样式比较单一，容易让人产生视觉疲劳，加之最近公司在大力推行所谓的“工业 4.0”，除了对自动化控制要求的提高之外，对这种图形化界面的要求也随之提高，所以单纯的
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-07-01 10:00" pubdate>
+              2021-07-01
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Web/" class="category-chain-item">Web</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Web/">#Web</a>
+            
+              <a href="/tags/JavaScript/">#JavaScript</a>
+            
+              <a href="/tags/Gojs/">#Gojs</a>
+            
+              <a href="/tags/Vue/">#Vue</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/reverse()%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E5%8F%8A%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" target="_self">
+          <img src="/img/pexels-sabeel-ahammed-68357.jpg" srcset="/img/loading.gif" lazyload alt="reverse()使用方法及常见问题">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/reverse()%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E5%8F%8A%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" target="_self">
+          reverse()使用方法及常见问题
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/reverse()%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E5%8F%8A%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" target="_self">
+        <div>
+          Header： 原创不易，还请大家不吝指导赐教，Code is never die！ ps：本着让更多人不止解决问题，更能够学到一点点方法的目的。 今天给大家分享一下 JavaScript 中最实用的方法之一——reverse()。 一、简单用法相信身为前端工程师或者正在成为前端工程师的小伙伴都对它并不陌生，甚至非常熟悉，主要作用就是用于颠倒数组中元素的顺序，这里举个例子： 1234var arr
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-05-01 10:00" pubdate>
+              2021-05-01
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Web/" class="category-chain-item">Web</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Web/">#Web</a>
+            
+              <a href="/tags/JavaScript/">#JavaScript</a>
+            
+              <a href="/tags/Vue/">#Vue</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E6%9C%AC---%E7%90%86%E8%A7%A3%20%E2%80%9C%E7%B1%BB%E2%80%9C%E5%92%8C%20%E2%80%9C%E5%AF%B9%E8%B1%A1%E2%80%9C/" target="_self">
+          <img src="/img/pexels-sabeel-ahammed-68357.jpg" srcset="/img/loading.gif" lazyload alt="前端面试基本---理解 “类“和 “对象“">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E6%9C%AC---%E7%90%86%E8%A7%A3%20%E2%80%9C%E7%B1%BB%E2%80%9C%E5%92%8C%20%E2%80%9C%E5%AF%B9%E8%B1%A1%E2%80%9C/" target="_self">
+          前端面试基本---理解 “类“和 “对象“
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E6%9C%AC---%E7%90%86%E8%A7%A3%20%E2%80%9C%E7%B1%BB%E2%80%9C%E5%92%8C%20%E2%80%9C%E5%AF%B9%E8%B1%A1%E2%80%9C/" target="_self">
+        <div>
+          Code is never die ! 1. 对象对象是由属性和方法组成的：是一个无序键值对的集合,指的是一个具体的事物  属性：事物的特征，在对象中用属性来表示（常用名词） 方法：事物的行为，在对象中用方法来表示（常用动词）  2. 类2.1 类介绍 在 ES6 中新增加了类的概念，可以使用 class 关键字声明一个类，之后以这个类来实例化对象。  类抽象了对象的公共部分，它泛指某一大类（cl
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-04-08 03:00" pubdate>
+              2021-04-08
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Web/" class="category-chain-item">Web</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Web/">#Web</a>
+            
+              <a href="/tags/JavaScript/">#JavaScript</a>
+            
+              <a href="/tags/ES6/">#ES6</a>
+            
+              <a href="/tags/%E7%B1%BB/">#类</a>
+            
+              <a href="/tags/%E5%AF%B9%E8%B1%A1/">#对象</a>
+            
+              <a href="/tags/Class/">#Class</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/TypeError_%20util.print%20is%20not%20a%20function%20%E7%94%A8node.js%E5%AE%89%E8%A3%85hotnode%E5%90%8E%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99/" target="_self">
+          <img src="/img/pexels-sabeel-ahammed-68357.jpg" srcset="/img/loading.gif" lazyload alt="TypeError_ util.print is not a function 用node.js安装hotnode后启动报错">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/TypeError_%20util.print%20is%20not%20a%20function%20%E7%94%A8node.js%E5%AE%89%E8%A3%85hotnode%E5%90%8E%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99/" target="_self">
+          TypeError_ util.print is not a function 用node.js安装hotnode后启动报错
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/TypeError_%20util.print%20is%20not%20a%20function%20%E7%94%A8node.js%E5%AE%89%E8%A3%85hotnode%E5%90%8E%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99/" target="_self">
+        <div>
+          Code is never die ! 12&#x2F;&#x2F;终端安装插件npm install -g hotnode  直接展示错误地方：点击下划线处部分进入 hotloader.js 中（长按 ctrl+鼠标点击）进入自动定位到下方位置修改代码util.print -&gt;console.log保存，重新跑项目 最终成功跑项目：Ending…
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-03-10 10:00" pubdate>
+              2021-03-10
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Web/" class="category-chain-item">Web</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Node/">#Node</a>
+            
+              <a href="/tags/Nodejs/">#Nodejs</a>
+            
+              <a href="/tags/Web/">#Web</a>
+            
+              <a href="/tags/JavaScript/">#JavaScript</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
         <a href="/Vue%203%20%E6%8A%93%E4%BD%8F%E6%96%B0%E7%89%B9%E6%80%A7%C2%B7%C2%B7%C2%B7%E9%81%87%E8%A7%81%E6%96%B0%E5%89%8D%E7%AB%AF/" target="_self">
           <img src="/img/pexels-sabeel-ahammed-68357.jpg" srcset="/img/loading.gif" lazyload alt="Vue 3 抓住新特性···遇见新前端">
         </a>
@@ -265,8 +908,8 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2022-08-15 16:59" pubdate>
-              2022-08-15
+            <time datetime="2021-01-10 10:00" pubdate>
+              2021-01-10
             </time>
           </div>
         
@@ -303,472 +946,6 @@
               <a href="/tags/Vue/">#Vue</a>
             
               <a href="/tags/Vue3/">#Vue3</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/Gojs%E7%BB%84%E4%BB%B6------%E5%89%8D%E7%AB%AF%E5%9B%BE%E5%BD%A2%E5%8C%96%E6%8F%92%E4%BB%B6%E4%B9%8B%E5%88%A9%E5%99%A8/" target="_self">
-          <img src="/img/pexels-sabeel-ahammed-68357.jpg" srcset="/img/loading.gif" lazyload alt="Gojs组件------前端图形化插件之利器">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/Gojs%E7%BB%84%E4%BB%B6------%E5%89%8D%E7%AB%AF%E5%9B%BE%E5%BD%A2%E5%8C%96%E6%8F%92%E4%BB%B6%E4%B9%8B%E5%88%A9%E5%99%A8/" target="_self">
-          Gojs组件------前端图形化插件之利器
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/Gojs%E7%BB%84%E4%BB%B6------%E5%89%8D%E7%AB%AF%E5%9B%BE%E5%BD%A2%E5%8C%96%E6%8F%92%E4%BB%B6%E4%B9%8B%E5%88%A9%E5%99%A8/" target="_self">
-        <div>
-          Code is never die！ 前言使用 jsPlumb 这个组件本身还不错，使用方便、入门简单、轻量级，但是使用一段时间下来，发现一些弊病，比如组件不太稳定，初始进入页面的时候连线的样式有时会乱掉，刷新页面之后才能恢复正常，而且连线样式比较单一，容易让人产生视觉疲劳，加之最近公司在大力推行所谓的“工业 4.0”，除了对自动化控制要求的提高之外，对这种图形化界面的要求也随之提高，所以单纯的
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-08-15 16:59" pubdate>
-              2022-08-15
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/Web/" class="category-chain-item">Web</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Web/">#Web</a>
-            
-              <a href="/tags/JavaScript/">#JavaScript</a>
-            
-              <a href="/tags/Vue/">#Vue</a>
-            
-              <a href="/tags/Gojs/">#Gojs</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/TypeError_%20util.print%20is%20not%20a%20function%20%E7%94%A8node.js%E5%AE%89%E8%A3%85hotnode%E5%90%8E%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99/" target="_self">
-          <img src="/img/pexels-sabeel-ahammed-68357.jpg" srcset="/img/loading.gif" lazyload alt="TypeError_ util.print is not a function 用node.js安装hotnode后启动报错">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/TypeError_%20util.print%20is%20not%20a%20function%20%E7%94%A8node.js%E5%AE%89%E8%A3%85hotnode%E5%90%8E%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99/" target="_self">
-          TypeError_ util.print is not a function 用node.js安装hotnode后启动报错
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/TypeError_%20util.print%20is%20not%20a%20function%20%E7%94%A8node.js%E5%AE%89%E8%A3%85hotnode%E5%90%8E%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99/" target="_self">
-        <div>
-          Code is never die ! 12&#x2F;&#x2F;终端安装插件npm install -g hotnode  直接展示错误地方：点击下划线处部分进入 hotloader.js 中（长按 ctrl+鼠标点击）进入自动定位到下方位置修改代码util.print -&gt;console.log保存，重新跑项目 最终成功跑项目：Ending…
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-08-15 16:59" pubdate>
-              2022-08-15
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/Web/" class="category-chain-item">Web</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Node/">#Node</a>
-            
-              <a href="/tags/Nodejs/">#Nodejs</a>
-            
-              <a href="/tags/Web/">#Web</a>
-            
-              <a href="/tags/JavaScript/">#JavaScript</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/%E5%AE%8C%E6%95%B4%E9%A1%BA%E5%88%A9%E7%9A%84%E5%8D%B8%E8%BD%BDnode%EF%BC%88%E9%81%BF%E5%85%8D%E8%B8%A9%E5%9D%91%EF%BC%81%EF%BC%89/" target="_self">
-          <img src="/img/pexels-sabeel-ahammed-68357.jpg" srcset="/img/loading.gif" lazyload alt="完整顺利的卸载node（避免踩坑！）">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/%E5%AE%8C%E6%95%B4%E9%A1%BA%E5%88%A9%E7%9A%84%E5%8D%B8%E8%BD%BDnode%EF%BC%88%E9%81%BF%E5%85%8D%E8%B8%A9%E5%9D%91%EF%BC%81%EF%BC%89/" target="_self">
-          完整顺利的卸载node（避免踩坑！）
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/%E5%AE%8C%E6%95%B4%E9%A1%BA%E5%88%A9%E7%9A%84%E5%8D%B8%E8%BD%BDnode%EF%BC%88%E9%81%BF%E5%85%8D%E8%B8%A9%E5%9D%91%EF%BC%81%EF%BC%89/" target="_self">
-        <div>
-          Code is never die！ 1.卸载node本身、删除nodejs目录 提示：可以在系统控制面板–&gt;所有控制面板项–&gt;程序和功能  卸载Node.js 2.手动删除C:\Program Files\nodejs\node_modules(如果你的文件是在这里的话) 3.手动删除C:\users\你的用户名\node_modules(如果你的文件是在这里的话) 这样就能完整卸载
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-08-15 16:59" pubdate>
-              2022-08-15
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Node/">#Node</a>
-            
-              <a href="/tags/Nodejs/">#Nodejs</a>
-            
-              <a href="/tags/Web/">#Web</a>
-            
-              <a href="/tags/JavaScript/">#JavaScript</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/%E5%89%8D%E7%AB%AF%E7%9A%84%E5%B0%8F%E6%BF%80%E5%8A%A8%EF%BC%9ANodejs%E5%86%99%E7%AE%80%E5%8D%95%E6%8E%A5%E5%8F%A3%E6%95%99%E7%A8%8B/" target="_self">
-          <img src="/img/pexels-sabeel-ahammed-68357.jpg" srcset="/img/loading.gif" lazyload alt="前端的小激动：Nodejs写简单接口教程">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/%E5%89%8D%E7%AB%AF%E7%9A%84%E5%B0%8F%E6%BF%80%E5%8A%A8%EF%BC%9ANodejs%E5%86%99%E7%AE%80%E5%8D%95%E6%8E%A5%E5%8F%A3%E6%95%99%E7%A8%8B/" target="_self">
-          前端的小激动：Nodejs写简单接口教程
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/%E5%89%8D%E7%AB%AF%E7%9A%84%E5%B0%8F%E6%BF%80%E5%8A%A8%EF%BC%9ANodejs%E5%86%99%E7%AE%80%E5%8D%95%E6%8E%A5%E5%8F%A3%E6%95%99%E7%A8%8B/" target="_self">
-        <div>
-          Code is never die ! 写前端的朋友不知道如何拓展自己在后端的能力，那么nodejs是你的不二选择，废话不多说，直接进入正题。 这里我演示的是nodejs+mysql，别的数据库也类似。 首先我们需要做两件事，下载nodejs和mysql安装，这些基本知识略过。 接着新建一个文件夹，在此文件夹下打开cms,或者vscode的终端，输入node init初始化一个项目，输入一些基本信
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-08-15 16:59" pubdate>
-              2022-08-15
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Node/">#Node</a>
-            
-              <a href="/tags/Nodejs/">#Nodejs</a>
-            
-              <a href="/tags/Web/">#Web</a>
-            
-              <a href="/tags/JavaScript/">#JavaScript</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/%E4%B8%8D%E5%BE%97%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E4%BA%8B%E5%84%BF---%E5%89%8D%E7%AB%AFGojs%E4%B9%8B%E5%8E%BB%E9%99%A4%E6%B0%B4%E5%8D%B0/" target="_self">
-          <img src="/img/pexels-sabeel-ahammed-68357.jpg" srcset="/img/loading.gif" lazyload alt="不得不知道的事儿---前端Gojs之去除水印">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/%E4%B8%8D%E5%BE%97%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E4%BA%8B%E5%84%BF---%E5%89%8D%E7%AB%AFGojs%E4%B9%8B%E5%8E%BB%E9%99%A4%E6%B0%B4%E5%8D%B0/" target="_self">
-          不得不知道的事儿---前端Gojs之去除水印
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/%E4%B8%8D%E5%BE%97%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E4%BA%8B%E5%84%BF---%E5%89%8D%E7%AB%AFGojs%E4%B9%8B%E5%8E%BB%E9%99%A4%E6%B0%B4%E5%8D%B0/" target="_self">
-        <div>
-          Code is never die !刚开始是这个样子的，带有水印，显得特别难看，太影响界面了吧 ！打开你项目引入的go.js文件，然后甭管其他的，直接ctrl+f 然后复制这段文字5da73c80a36755dc038e4972187c3cae51fd22，然后就能查找到图中所示位置了此时就是从b[c]开始的内容，一直到if(…)这里，全部注释掉！直接ctrl+s保存，本来将信将疑，然而奇迹般地
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-08-15 16:59" pubdate>
-              2022-08-15
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Web/">#Web</a>
-            
-              <a href="/tags/JavaScript/">#JavaScript</a>
-            
-              <a href="/tags/Vue/">#Vue</a>
-            
-              <a href="/tags/Gojs/">#Gojs</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E6%9C%AC---forEach%E3%80%81filter%E3%80%81some%E5%A4%A7%E5%90%88%E9%9B%86/" target="_self">
-          <img src="/img/pexels-sabeel-ahammed-68357.jpg" srcset="/img/loading.gif" lazyload alt="前端面试基本---forEach、filter、some大合集">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E6%9C%AC---forEach%E3%80%81filter%E3%80%81some%E5%A4%A7%E5%90%88%E9%9B%86/" target="_self">
-          前端面试基本---forEach、filter、some大合集
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E6%9C%AC---forEach%E3%80%81filter%E3%80%81some%E5%A4%A7%E5%90%88%E9%9B%86/" target="_self">
-        <div>
-          Code is never die ! 1.0 数组方法forEach遍历数组 *** 语法：  123456789101112var arr &#x3D; [1,2,3]; arr.forEach(function(value， index， array) &amp;#123;       &#x2F;&#x2F;参数一是:数组元素       &#x2F;&#x2F;参数二是:数组元素的索引       &#x2F;&#x2F;参数三是:当前的数组 &amp;#125;)  &#x2F;
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-08-15 16:59" pubdate>
-              2022-08-15
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Web/">#Web</a>
-            
-              <a href="/tags/JavaScript/">#JavaScript</a>
-            
-              <a href="/tags/Array/">#Array</a>
-            
-              <a href="/tags/forEach/">#forEach</a>
-            
-              <a href="/tags/filter/">#filter</a>
-            
-              <a href="/tags/some/">#some</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E6%9C%AC---%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" target="_self">
-          <img src="/img/pexels-sabeel-ahammed-68357.jpg" srcset="/img/loading.gif" lazyload alt="前端面试基本---面向过程与面向对象">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E6%9C%AC---%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" target="_self">
-          前端面试基本---面向过程与面向对象
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E6%9C%AC---%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" target="_self">
-        <div>
-          Code is never die ! 1. 面向过程 面向过程就是分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，使用的时候再一个一个的依次调用就可以了。 总结：按照步骤编程  （函数和变量）  2. 面向对象 面向对象是把事务分解成为一个个对象，然后由对象之间分工与合作。 总结：将需求分析出一个一个的对象，然后在分析出对象中的属性和方法，最后按照步骤编程（方法和属性）  3. 面
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-08-15 16:59" pubdate>
-              2022-08-15
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Web/">#Web</a>
-            
-              <a href="/tags/JavaScript/">#JavaScript</a>
-            
-              <a href="/tags/%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B/">#面向过程</a>
-            
-              <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">#面向对象</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E6%9C%AC---%E7%90%86%E8%A7%A3%20%E2%80%9C%E7%B1%BB%E2%80%9C%E5%92%8C%20%E2%80%9C%E5%AF%B9%E8%B1%A1%E2%80%9C/" target="_self">
-          <img src="/img/pexels-sabeel-ahammed-68357.jpg" srcset="/img/loading.gif" lazyload alt="前端面试基本---理解 “类“和 “对象“">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E6%9C%AC---%E7%90%86%E8%A7%A3%20%E2%80%9C%E7%B1%BB%E2%80%9C%E5%92%8C%20%E2%80%9C%E5%AF%B9%E8%B1%A1%E2%80%9C/" target="_self">
-          前端面试基本---理解 “类“和 “对象“
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E6%9C%AC---%E7%90%86%E8%A7%A3%20%E2%80%9C%E7%B1%BB%E2%80%9C%E5%92%8C%20%E2%80%9C%E5%AF%B9%E8%B1%A1%E2%80%9C/" target="_self">
-        <div>
-          Code is never die ! 1. 对象对象是由属性和方法组成的：是一个无序键值对的集合,指的是一个具体的事物  属性：事物的特征，在对象中用属性来表示（常用名词） 方法：事物的行为，在对象中用方法来表示（常用动词）  2. 类2.1 类介绍 在 ES6 中新增加了类的概念，可以使用 class 关键字声明一个类，之后以这个类来实例化对象。  类抽象了对象的公共部分，它泛指某一大类（cl
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-08-15 16:59" pubdate>
-              2022-08-15
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Web/">#Web</a>
-            
-              <a href="/tags/JavaScript/">#JavaScript</a>
-            
-              <a href="/tags/ES6/">#ES6</a>
-            
-              <a href="/tags/%E7%B1%BB/">#类</a>
-            
-              <a href="/tags/%E5%AF%B9%E8%B1%A1/">#对象</a>
-            
-              <a href="/tags/Class/">#Class</a>
             
           </div>
         
@@ -834,6 +1011,31 @@
     </div>
   
   
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
   
   
 </div>
@@ -884,6 +1086,8 @@
 
 
 
+
+  <script defer src="/js/leancloud.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 

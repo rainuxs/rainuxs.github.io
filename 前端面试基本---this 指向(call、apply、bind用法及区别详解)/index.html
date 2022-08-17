@@ -12,19 +12,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
   <meta name="theme-color" content="#2f4154">
   <meta name="author" content="Rainux">
   <meta name="keywords" content="前端；生活；美好；">
   
-    <meta name="description" content="Code is never die ! 1.0 函数内部的this指向 这些 this 的指向，是当我们调用函数的时候确定的 调用方式的不同决定了this 的指向不同 一般指向我们的调用者 总结如下：     调用方式 this指向    普通函数调用 window   构造函数调用 实例对象,原型对象里面的方法也指向实例对象   对象方法调用 该方法所属对象   事件绑定方法 绑定事件对象">
+    <meta name="description" content="Code is never die ! 1.0 函数内部的 this 指向 这些 this 的指向，是当我们调用函数的时候确定的 调用方式的不同决定了 this 的指向不同 一般指向我们的调用者 总结如下：     调用方式 this 指向    普通函数调用 window   构造函数调用 实例对象,原型对象里面的方法也指向实例对象   对象方法调用 该方法所属对象   事件绑定方法 绑定事件对">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端面试基本---this 指向(call、apply、bind用法及区别详解)">
 <meta property="og:url" content="https://rainuxs.github.io/rainuxs.github.io/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E6%9C%AC---this%20%E6%8C%87%E5%90%91(call%E3%80%81apply%E3%80%81bind%E7%94%A8%E6%B3%95%E5%8F%8A%E5%8C%BA%E5%88%AB%E8%AF%A6%E8%A7%A3)/index.html">
 <meta property="og:site_name" content="Rainux">
-<meta property="og:description" content="Code is never die ! 1.0 函数内部的this指向 这些 this 的指向，是当我们调用函数的时候确定的 调用方式的不同决定了this 的指向不同 一般指向我们的调用者 总结如下：     调用方式 this指向    普通函数调用 window   构造函数调用 实例对象,原型对象里面的方法也指向实例对象   对象方法调用 该方法所属对象   事件绑定方法 绑定事件对象">
+<meta property="og:description" content="Code is never die ! 1.0 函数内部的 this 指向 这些 this 的指向，是当我们调用函数的时候确定的 调用方式的不同决定了 this 的指向不同 一般指向我们的调用者 总结如下：     调用方式 this 指向    普通函数调用 window   构造函数调用 实例对象,原型对象里面的方法也指向实例对象   对象方法调用 该方法所属对象   事件绑定方法 绑定事件对">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-08-15T08:59:55.317Z">
-<meta property="article:modified_time" content="2021-06-09T11:09:48.720Z">
+<meta property="article:published_time" content="2022-03-22T04:00:00.000Z">
+<meta property="article:modified_time" content="2022-08-16T09:43:28.904Z">
 <meta property="article:author" content="Rainux">
 <meta property="article:tag" content="Web">
 <meta property="article:tag" content="JavaScript">
@@ -76,7 +78,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"rainuxs.github.io","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"rainuxs.github.io","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"63db8f33b048363f4e66f2747e8abd8b","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"fW3q5WG7pFToTqTLLKdzr574-gzGzoHsz","app_key":"gqGmBLPen7vYa524PBFUqDEq","server_url":"https://fw3q5wg7.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -88,7 +90,18 @@
   
 
   
-
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?63db8f33b048363f4e66f2747e8abd8b";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
   
 
   
@@ -99,6 +112,10 @@
 
   
 
+  
+
+  
+    
   
 
 
@@ -183,6 +200,42 @@
           
           
             <li class="nav-item">
+              <a class="nav-link" href="/musics/">
+                <i class="iconfont icon-music-fill"></i>
+                音乐
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/videos/">
+                <i class="iconfont icon-video-fill"></i>
+                视频
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tools/">
+                <i class="iconfont icon-tool-fill"></i>
+                工具
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
               <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
                 关于
@@ -229,8 +282,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-08-15 16:59" pubdate>
-          2022年8月15日 下午
+        <time datetime="2022-03-22 12:00" pubdate>
+          2022年3月22日 中午
         </time>
       </span>
     
@@ -304,9 +357,9 @@
               <div class="markdown-body">
                 
                 <p><strong>Code is never die !</strong></p>
-<h3 id="1-0-函数内部的this指向"><a href="#1-0-函数内部的this指向" class="headerlink" title="1.0 函数内部的this指向"></a>1.0 函数内部的this指向</h3><ul>
+<h3 id="1-0-函数内部的-this-指向"><a href="#1-0-函数内部的-this-指向" class="headerlink" title="1.0 函数内部的 this 指向"></a>1.0 函数内部的 this 指向</h3><ul>
 <li>这些 this 的指向，是当我们调用函数的时候确定的</li>
-<li>调用方式的不同决定了this 的指向不同</li>
+<li>调用方式的不同决定了 this 的指向不同</li>
 <li>一般指向我们的调用者</li>
 <li>总结如下：</li>
 </ul>
@@ -314,7 +367,7 @@
 <thead>
 <tr>
 <th>调用方式</th>
-<th>this指向</th>
+<th>this 指向</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -345,53 +398,54 @@
 <p>代码：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs js">&lt;button&gt;点击&lt;/button&gt;<br> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="javascript"><span class="xml">     <span class="hljs-comment">// 函数的不同调用方式决定了this 的指向不同</span></span></span><br><span class="javascript"><span class="xml">     <span class="hljs-comment">// 1. 普通函数 this 指向window</span></span></span><br><span class="javascript"><span class="xml">     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn</span>(<span class="hljs-params"></span>) </span>&#123;</span></span><br><span class="javascript"><span class="xml">         <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;普通函数的this&#x27;</span> + <span class="hljs-built_in">this</span>);</span></span><br><span class="javascript"><span class="xml">     &#125;</span></span><br><span class="javascript"><span class="xml">     <span class="hljs-built_in">window</span>.fn();</span></span><br><span class="javascript"><span class="xml">     <span class="hljs-comment">// 2. 对象的方法 this指向的是对象 o</span></span></span><br><span class="javascript"><span class="xml">     <span class="hljs-keyword">var</span> o = &#123;</span></span><br><span class="javascript"><span class="xml">         <span class="hljs-attr">sayHi</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;</span></span><br><span class="javascript"><span class="xml">             <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;对象方法的this:&#x27;</span> + <span class="hljs-built_in">this</span>);</span></span><br><span class="javascript"><span class="xml">         &#125;</span></span><br><span class="javascript"><span class="xml">     &#125;</span></span><br><span class="javascript"><span class="xml">     o.sayHi();</span></span><br><span class="javascript"><span class="xml">     <span class="hljs-comment">// 3. 构造函数 this 指向 ldh 这个实例对象 原型对象里面的this 指向的也是 ldh这个实例对象</span></span></span><br><span class="javascript"><span class="xml">     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Star</span>(<span class="hljs-params"></span>) </span>&#123;&#125;;</span></span><br><span class="javascript"><span class="xml">     Star.prototype.sing = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;</span></span><br><span class="javascript"><span class="xml"></span></span><br><span class="javascript"><span class="xml">     &#125;</span></span><br><span class="javascript"><span class="xml">     <span class="hljs-keyword">var</span> ldh = <span class="hljs-keyword">new</span> Star();</span></span><br><span class="javascript"><span class="xml">     <span class="hljs-comment">// 4. 绑定事件函数 this 指向的是函数的调用者 btn这个按钮对象</span></span></span><br><span class="javascript"><span class="xml">     <span class="hljs-keyword">var</span> btn = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&#x27;button&#x27;</span>);</span></span><br><span class="javascript"><span class="xml">     btn.onclick = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;</span></span><br><span class="javascript"><span class="xml">         <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;绑定时间函数的this:&#x27;</span> + <span class="hljs-built_in">this</span>);</span></span><br><span class="javascript"><span class="xml">     &#125;;</span></span><br><span class="javascript"><span class="xml">     <span class="hljs-comment">// 5. 定时器函数 this 指向的也是window</span></span></span><br><span class="javascript"><span class="xml">     <span class="hljs-built_in">window</span>.setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;</span></span><br><span class="javascript"><span class="xml">         <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;定时器的this:&#x27;</span> + <span class="hljs-built_in">this</span>);</span></span><br><span class="javascript"><span class="xml"></span></span><br><span class="javascript"><span class="xml">     &#125;, <span class="hljs-number">1000</span>);</span></span><br><span class="javascript"><span class="xml">     <span class="hljs-comment">// 6. 立即执行函数 this还是指向window</span></span></span><br><span class="javascript"><span class="xml">     (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;</span></span><br><span class="javascript"><span class="xml">         <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;立即执行函数的this&#x27;</span> + <span class="hljs-built_in">this</span>);</span></span><br><span class="javascript"><span class="xml">     &#125;)();</span></span><br><span class="javascript"><span class="xml"> </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
 
-<h3 id="2-0-改变函数内部-this-指向"><a href="#2-0-改变函数内部-this-指向" class="headerlink" title="2.0 改变函数内部 this 指向"></a>2.0 改变函数内部 this 指向</h3><p>改变函数内this指向  js提供了三种方法  call()  apply()  bind() </p>
-<h4 id="2-1-call方法"><a href="#2-1-call方法" class="headerlink" title="2.1 call方法"></a>2.1 call方法</h4><ul>
+<h3 id="2-0-改变函数内部-this-指向"><a href="#2-0-改变函数内部-this-指向" class="headerlink" title="2.0 改变函数内部 this 指向"></a>2.0 改变函数内部 this 指向</h3><p>改变函数内 this 指向 js 提供了三种方法 call() apply() bind()</p>
+<h4 id="2-1-call-方法"><a href="#2-1-call-方法" class="headerlink" title="2.1 call 方法"></a>2.1 call 方法</h4><ul>
 <li>call()方法调用一个对象</li>
 <li>简单理解为调用函数的方式，但是它可以改变函数的 this 指向</li>
-<li>应用场景:  经常做继承</li>
+<li>应用场景: 经常做继承</li>
 <li>call：打电话，在程序中有调用的意思</li>
 <li>代码：</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> o = &#123;<br>	<span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;andy&#x27;</span><br>&#125;<br> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn</span>(<span class="hljs-params">a, b</span>) </span>&#123;<br>      <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>);<br>      <span class="hljs-built_in">console</span>.log(a+b)<br>&#125;;<br>fn()<span class="hljs-comment">// 此时的this指向的是window</span><br>fn.call(o,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>)<span class="hljs-comment">//此时的this指向的是对象o,参数使用逗号隔开</span><br><br><span class="hljs-comment">// call 第一个可以调用函数 第二个可以改变函数内的this 指向</span><br><span class="hljs-comment">// call 的主要作用可以实现继承</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Father</span>(<span class="hljs-params">uname, age, sex</span>) </span>&#123;<br>    <span class="hljs-built_in">this</span>.uname = uname;<br>    <span class="hljs-built_in">this</span>.age = age;<br>    <span class="hljs-built_in">this</span>.sex = sex;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Son</span>(<span class="hljs-params">uname, age, sex</span>) </span>&#123;<br>    Father.call(<span class="hljs-built_in">this</span>, uname, age, sex);<br>&#125;<br><span class="hljs-keyword">var</span> son = <span class="hljs-keyword">new</span> Son(<span class="hljs-string">&#x27;刘德华&#x27;</span>, <span class="hljs-number">18</span>, <span class="hljs-string">&#x27;男&#x27;</span>);<br><span class="hljs-built_in">console</span>.log(son);<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> o = &#123;<br>	<span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;andy&#x27;</span>,<br>&#125;;<br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn</span>(<span class="hljs-params">a, b</span>) </span>&#123;<br>	<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>);<br>	<span class="hljs-built_in">console</span>.log(a + b);<br>&#125;<br>fn(); <span class="hljs-comment">// 此时的this指向的是window</span><br>fn.call(o, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>); <span class="hljs-comment">//此时的this指向的是对象o,参数使用逗号隔开</span><br><br><span class="hljs-comment">// call 第一个可以调用函数 第二个可以改变函数内的this 指向</span><br><span class="hljs-comment">// call 的主要作用可以实现继承</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Father</span>(<span class="hljs-params">uname, age, sex</span>) </span>&#123;<br>	<span class="hljs-built_in">this</span>.uname = uname;<br>	<span class="hljs-built_in">this</span>.age = age;<br>	<span class="hljs-built_in">this</span>.sex = sex;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Son</span>(<span class="hljs-params">uname, age, sex</span>) </span>&#123;<br>	Father.call(<span class="hljs-built_in">this</span>, uname, age, sex);<br>&#125;<br><span class="hljs-keyword">var</span> son = <span class="hljs-keyword">new</span> Son(<span class="hljs-string">&#x27;刘德华&#x27;</span>, <span class="hljs-number">18</span>, <span class="hljs-string">&#x27;男&#x27;</span>);<br><span class="hljs-built_in">console</span>.log(son);<br></code></pre></td></tr></table></figure>
 
-<h4 id="2-2-apply方法"><a href="#2-2-apply方法" class="headerlink" title="2.2 apply方法"></a>2.2 apply方法</h4><ul>
+<h4 id="2-2-apply-方法"><a href="#2-2-apply-方法" class="headerlink" title="2.2 apply 方法"></a>2.2 apply 方法</h4><ul>
 <li>apply() 方法调用一个函数</li>
 <li>简单理解为调用函数的方式，但是它可以改变函数的 this 指向</li>
-<li>应用场景:  经常跟数组有关系</li>
+<li>应用场景: 经常跟数组有关系</li>
 <li>apply：应用，运用</li>
 <li>代码：</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> o = &#123;<br>	<span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;andy&#x27;</span><br>&#125;<br> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn</span>(<span class="hljs-params">a, b</span>) </span>&#123;<br>      <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>);<br>      <span class="hljs-built_in">console</span>.log(a+b)<br>&#125;;<br>fn()<span class="hljs-comment">// 此时的this指向的是window</span><br>fn.apply(o,[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>])<span class="hljs-comment">//此时的this指向的是对象o,参数使用数组传递</span><br><span class="hljs-comment">// 1. 也是调用函数 第二个可以改变函数内部的this指向</span><br><span class="hljs-comment">// 2. 但是他的参数必须是数组(伪数组)</span><br><span class="hljs-comment">// 3. apply 的主要应用 比如说我们可以利用 apply 借助于数学内置对象求数组最大值 </span><br><span class="hljs-comment">// ***4. apply将第二个参数的数组,进行了拆包,将拆出来的每个元素,作为实参传递进去</span><br><span class="hljs-comment">// Math.max();</span><br><span class="hljs-keyword">var</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">66</span>, <span class="hljs-number">3</span>, <span class="hljs-number">99</span>, <span class="hljs-number">4</span>];<br><span class="hljs-keyword">var</span> arr1 = [<span class="hljs-string">&#x27;red&#x27;</span>, <span class="hljs-string">&#x27;pink&#x27;</span>];<br><span class="hljs-comment">// var max = Math.max.apply(null, arr);//不需要改变this指向，写null</span><br><span class="hljs-keyword">var</span> max = <span class="hljs-built_in">Math</span>.max.apply(<span class="hljs-built_in">Math</span>, arr);<span class="hljs-comment">//但是写null不太合适，写max的调用者Math最好</span><br><span class="hljs-comment">// 以上代码相当于:Math.max(1, 66, 3, 99, 4);</span><br><span class="hljs-keyword">var</span> min = <span class="hljs-built_in">Math</span>.min.apply(<span class="hljs-built_in">Math</span>, arr);<br><span class="hljs-built_in">console</span>.log(max, min);<br><span class="hljs-comment">//补充:</span><br><span class="hljs-built_in">Math</span>.max(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>); <span class="hljs-comment">// max计算一组数中的最大值</span><br><span class="hljs-built_in">Math</span>.max(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>);<br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> o = &#123;<br>	<span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;andy&#x27;</span>,<br>&#125;;<br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn</span>(<span class="hljs-params">a, b</span>) </span>&#123;<br>	<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>);<br>	<span class="hljs-built_in">console</span>.log(a + b);<br>&#125;<br>fn(); <span class="hljs-comment">// 此时的this指向的是window</span><br>fn.apply(o, [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>]); <span class="hljs-comment">//此时的this指向的是对象o,参数使用数组传递</span><br><span class="hljs-comment">// 1. 也是调用函数 第二个可以改变函数内部的this指向</span><br><span class="hljs-comment">// 2. 但是他的参数必须是数组(伪数组)</span><br><span class="hljs-comment">// 3. apply 的主要应用 比如说我们可以利用 apply 借助于数学内置对象求数组最大值</span><br><span class="hljs-comment">// ***4. apply将第二个参数的数组,进行了拆包,将拆出来的每个元素,作为实参传递进去</span><br><span class="hljs-comment">// Math.max();</span><br><span class="hljs-keyword">var</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">66</span>, <span class="hljs-number">3</span>, <span class="hljs-number">99</span>, <span class="hljs-number">4</span>];<br><span class="hljs-keyword">var</span> arr1 = [<span class="hljs-string">&#x27;red&#x27;</span>, <span class="hljs-string">&#x27;pink&#x27;</span>];<br><span class="hljs-comment">// var max = Math.max.apply(null, arr);//不需要改变this指向，写null</span><br><span class="hljs-keyword">var</span> max = <span class="hljs-built_in">Math</span>.max.apply(<span class="hljs-built_in">Math</span>, arr); <span class="hljs-comment">//但是写null不太合适，写max的调用者Math最好</span><br><span class="hljs-comment">// 以上代码相当于:Math.max(1, 66, 3, 99, 4);</span><br><span class="hljs-keyword">var</span> min = <span class="hljs-built_in">Math</span>.min.apply(<span class="hljs-built_in">Math</span>, arr);<br><span class="hljs-built_in">console</span>.log(max, min);<br><span class="hljs-comment">//补充:</span><br><span class="hljs-built_in">Math</span>.max(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>); <span class="hljs-comment">// max计算一组数中的最大值</span><br><span class="hljs-built_in">Math</span>.max(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>);<br></code></pre></td></tr></table></figure>
 
-<h4 id="2-3-bind方法"><a href="#2-3-bind方法" class="headerlink" title="2.3 bind方法"></a>2.3 bind方法</h4><ul>
-<li><p>bind() 方法不会调用函数，但是能改变函数内部this 指向，返回的是原函数改变this之后产生的新函数</p>
+<h4 id="2-3-bind-方法"><a href="#2-3-bind-方法" class="headerlink" title="2.3 bind 方法"></a>2.3 bind 方法</h4><ul>
+<li><p>bind() 方法不会调用函数，但是能改变函数内部 this 指向，返回的是原函数改变 this 之后产生的新函数</p>
 </li>
-<li><p>如果只是想改变 this 指向，并且不想调用这个函数的时候，可以使用bind</p>
+<li><p>如果只是想改变 this 指向，并且不想调用这个函数的时候，可以使用 bind</p>
 </li>
-<li><p>应用场景：不调用函数，但是还想改变this指向</p>
+<li><p>应用场景：不调用函数，但是还想改变 this 指向</p>
 </li>
 <li><p>bind：绑定</p>
 </li>
 <li><p>代码：</p>
 </li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs js"> <span class="hljs-keyword">var</span> o = &#123;<br> <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;andy&#x27;</span><br> &#125;;<br><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn</span>(<span class="hljs-params">a, b</span>) </span>&#123;<br>	<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>);<br>	<span class="hljs-built_in">console</span>.log(a + b);<br>&#125;;<br><span class="hljs-comment">//this指向的是对象o 参数使用逗号隔开</span><br><span class="hljs-keyword">var</span> f = fn.bind(o, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>); <span class="hljs-comment">//此处的f是bind返回的新函数</span><br>f();<span class="hljs-comment">//调用新函数  </span><br><span class="hljs-comment">// 1. 不会调用原来的函数   可以改变原来函数内部的this 指向</span><br><span class="hljs-comment">// 2. 返回的是原函数改变this之后产生的新函数</span><br><span class="hljs-comment">// 3. 如果有的函数我们不需要立即调用,但是又想改变这个函数内部的this指向此时用bind</span><br><span class="hljs-comment">// 4. 我们有一个按钮,当我们点击了之后,就禁用这个按钮,3秒钟之后开启这个按钮</span><br><span class="hljs-comment">// var btn1 = document.querySelector(&#x27;button&#x27;);</span><br><span class="hljs-comment">// btn1.onclick = function() &#123;</span><br><span class="hljs-comment">//     this.disabled = true; // 这个this 指向的是 btn 这个按钮</span><br><span class="hljs-comment">//     // var that = this;</span><br><span class="hljs-comment">//     setTimeout(function() &#123;</span><br><span class="hljs-comment">//         // that.disabled = false; // 定时器函数里面的this 指向的是window</span><br><span class="hljs-comment">//         this.disabled = false; // 此时定时器函数里面的this 指向的是btn</span><br><span class="hljs-comment">//     &#125;.bind(this), 3000); // 这个this 指向的是btn 这个对象</span><br><span class="hljs-comment">// &#125;</span><br><span class="hljs-keyword">var</span> btns = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">&#x27;button&#x27;</span>);<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; btns.length; i++) &#123;<br>    btns[i].onclick = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;<br>        <span class="hljs-built_in">this</span>.disabled = <span class="hljs-literal">true</span>;<br>        <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;<br>            <span class="hljs-built_in">this</span>.disabled = <span class="hljs-literal">false</span>;<br>        &#125;.bind(<span class="hljs-built_in">this</span>), <span class="hljs-number">2000</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> o = &#123;<br>	<span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;andy&#x27;</span>,<br>&#125;;<br><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn</span>(<span class="hljs-params">a, b</span>) </span>&#123;<br>	<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>);<br>	<span class="hljs-built_in">console</span>.log(a + b);<br>&#125;<br><span class="hljs-comment">//this指向的是对象o 参数使用逗号隔开</span><br><span class="hljs-keyword">var</span> f = fn.bind(o, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>); <span class="hljs-comment">//此处的f是bind返回的新函数</span><br>f(); <span class="hljs-comment">//调用新函数</span><br><span class="hljs-comment">// 1. 不会调用原来的函数   可以改变原来函数内部的this 指向</span><br><span class="hljs-comment">// 2. 返回的是原函数改变this之后产生的新函数</span><br><span class="hljs-comment">// 3. 如果有的函数我们不需要立即调用,但是又想改变这个函数内部的this指向此时用bind</span><br><span class="hljs-comment">// 4. 我们有一个按钮,当我们点击了之后,就禁用这个按钮,3秒钟之后开启这个按钮</span><br><span class="hljs-comment">// var btn1 = document.querySelector(&#x27;button&#x27;);</span><br><span class="hljs-comment">// btn1.onclick = function() &#123;</span><br><span class="hljs-comment">//     this.disabled = true; // 这个this 指向的是 btn 这个按钮</span><br><span class="hljs-comment">//     // var that = this;</span><br><span class="hljs-comment">//     setTimeout(function() &#123;</span><br><span class="hljs-comment">//         // that.disabled = false; // 定时器函数里面的this 指向的是window</span><br><span class="hljs-comment">//         this.disabled = false; // 此时定时器函数里面的this 指向的是btn</span><br><span class="hljs-comment">//     &#125;.bind(this), 3000); // 这个this 指向的是btn 这个对象</span><br><span class="hljs-comment">// &#125;</span><br><span class="hljs-keyword">var</span> btns = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">&#x27;button&#x27;</span>);<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; btns.length; i++) &#123;<br>	btns[i].onclick = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>		<span class="hljs-built_in">this</span>.disabled = <span class="hljs-literal">true</span>;<br>		<span class="hljs-built_in">setTimeout</span>(<br>			<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>				<span class="hljs-built_in">this</span>.disabled = <span class="hljs-literal">false</span>;<br>			&#125;.bind(<span class="hljs-built_in">this</span>),<br>			<span class="hljs-number">2000</span><br>		);<br>	&#125;;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h4 id="2-4-call、apply、bind三者的异同"><a href="#2-4-call、apply、bind三者的异同" class="headerlink" title="2.4 call、apply、bind三者的异同"></a>2.4 call、apply、bind三者的异同</h4><ul>
-<li><strong>共同点:</strong> 都可以改变this指向</li>
-<li><strong>不同点:</strong><ul>
-<li>call 和 apply  会调用函数, 并且改变函数内部this指向.</li>
-<li>call 和 apply传递的参数不一样,call传递参数使用逗号隔开,apply使用数组传递</li>
-<li>bind  不会调用函数, 可以改变函数内部this指向.</li>
+<h4 id="2-4-call、apply、bind-三者的异同"><a href="#2-4-call、apply、bind-三者的异同" class="headerlink" title="2.4 call、apply、bind 三者的异同"></a>2.4 call、apply、bind 三者的异同</h4><ul>
+<li><p><strong>共同点:</strong> 都可以改变 this 指向</p>
+</li>
+<li><p><strong>不同点:</strong></p>
+<ul>
+<li>call 和 apply 会调用函数, 并且改变函数内部 this 指向.</li>
+<li>call 和 apply 传递的参数不一样,call 传递参数使用逗号隔开,apply 使用数组传递</li>
+<li>bind 不会调用函数, 可以改变函数内部 this 指向.</li>
 </ul>
 </li>
-</ul>
-<ul>
-<li><strong>应用场景</strong><ol>
+<li><p><strong>应用场景</strong></p>
+<ol>
 <li>call 经常做继承</li>
-<li>apply经常跟数组有关系.  比如借助于数学对象实现数组最大值最小值</li>
-<li>bind  不调用函数,但是还想改变this指向. 比如改变定时器内部的this指向</li>
+<li>apply 经常跟数组有关系. 比如借助于数学对象实现数组最大值最小值</li>
+<li>bind 不调用函数,但是还想改变 this 指向. 比如改变定时器内部的 this 指向</li>
 </ol>
 </li>
 </ul>
@@ -403,6 +457,27 @@
             <hr/>
             <div>
               <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Web/" class="category-chain-item">Web</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
   
   
     <div class="post-meta">
@@ -443,7 +518,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年8月15日</div>
+          <div>2022年3月22日</div>
         </div>
       
       
@@ -473,9 +548,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/%E6%9C%80%E5%B8%B8%E8%A7%81%E7%9A%84%E5%89%8D%E7%AB%AF%E5%B0%8F%E6%A1%88%E4%BE%8B---%E7%AD%9B%E9%80%89%E5%95%86%E5%93%81/" title="最常见的前端小案例---筛选商品">
+                      <a href="/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E6%9C%AC---JavaScript%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F/" title="前端面试基本---JavaScript严格模式">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">最常见的前端小案例---筛选商品</span>
+                        <span class="hidden-mobile">前端面试基本---JavaScript严格模式</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -483,8 +558,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E6%9C%AC---%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89%E5%92%8C%E8%B0%83%E7%94%A8/" title="前端面试基本---函数的定义和调用">
-                        <span class="hidden-mobile">前端面试基本---函数的定义和调用</span>
+                      <a href="/%E4%BD%BF%E7%94%A8innerHTML%E5%90%91DOM%E5%85%83%E7%B4%A0%E4%B8%AD%E8%BF%BD%E5%8A%A0%E9%97%AE%E9%A2%98/" title="使用innerHTML向DOM元素中追加问题">
+                        <span class="hidden-mobile">使用innerHTML向DOM元素中追加问题</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -616,6 +691,31 @@
     </div>
   
   
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
   
   
 </div>
@@ -732,6 +832,8 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 

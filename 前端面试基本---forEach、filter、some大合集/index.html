@@ -12,19 +12,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
   <meta name="theme-color" content="#2f4154">
   <meta name="author" content="Rainux">
   <meta name="keywords" content="前端；生活；美好；">
   
-    <meta name="description" content="Code is never die ! 1.0 数组方法forEach遍历数组 *** 语法：  123456789101112var arr &#x3D; [1,2,3]; arr.forEach(function(value， index， array) &amp;#123;       &#x2F;&#x2F;参数一是:数组元素       &#x2F;&#x2F;参数二是:数组元素的索引       &#x2F;&#x2F;参数三是:当前的数组 &amp;#125;)  &#x2F;">
+    <meta name="description" content="Code is never die ! 1.0 数组方法 forEach 遍历数组 *** 语法：  123456789101112var arr &#x3D; [1,2,3];arr.forEach(function(value， index， array) &amp;#123;       &#x2F;&#x2F;参数一是:数组元素       &#x2F;&#x2F;参数二是:数组元素的索引       &#x2F;&#x2F;参数三是:当前的数组 &amp;#125;)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端面试基本---forEach、filter、some大合集">
 <meta property="og:url" content="https://rainuxs.github.io/rainuxs.github.io/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E6%9C%AC---forEach%E3%80%81filter%E3%80%81some%E5%A4%A7%E5%90%88%E9%9B%86/index.html">
 <meta property="og:site_name" content="Rainux">
-<meta property="og:description" content="Code is never die ! 1.0 数组方法forEach遍历数组 *** 语法：  123456789101112var arr &#x3D; [1,2,3]; arr.forEach(function(value， index， array) &amp;#123;       &#x2F;&#x2F;参数一是:数组元素       &#x2F;&#x2F;参数二是:数组元素的索引       &#x2F;&#x2F;参数三是:当前的数组 &amp;#125;)  &#x2F;">
+<meta property="og:description" content="Code is never die ! 1.0 数组方法 forEach 遍历数组 *** 语法：  123456789101112var arr &#x3D; [1,2,3];arr.forEach(function(value， index， array) &amp;#123;       &#x2F;&#x2F;参数一是:数组元素       &#x2F;&#x2F;参数二是:数组元素的索引       &#x2F;&#x2F;参数三是:当前的数组 &amp;#125;)">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-08-15T08:59:55.205Z">
-<meta property="article:modified_time" content="2021-06-08T08:36:59.019Z">
+<meta property="article:published_time" content="2022-07-07T03:00:00.000Z">
+<meta property="article:modified_time" content="2022-08-16T09:44:03.709Z">
 <meta property="article:author" content="Rainux">
 <meta property="article:tag" content="Web">
 <meta property="article:tag" content="JavaScript">
@@ -76,7 +78,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"rainuxs.github.io","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"rainuxs.github.io","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"63db8f33b048363f4e66f2747e8abd8b","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"fW3q5WG7pFToTqTLLKdzr574-gzGzoHsz","app_key":"gqGmBLPen7vYa524PBFUqDEq","server_url":"https://fw3q5wg7.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -88,7 +90,18 @@
   
 
   
-
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?63db8f33b048363f4e66f2747e8abd8b";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
   
 
   
@@ -99,6 +112,10 @@
 
   
 
+  
+
+  
+    
   
 
 
@@ -183,6 +200,42 @@
           
           
             <li class="nav-item">
+              <a class="nav-link" href="/musics/">
+                <i class="iconfont icon-music-fill"></i>
+                音乐
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/videos/">
+                <i class="iconfont icon-video-fill"></i>
+                视频
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tools/">
+                <i class="iconfont icon-tool-fill"></i>
+                工具
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
               <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
                 关于
@@ -229,8 +282,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-08-15 16:59" pubdate>
-          2022年8月15日 下午
+        <time datetime="2022-07-07 11:00" pubdate>
+          2022年7月7日 上午
         </time>
       </span>
     
@@ -304,17 +357,17 @@
               <div class="markdown-body">
                 
                 <p><strong>Code is never die !</strong></p>
-<h3 id="1-0-数组方法forEach遍历数组"><a href="#1-0-数组方法forEach遍历数组" class="headerlink" title="1.0 数组方法forEach遍历数组 ***"></a>1.0 数组方法forEach遍历数组 ***</h3><ul>
+<h3 id="1-0-数组方法-forEach-遍历数组"><a href="#1-0-数组方法-forEach-遍历数组" class="headerlink" title="1.0 数组方法 forEach 遍历数组 ***"></a>1.0 数组方法 forEach 遍历数组 ***</h3><ul>
 <li>语法：</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> arr = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]; <br>arr.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value， index， array</span>) </span>&#123;<br>       <span class="hljs-comment">//参数一是:数组元素</span><br>       <span class="hljs-comment">//参数二是:数组元素的索引</span><br>       <span class="hljs-comment">//参数三是:当前的数组</span><br> &#125;)<br>  <span class="hljs-comment">//相当于数组遍历的 for循环 没有返回值</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">forEach</span>（<span class="hljs-title">fn</span>）</span>&#123;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-built_in">this</span>.length;i++)&#123;<br>        fn(<span class="hljs-built_in">this</span>[i],i,<span class="hljs-built_in">this</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> arr = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>];<br>arr.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value， index， array</span>) </span>&#123;<br>       <span class="hljs-comment">//参数一是:数组元素</span><br>       <span class="hljs-comment">//参数二是:数组元素的索引</span><br>       <span class="hljs-comment">//参数三是:当前的数组</span><br> &#125;)<br>  <span class="hljs-comment">//相当于数组遍历的 for循环 没有返回值</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">forEach</span>（<span class="hljs-title">fn</span>）</span>&#123;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-built_in">this</span>.length;i++)&#123;<br>        fn(<span class="hljs-built_in">this</span>[i],i,<span class="hljs-built_in">this</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <ul>
 <li>代码：</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs js">&lt;script&gt;<br>    <span class="hljs-comment">// forEach 迭代(遍历) 数组</span><br>    <span class="hljs-keyword">var</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];<br>    <span class="hljs-keyword">var</span> sum = <span class="hljs-number">0</span>;<br>    arr.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value, index, array</span>) </span>&#123;<br>        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;每个数组元素&#x27;</span> + value);<br>        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;每个数组元素的索引号&#x27;</span> + index);<br>        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;数组本身&#x27;</span> + array);<br>        sum += value;<br>    &#125;)<br>    <span class="hljs-built_in">console</span>.log(sum);<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
 
-<h3 id="2-0-数组方法filter过滤数组"><a href="#2-0-数组方法filter过滤数组" class="headerlink" title="2.0 数组方法filter过滤数组 ***"></a>2.0 数组方法filter过滤数组 ***</h3><ul>
+<h3 id="2-0-数组方法-filter-过滤数组"><a href="#2-0-数组方法-filter-过滤数组" class="headerlink" title="2.0 数组方法 filter 过滤数组 ***"></a>2.0 数组方法 filter 过滤数组 ***</h3><ul>
 <li>语法：</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs js">  <span class="hljs-keyword">var</span> arr = [<span class="hljs-number">12</span>， <span class="hljs-number">66</span>， <span class="hljs-number">4</span>， <span class="hljs-number">88</span>， <span class="hljs-number">3</span>， <span class="hljs-number">7</span>];<br>  <span class="hljs-keyword">var</span> newArr = arr.filter(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value， index，array</span>) </span>&#123;<br>  	 <span class="hljs-comment">//参数一是:数组元素</span><br>     <span class="hljs-comment">//参数二是:数组元素的索引</span><br>     <span class="hljs-comment">//参数三是:当前的数组</span><br>     <span class="hljs-keyword">return</span> value &gt;= <span class="hljs-number">20</span>;<br>  &#125;);<br>  <span class="hljs-built_in">console</span>.log(newArr);<span class="hljs-comment">//[66，88] //返回值是一个新数组</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myFilter</span>(<span class="hljs-params">fnCallback</span>)</span>&#123;<br>    <span class="hljs-comment">// 根据fnCallback的返回值来进行过滤</span><br>    <span class="hljs-comment">// 返回值就是过滤条件</span><br>    <span class="hljs-keyword">var</span> tj = fnCallback(<span class="hljs-number">12</span>,<span class="hljs-number">0</span>,arr);<br>    <span class="hljs-keyword">if</span>(tj)&#123;<br>        newArr.push(<span class="hljs-number">12</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
@@ -324,16 +377,17 @@
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js">&lt;script&gt;<br>    <span class="hljs-comment">// filter 筛选数组</span><br>    <span class="hljs-keyword">var</span> arr = [<span class="hljs-number">12</span>, <span class="hljs-number">66</span>, <span class="hljs-number">4</span>, <span class="hljs-number">88</span>, <span class="hljs-number">3</span>, <span class="hljs-number">7</span>];<br>    <span class="hljs-keyword">var</span> newArr = arr.filter(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value, index</span>) </span>&#123;<br>        <span class="hljs-comment">// return value &gt;= 20;</span><br>        <span class="hljs-keyword">return</span> value % <span class="hljs-number">2</span> === <span class="hljs-number">0</span>;<br>    &#125;);<br>    <span class="hljs-built_in">console</span>.log(newArr);<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
 
-<h3 id="3-0-数组方法some"><a href="#3-0-数组方法some" class="headerlink" title="3.0 数组方法some ***"></a>3.0 数组方法some ***</h3><ul>
+<h3 id="3-0-数组方法-some"><a href="#3-0-数组方法-some" class="headerlink" title="3.0 数组方法 some ***"></a>3.0 数组方法 some ***</h3><ul>
 <li>语法：</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs js">some 查找数组中是否有满足条件的元素 <br> <span class="hljs-keyword">var</span> arr = [<span class="hljs-number">10</span>， <span class="hljs-number">30</span>， <span class="hljs-number">4</span>];<br> <span class="hljs-keyword">var</span> flag = arr.some(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value，index，array</span>) </span>&#123;<br>     <span class="hljs-comment">//参数一是:数组元素</span><br>     <span class="hljs-comment">//参数二是:数组元素的索引</span><br>     <span class="hljs-comment">//参数三是:当前的数组</span><br>     <span class="hljs-keyword">return</span> value &lt; <span class="hljs-number">15</span>;<br>  &#125;);<br><span class="hljs-built_in">console</span>.log(flag);<span class="hljs-comment">//返回值是布尔值，只要查找到满足条件的一个元素就立马终止循环</span><br><br><span class="hljs-comment">// some的源码</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">some</span>(<span class="hljs-params">fn</span>) </span>&#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">this</span>.length; i++) &#123;<br>        <span class="hljs-keyword">var</span> result = fn(<span class="hljs-built_in">this</span>[i], i, <span class="hljs-built_in">this</span>);<br>        <span class="hljs-keyword">if</span>(result == <span class="hljs-literal">true</span>)&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs js">some 查找数组中是否有满足条件的元素<br> <span class="hljs-keyword">var</span> arr = [<span class="hljs-number">10</span>， <span class="hljs-number">30</span>， <span class="hljs-number">4</span>];<br> <span class="hljs-keyword">var</span> flag = arr.some(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value，index，array</span>) </span>&#123;<br>     <span class="hljs-comment">//参数一是:数组元素</span><br>     <span class="hljs-comment">//参数二是:数组元素的索引</span><br>     <span class="hljs-comment">//参数三是:当前的数组</span><br>     <span class="hljs-keyword">return</span> value &lt; <span class="hljs-number">15</span>;<br>  &#125;);<br><span class="hljs-built_in">console</span>.log(flag);<span class="hljs-comment">//返回值是布尔值，只要查找到满足条件的一个元素就立马终止循环</span><br><br><span class="hljs-comment">// some的源码</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">some</span>(<span class="hljs-params">fn</span>) </span>&#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">this</span>.length; i++) &#123;<br>        <span class="hljs-keyword">var</span> result = fn(<span class="hljs-built_in">this</span>[i], i, <span class="hljs-built_in">this</span>);<br>        <span class="hljs-keyword">if</span>(result == <span class="hljs-literal">true</span>)&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <ul>
 <li>代码：</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs js">&lt;script&gt;<br>    <span class="hljs-comment">// some 查找数组中是否有满足条件的元素 </span><br>    <span class="hljs-comment">// var arr = [10, 30, 4];</span><br>    <span class="hljs-comment">// var flag = arr.some(function(value) &#123;</span><br>    <span class="hljs-comment">//     // return value &gt;= 20;</span><br>    <span class="hljs-comment">//     return value &lt; 3;</span><br>    <span class="hljs-comment">// &#125;);</span><br>    <span class="hljs-comment">// console.log(flag);</span><br>    <span class="hljs-keyword">var</span> arr1 = [<span class="hljs-string">&#x27;red&#x27;</span>, <span class="hljs-string">&#x27;pink&#x27;</span>, <span class="hljs-string">&#x27;blue&#x27;</span>];<br>    <span class="hljs-keyword">var</span> flag1 = arr1.some(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value</span>) </span>&#123;<br>        <span class="hljs-keyword">return</span> value == <span class="hljs-string">&#x27;pink&#x27;</span>;<br>    &#125;);<br>    <span class="hljs-built_in">console</span>.log(flag1);<br>    <span class="hljs-comment">// 1. filter 也是查找满足条件的元素 返回的是一个数组 而且是把所有满足条件的元素返回回来</span><br>    <span class="hljs-comment">// 2. some 也是查找满足条件的元素是否存在  返回的是一个布尔值 如果查找到第一个满足条件的元素就终止循环</span><br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
-<p><strong>总结</strong><br>| 名称 | 作用 |参数  | 返回值| 备注|<br>|–|–|–|–|–|<br>| forEach| 遍历数组,取出数组中的每一项| function(value,index,array){}|没有返回值|不会使用回调函数的返回值|<br>| filter| 遍历数组,筛选出满足条件的项,将满足条件的项放到新数组中,并且返回| function(value,index,array){}|返回存放了满足条件的项的新数组|如果发现回调函数,返回了true,就会将当前的value,放到新数组中|<br>| some| 遍历数组,判断是否有满足条件的元素,如果有返回true,如果没有返回false| function(value,index,array){}|返回true/false|如果发现回调函数,返回了true,就会停止遍历|</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs js">&lt;script&gt;<br>    <span class="hljs-comment">// some 查找数组中是否有满足条件的元素</span><br>    <span class="hljs-comment">// var arr = [10, 30, 4];</span><br>    <span class="hljs-comment">// var flag = arr.some(function(value) &#123;</span><br>    <span class="hljs-comment">//     // return value &gt;= 20;</span><br>    <span class="hljs-comment">//     return value &lt; 3;</span><br>    <span class="hljs-comment">// &#125;);</span><br>    <span class="hljs-comment">// console.log(flag);</span><br>    <span class="hljs-keyword">var</span> arr1 = [<span class="hljs-string">&#x27;red&#x27;</span>, <span class="hljs-string">&#x27;pink&#x27;</span>, <span class="hljs-string">&#x27;blue&#x27;</span>];<br>    <span class="hljs-keyword">var</span> flag1 = arr1.some(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value</span>) </span>&#123;<br>        <span class="hljs-keyword">return</span> value == <span class="hljs-string">&#x27;pink&#x27;</span>;<br>    &#125;);<br>    <span class="hljs-built_in">console</span>.log(flag1);<br>    <span class="hljs-comment">// 1. filter 也是查找满足条件的元素 返回的是一个数组 而且是把所有满足条件的元素返回回来</span><br>    <span class="hljs-comment">// 2. some 也是查找满足条件的元素是否存在  返回的是一个布尔值 如果查找到第一个满足条件的元素就终止循环</span><br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+
+<p><strong>总结</strong><br>| 名称 | 作用 |参数 | 返回值| 备注|<br>|–|–|–|–|–|<br>| forEach| 遍历数组,取出数组中的每一项| function(value,index,array){}|没有返回值|不会使用回调函数的返回值|<br>| filter| 遍历数组,筛选出满足条件的项,将满足条件的项放到新数组中,并且返回| function(value,index,array){}|返回存放了满足条件的项的新数组|如果发现回调函数,返回了 true,就会将当前的 value,放到新数组中|<br>| some| 遍历数组,判断是否有满足条件的元素,如果有返回 true,如果没有返回 false| function(value,index,array){}|返回 true/false|如果发现回调函数,返回了 true,就会停止遍历|</p>
 <p><strong>Ending…</strong></p>
 
                 
@@ -342,6 +396,27 @@
             <hr/>
             <div>
               <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Web/" class="category-chain-item">Web</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
   
   
     <div class="post-meta">
@@ -382,7 +457,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年8月15日</div>
+          <div>2022年7月7日</div>
         </div>
       
       
@@ -412,9 +487,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/%E4%B8%8D%E5%BE%97%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E4%BA%8B%E5%84%BF---%E5%89%8D%E7%AB%AFGojs%E4%B9%8B%E5%8E%BB%E9%99%A4%E6%B0%B4%E5%8D%B0/" title="不得不知道的事儿---前端Gojs之去除水印">
+                      <a href="/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E6%9C%AC---%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="前端面试基本---面向过程与面向对象">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">不得不知道的事儿---前端Gojs之去除水印</span>
+                        <span class="hidden-mobile">前端面试基本---面向过程与面向对象</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -422,8 +497,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E6%9C%AC---%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="前端面试基本---面向过程与面向对象">
-                        <span class="hidden-mobile">前端面试基本---面向过程与面向对象</span>
+                      <a href="/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E6%9C%AC---%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89%E5%92%8C%E8%B0%83%E7%94%A8/" title="前端面试基本---函数的定义和调用">
+                        <span class="hidden-mobile">前端面试基本---函数的定义和调用</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -555,6 +630,31 @@
     </div>
   
   
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
   
   
 </div>
@@ -671,6 +771,8 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 
