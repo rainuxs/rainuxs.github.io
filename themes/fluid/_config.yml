@@ -527,8 +527,7 @@ index:
   # If the posts are sorted by `sticky`, an icon is displayed in front of the post title
   post_sticky:
     enable: true
-    icon: "iconfont icon-top"
-
+    icon: "iconfont icon-top" 
 
 #---------------------------
 # 文章页
