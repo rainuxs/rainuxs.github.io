@@ -63,7 +63,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"rainuxs.github.io","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":166,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":"63db8f33b048363f4e66f2747e8abd8b","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"enable":true,"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"rainuxs.github.io","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":166,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"63db8f33b048363f4e66f2747e8abd8b","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"fW3q5WG7pFToTqTLLKdzr574-gzGzoHsz","app_key":"gqGmBLPen7vYa524PBFUqDEq","server_url":"https://fw3q5wg7.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -73,6 +73,36 @@
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
   
+
+  
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?63db8f33b048363f4e66f2747e8abd8b";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
 
 
   
@@ -262,15 +292,15 @@
       
       <p class="h5">2021</p>
     
-    <a href="/%E5%8E%9F%E7%94%9FJavaScript%E5%B0%81%E8%A3%85%E5%8E%BB%E9%99%A4%E6%95%B0%E7%BB%84%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0%E7%9A%84%E5%8E%BB%E9%87%8D%E5%87%BD%E6%95%B0/" class="list-group-item list-group-item-action">
-      <time>12-20</time>
-      <div class="list-group-item-title">原生JavaScript封装去除数组重复元素的去重函数</div>
-    </a>
-  
-    
     <a href="/%E5%8E%9F%E7%94%9FJavaScript%E5%B0%81%E8%A3%85%E9%A2%A0%E5%80%92%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0/" class="list-group-item list-group-item-action">
       <time>12-20</time>
       <div class="list-group-item-title">原生JavaScript封装颠倒数组元素</div>
+    </a>
+  
+    
+    <a href="/%E5%8E%9F%E7%94%9FJavaScript%E5%B0%81%E8%A3%85%E5%8E%BB%E9%99%A4%E6%95%B0%E7%BB%84%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0%E7%9A%84%E5%8E%BB%E9%87%8D%E5%87%BD%E6%95%B0/" class="list-group-item list-group-item-action">
+      <time>12-20</time>
+      <div class="list-group-item-title">原生JavaScript封装去除数组重复元素的去重函数</div>
     </a>
   
     
@@ -457,9 +487,9 @@
 
 
 
-  <script  src="/js/local-search.js" ></script>
-
   <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
 
 
 
