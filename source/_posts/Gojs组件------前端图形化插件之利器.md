@@ -1,7 +1,6 @@
 ﻿---
 title: Gojs组件------前端图形化插件之利器
 type: 'tags'
-tags: ['Gojs', 'Vue', 'Web', 'JavaScript']
 categories: ['Web']
 date: 2021-07-01 10:00:00
 ---

@@ -1,7 +1,6 @@
 ﻿---
 title: 不得不知道的事儿---前端Gojs之去除水印
 type: 'tags'
-tags: ['Gojs', 'Vue', 'Web', 'JavaScript']
 categories: ['Web']
 date: 2021-08-25 12:00:00
 ---

@@ -1,7 +1,6 @@
 ﻿---
 title: 前端面试基本---this 指向(call、apply、bind用法及区别详解)
 type: 'tags'
-tags: ['this', 'Web', 'call', 'apply', 'bind', 'JavaScript']
 categories: ['Web']
 date: 2022-03-22 12:00:00
 ---

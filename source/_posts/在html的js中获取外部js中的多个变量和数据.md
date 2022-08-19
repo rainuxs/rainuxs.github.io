@@ -1,7 +1,6 @@
 ﻿---
 title: 在html的js中获取外部js中的多个变量和数据
 type: 'tags'
-tags: ['HTML', '封装', 'Web', 'Import', 'Script', 'JavaScript']
 categories: ['Web']
 date: 2021-11-15 19:00:00
 ---

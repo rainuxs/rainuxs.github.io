@@ -1,7 +1,6 @@
 ﻿---
 title: 前端面试基本---forEach、filter、some大合集
 type: 'tags'
-tags: ['Array', 'Web', 'forEach', 'filter', 'some', 'JavaScript']
 categories: ['Web']
 date: 2022-07-07 11:00:00
 ---

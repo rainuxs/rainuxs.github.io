@@ -1,7 +1,6 @@
 ﻿---
 title: 前端面试基本---JavaScript严格模式
 type: 'tags'
-tags: ['严格模式', 'Web', 'JavaScript']
 categories: ['Web']
 date: 2022-05-08 16:00:00
 ---

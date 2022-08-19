@@ -1,7 +1,6 @@
 ﻿---
 title: 前端的小激动：Nodejs写简单接口教程
 type: 'tags'
-tags: ['Node', 'Nodejs', 'Web', 'JavaScript']
 categories: ['Web&Node']
 date: 2021-08-19 19:00:00
 ---

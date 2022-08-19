@@ -1,7 +1,6 @@
 ﻿---
 title: TypeError_ util.print is not a function 用node.js安装hotnode后启动报错
 type: 'tags'
-tags: ['Node', 'Nodejs', 'Web', 'JavaScript']
 categories: ['Web']
 date: 2021-03-10 10:00:00
 ---

@@ -1,7 +1,6 @@
 ﻿---
 title: reverse()使用方法及常见问题
 type: 'tags'
-tags: ['JavaScript', 'Vue', 'Web']
 categories: ['Web']
 date: 2021-05-01 10:00:00
 ---

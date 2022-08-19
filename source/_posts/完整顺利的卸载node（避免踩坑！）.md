@@ -1,7 +1,6 @@
 ﻿---
 title: 完整顺利的卸载node（避免踩坑！）
 type: 'tags'
-tags: ['Node', 'Nodejs', 'Web', 'JavaScript']
 categories: ['Web&Node']
 date: 2022-01-16 12:00:00
 ---

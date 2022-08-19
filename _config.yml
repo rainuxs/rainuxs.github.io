@@ -5,7 +5,8 @@
 # Site
 title: Rainux
 date: '2021-05-12'
-subtitle: 'Rainux的博客主页，分享生活分享美好'
+subtitle: '云想衣裳花想容，春风拂槛露华浓~'
+# subtitle: 'Rainux的博客主页，分享生活分享美好'
 description: 'Good Done Good Luck.努力即幸运'
 keywords: '前端；生活；美好；'
 author: Rainux
@@ -99,7 +100,8 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: fluid
+theme: butterfly
+# theme: fluid
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

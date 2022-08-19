@@ -1,7 +1,6 @@
 ﻿---
 title: 使用innerHTML向DOM元素中追加问题
 type: 'tags'
-tags: ['JavaScript', 'Vue', 'Web']
 categories: ['Web']
 date: 2022-03-21 12:00:00
 ---

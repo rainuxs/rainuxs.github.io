@@ -1,7 +1,6 @@
 ﻿---
 title: 原生JavaScript封装去除数组重复元素的去重函数
 type: 'tags'
-tags: ['JavaScript', 'Vue', 'Web']
 categories: ['Web']
 date: 2021-12-20 09:00:00
 ---
