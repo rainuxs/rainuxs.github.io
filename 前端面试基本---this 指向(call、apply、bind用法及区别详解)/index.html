@@ -1,0 +1,310 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>前端面试基本---this 指向(call、apply、bind用法及区别详解) | Rainux</title><meta name="keywords" content="前端；生活；美好；"><meta name="author" content="Rainux"><meta name="copyright" content="Rainux"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Code is never die ! 1.0 函数内部的 this 指向 这些 this 的指向，是当我们调用函数的时候确定的 调用方式的不同决定了 this 的指向不同 一般指向我们的调用者 总结如下：     调用方式 this 指向    普通函数调用 window   构造函数调用 实例对象,原型对象里面的方法也指向实例对象   对象方法调用 该方法所属对象   事件绑定方法 绑定事件对">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端面试基本---this 指向(call、apply、bind用法及区别详解)">
+<meta property="og:url" content="https://rainuxs.github.io/rainuxs.github.io/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E6%9C%AC---this%20%E6%8C%87%E5%90%91(call%E3%80%81apply%E3%80%81bind%E7%94%A8%E6%B3%95%E5%8F%8A%E5%8C%BA%E5%88%AB%E8%AF%A6%E8%A7%A3)/index.html">
+<meta property="og:site_name" content="Rainux">
+<meta property="og:description" content="Code is never die ! 1.0 函数内部的 this 指向 这些 this 的指向，是当我们调用函数的时候确定的 调用方式的不同决定了 this 的指向不同 一般指向我们的调用者 总结如下：     调用方式 this 指向    普通函数调用 window   构造函数调用 实例对象,原型对象里面的方法也指向实例对象   对象方法调用 该方法所属对象   事件绑定方法 绑定事件对">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://rainuxs.github.io/rainuxs.github.io/img/pexels-christina-morillo-1181298.jpg">
+<meta property="article:published_time" content="2022-03-22T04:00:00.000Z">
+<meta property="article:modified_time" content="2022-08-19T02:41:54.196Z">
+<meta property="article:author" content="Rainux">
+<meta property="article:tag" content="前端；生活；美好；">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://rainuxs.github.io/rainuxs.github.io/img/pexels-christina-morillo-1181298.jpg"><link rel="shortcut icon" href="/img/icon.ico"><link rel="canonical" href="https://rainuxs.github.io/rainuxs.github.io/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E6%9C%AC---this%20%E6%8C%87%E5%90%91(call%E3%80%81apply%E3%80%81bind%E7%94%A8%E6%B3%95%E5%8F%8A%E5%8C%BA%E5%88%AB%E8%AF%A6%E8%A7%A3)/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#2d3035","position":"bottom-right"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '前端面试基本---this 指向(call、apply、bind用法及区别详解)',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: ,
+  postUpdate: '2022-08-19 10:41:54'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><link rel="stylesheet" href="/css/iconset.css" media="defer" onload="this.media='all'"><meta name="generator" content="Hexo 5.4.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/avatar_img.png" onerror="onerror=null;src='/img/loading.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/musics/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书单</span></a></div><div class="menus_item"><a class="site-page" href="/tools/"><i class="fa-fw fas fa-tools"></i><span> 工具</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/pexels-christina-morillo-1181298.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Rainux</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/musics/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书单</span></a></div><div class="menus_item"><a class="site-page" href="/tools/"><i class="fa-fw fas fa-tools"></i><span> 工具</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">前端面试基本---this 指向(call、apply、bind用法及区别详解)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-03-22T04:00:00.000Z" title="发表于 2022-03-22 12:00:00">2022-03-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-08-19T02:41:54.196Z" title="更新于 2022-08-19 10:41:54">2022-08-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Web/">Web</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="前端面试基本---this 指向(call、apply、bind用法及区别详解)"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><strong>Code is never die !</strong></p>
+<h3 id="1-0-函数内部的-this-指向"><a href="#1-0-函数内部的-this-指向" class="headerlink" title="1.0 函数内部的 this 指向"></a>1.0 函数内部的 this 指向</h3><ul>
+<li>这些 this 的指向，是当我们调用函数的时候确定的</li>
+<li>调用方式的不同决定了 this 的指向不同</li>
+<li>一般指向我们的调用者</li>
+<li>总结如下：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>调用方式</th>
+<th>this 指向</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>普通函数调用</td>
+<td>window</td>
+</tr>
+<tr>
+<td>构造函数调用</td>
+<td>实例对象,原型对象里面的方法也指向实例对象</td>
+</tr>
+<tr>
+<td>对象方法调用</td>
+<td>该方法所属对象</td>
+</tr>
+<tr>
+<td>事件绑定方法</td>
+<td>绑定事件对象</td>
+</tr>
+<tr>
+<td>定时器函数</td>
+<td>window</td>
+</tr>
+<tr>
+<td>立即执行函数</td>
+<td>window</td>
+</tr>
+</tbody></table>
+<p>代码：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;button&gt;点击&lt;/button&gt;</span><br><span class="line"> <span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">     <span class="comment">// 函数的不同调用方式决定了this 的指向不同</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">     <span class="comment">// 1. 普通函数 this 指向window</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">     <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">         <span class="built_in">console</span>.log(<span class="string">&#x27;普通函数的this&#x27;</span> + <span class="built_in">this</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">     &#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">     <span class="built_in">window</span>.fn();</span></span></span><br><span class="line"><span class="javascript"><span class="xml">     <span class="comment">// 2. 对象的方法 this指向的是对象 o</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">     <span class="keyword">var</span> o = &#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">         <span class="attr">sayHi</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">             <span class="built_in">console</span>.log(<span class="string">&#x27;对象方法的this:&#x27;</span> + <span class="built_in">this</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">         &#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">     &#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">     o.sayHi();</span></span></span><br><span class="line"><span class="javascript"><span class="xml">     <span class="comment">// 3. 构造函数 this 指向 ldh 这个实例对象 原型对象里面的this 指向的也是 ldh这个实例对象</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">     <span class="function"><span class="keyword">function</span> <span class="title">Star</span>(<span class="params"></span>) </span>&#123;&#125;;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">     Star.prototype.sing = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">     &#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">     <span class="keyword">var</span> ldh = <span class="keyword">new</span> Star();</span></span></span><br><span class="line"><span class="javascript"><span class="xml">     <span class="comment">// 4. 绑定事件函数 this 指向的是函数的调用者 btn这个按钮对象</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">     <span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;button&#x27;</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">     btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">         <span class="built_in">console</span>.log(<span class="string">&#x27;绑定时间函数的this:&#x27;</span> + <span class="built_in">this</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">     &#125;;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">     <span class="comment">// 5. 定时器函数 this 指向的也是window</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">     <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">         <span class="built_in">console</span>.log(<span class="string">&#x27;定时器的this:&#x27;</span> + <span class="built_in">this</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">     &#125;, <span class="number">1000</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">     <span class="comment">// 6. 立即执行函数 this还是指向window</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">     (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">         <span class="built_in">console</span>.log(<span class="string">&#x27;立即执行函数的this&#x27;</span> + <span class="built_in">this</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">     &#125;)();</span></span></span><br><span class="line"><span class="javascript"><span class="xml"> </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-0-改变函数内部-this-指向"><a href="#2-0-改变函数内部-this-指向" class="headerlink" title="2.0 改变函数内部 this 指向"></a>2.0 改变函数内部 this 指向</h3><p>改变函数内 this 指向 js 提供了三种方法 call() apply() bind()</p>
+<h4 id="2-1-call-方法"><a href="#2-1-call-方法" class="headerlink" title="2.1 call 方法"></a>2.1 call 方法</h4><ul>
+<li>call()方法调用一个对象</li>
+<li>简单理解为调用函数的方式，但是它可以改变函数的 this 指向</li>
+<li>应用场景: 经常做继承</li>
+<li>call：打电话，在程序中有调用的意思</li>
+<li>代码：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> o = &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="string">&#x27;andy&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="built_in">this</span>);</span><br><span class="line">	<span class="built_in">console</span>.log(a + b);</span><br><span class="line">&#125;</span><br><span class="line">fn(); <span class="comment">// 此时的this指向的是window</span></span><br><span class="line">fn.call(o, <span class="number">1</span>, <span class="number">2</span>); <span class="comment">//此时的this指向的是对象o,参数使用逗号隔开</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// call 第一个可以调用函数 第二个可以改变函数内的this 指向</span></span><br><span class="line"><span class="comment">// call 的主要作用可以实现继承</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Father</span>(<span class="params">uname, age, sex</span>) </span>&#123;</span><br><span class="line">	<span class="built_in">this</span>.uname = uname;</span><br><span class="line">	<span class="built_in">this</span>.age = age;</span><br><span class="line">	<span class="built_in">this</span>.sex = sex;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Son</span>(<span class="params">uname, age, sex</span>) </span>&#123;</span><br><span class="line">	Father.call(<span class="built_in">this</span>, uname, age, sex);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> son = <span class="keyword">new</span> Son(<span class="string">&#x27;刘德华&#x27;</span>, <span class="number">18</span>, <span class="string">&#x27;男&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(son);</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-2-apply-方法"><a href="#2-2-apply-方法" class="headerlink" title="2.2 apply 方法"></a>2.2 apply 方法</h4><ul>
+<li>apply() 方法调用一个函数</li>
+<li>简单理解为调用函数的方式，但是它可以改变函数的 this 指向</li>
+<li>应用场景: 经常跟数组有关系</li>
+<li>apply：应用，运用</li>
+<li>代码：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> o = &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="string">&#x27;andy&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="built_in">this</span>);</span><br><span class="line">	<span class="built_in">console</span>.log(a + b);</span><br><span class="line">&#125;</span><br><span class="line">fn(); <span class="comment">// 此时的this指向的是window</span></span><br><span class="line">fn.apply(o, [<span class="number">1</span>, <span class="number">2</span>]); <span class="comment">//此时的this指向的是对象o,参数使用数组传递</span></span><br><span class="line"><span class="comment">// 1. 也是调用函数 第二个可以改变函数内部的this指向</span></span><br><span class="line"><span class="comment">// 2. 但是他的参数必须是数组(伪数组)</span></span><br><span class="line"><span class="comment">// 3. apply 的主要应用 比如说我们可以利用 apply 借助于数学内置对象求数组最大值</span></span><br><span class="line"><span class="comment">// ***4. apply将第二个参数的数组,进行了拆包,将拆出来的每个元素,作为实参传递进去</span></span><br><span class="line"><span class="comment">// Math.max();</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">66</span>, <span class="number">3</span>, <span class="number">99</span>, <span class="number">4</span>];</span><br><span class="line"><span class="keyword">var</span> arr1 = [<span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;pink&#x27;</span>];</span><br><span class="line"><span class="comment">// var max = Math.max.apply(null, arr);//不需要改变this指向，写null</span></span><br><span class="line"><span class="keyword">var</span> max = <span class="built_in">Math</span>.max.apply(<span class="built_in">Math</span>, arr); <span class="comment">//但是写null不太合适，写max的调用者Math最好</span></span><br><span class="line"><span class="comment">// 以上代码相当于:Math.max(1, 66, 3, 99, 4);</span></span><br><span class="line"><span class="keyword">var</span> min = <span class="built_in">Math</span>.min.apply(<span class="built_in">Math</span>, arr);</span><br><span class="line"><span class="built_in">console</span>.log(max, min);</span><br><span class="line"><span class="comment">//补充:</span></span><br><span class="line"><span class="built_in">Math</span>.max(<span class="number">1</span>, <span class="number">2</span>); <span class="comment">// max计算一组数中的最大值</span></span><br><span class="line"><span class="built_in">Math</span>.max(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-3-bind-方法"><a href="#2-3-bind-方法" class="headerlink" title="2.3 bind 方法"></a>2.3 bind 方法</h4><ul>
+<li><p>bind() 方法不会调用函数，但是能改变函数内部 this 指向，返回的是原函数改变 this 之后产生的新函数</p>
+</li>
+<li><p>如果只是想改变 this 指向，并且不想调用这个函数的时候，可以使用 bind</p>
+</li>
+<li><p>应用场景：不调用函数，但是还想改变 this 指向</p>
+</li>
+<li><p>bind：绑定</p>
+</li>
+<li><p>代码：</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> o = &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="string">&#x27;andy&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="built_in">this</span>);</span><br><span class="line">	<span class="built_in">console</span>.log(a + b);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//this指向的是对象o 参数使用逗号隔开</span></span><br><span class="line"><span class="keyword">var</span> f = fn.bind(o, <span class="number">1</span>, <span class="number">2</span>); <span class="comment">//此处的f是bind返回的新函数</span></span><br><span class="line">f(); <span class="comment">//调用新函数</span></span><br><span class="line"><span class="comment">// 1. 不会调用原来的函数   可以改变原来函数内部的this 指向</span></span><br><span class="line"><span class="comment">// 2. 返回的是原函数改变this之后产生的新函数</span></span><br><span class="line"><span class="comment">// 3. 如果有的函数我们不需要立即调用,但是又想改变这个函数内部的this指向此时用bind</span></span><br><span class="line"><span class="comment">// 4. 我们有一个按钮,当我们点击了之后,就禁用这个按钮,3秒钟之后开启这个按钮</span></span><br><span class="line"><span class="comment">// var btn1 = document.querySelector(&#x27;button&#x27;);</span></span><br><span class="line"><span class="comment">// btn1.onclick = function() &#123;</span></span><br><span class="line"><span class="comment">//     this.disabled = true; // 这个this 指向的是 btn 这个按钮</span></span><br><span class="line"><span class="comment">//     // var that = this;</span></span><br><span class="line"><span class="comment">//     setTimeout(function() &#123;</span></span><br><span class="line"><span class="comment">//         // that.disabled = false; // 定时器函数里面的this 指向的是window</span></span><br><span class="line"><span class="comment">//         this.disabled = false; // 此时定时器函数里面的this 指向的是btn</span></span><br><span class="line"><span class="comment">//     &#125;.bind(this), 3000); // 这个this 指向的是btn 这个对象</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"><span class="keyword">var</span> btns = <span class="built_in">document</span>.querySelectorAll(<span class="string">&#x27;button&#x27;</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; btns.length; i++) &#123;</span><br><span class="line">	btns[i].onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="built_in">this</span>.disabled = <span class="literal">true</span>;</span><br><span class="line">		<span class="built_in">setTimeout</span>(</span><br><span class="line">			<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">				<span class="built_in">this</span>.disabled = <span class="literal">false</span>;</span><br><span class="line">			&#125;.bind(<span class="built_in">this</span>),</span><br><span class="line">			<span class="number">2000</span></span><br><span class="line">		);</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-4-call、apply、bind-三者的异同"><a href="#2-4-call、apply、bind-三者的异同" class="headerlink" title="2.4 call、apply、bind 三者的异同"></a>2.4 call、apply、bind 三者的异同</h4><ul>
+<li><p><strong>共同点:</strong> 都可以改变 this 指向</p>
+</li>
+<li><p><strong>不同点:</strong></p>
+<ul>
+<li>call 和 apply 会调用函数, 并且改变函数内部 this 指向.</li>
+<li>call 和 apply 传递的参数不一样,call 传递参数使用逗号隔开,apply 使用数组传递</li>
+<li>bind 不会调用函数, 可以改变函数内部 this 指向.</li>
+</ul>
+</li>
+<li><p><strong>应用场景</strong></p>
+<ol>
+<li>call 经常做继承</li>
+<li>apply 经常跟数组有关系. 比如借助于数学对象实现数组最大值最小值</li>
+<li>bind 不调用函数,但是还想改变 this 指向. 比如改变定时器内部的 this 指向</li>
+</ol>
+</li>
+</ul>
+<p><strong>Ending…</strong></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Rainux</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://rainuxs.github.io/rainuxs.github.io/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E6%9C%AC---this%20%E6%8C%87%E5%90%91(call%E3%80%81apply%E3%80%81bind%E7%94%A8%E6%B3%95%E5%8F%8A%E5%8C%BA%E5%88%AB%E8%AF%A6%E8%A7%A3)/">https://rainuxs.github.io/rainuxs.github.io/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E6%9C%AC---this%20%E6%8C%87%E5%90%91(call%E3%80%81apply%E3%80%81bind%E7%94%A8%E6%B3%95%E5%8F%8A%E5%8C%BA%E5%88%AB%E8%AF%A6%E8%A7%A3)/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://rainuxs.github.io/rainuxs.github.io" target="_blank">Rainux</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/pexels-christina-morillo-1181298.jpg" data-sites="facebook,twitter,wechat,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/%E4%BD%BF%E7%94%A8innerHTML%E5%90%91DOM%E5%85%83%E7%B4%A0%E4%B8%AD%E8%BF%BD%E5%8A%A0%E9%97%AE%E9%A2%98/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/pexels-christina-morillo-1181298.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">使用innerHTML向DOM元素中追加问题</div></div></a></div><div class="next-post pull-right"><a href="/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E6%9C%AC---JavaScript%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F/"><img class="next-cover" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/pexels-christina-morillo-1181298.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">前端面试基本---JavaScript严格模式</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/avatar_img.png" onerror="this.onerror=null;this.src='/img/loading.gif'" alt="avatar"/><div class="author-info__name">Rainux</div><div class="author-info__description">Good Done Good Luck.努力即幸运</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/rainuxs"><i class="fab fa-github"></i><span>Follow Rainux's Github</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/rainuxs" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:raincode.zhu@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://blog.csdn.net/weixin_49918657" target="_blank" title="CSDN"><i class="fab fa-cuttlefish"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">Rainux's blog ！前端工程师一小枚  <strong>原则：享受美好生活--认真对待事情</strong><br/>CSDN博客：<a style="color:skyblue;font-size:18px" target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_49918657?spm=1010.2135.3001.5343">rainux_rainux</a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E6%9C%AC---%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="前端面试基本---面向过程与面向对象"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/pexels-christina-morillo-1181298.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端面试基本---面向过程与面向对象"/></a><div class="content"><a class="title" href="/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E6%9C%AC---%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="前端面试基本---面向过程与面向对象">前端面试基本---面向过程与面向对象</a><time datetime="2022-08-16T04:00:00.000Z" title="发表于 2022-08-16 12:00:00">2022-08-16</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/pexels-min-an-1337975.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2022 By Rainux</div><div class="footer_custom_text">Hi, welcome to <a href="https://rainuxs.github.io/" style="text-decoration:none">Rainux's blog</a> ! <div><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41019702002937" target="_blank" style="text-decoration:none"><img class="icp-icon" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/beian.png"><span>豫公网安备 41019702002937号</span></a></div></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'default',
+      })
+      false && mermaid.init()
+    })
+  }
+}</script><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'fW3q5WG7pFToTqTLLKdzr574-gzGzoHsz',
+      appKey: 'gqGmBLPen7vYa524PBFUqDEq',
+      placeholder: 'Please leave your footprints',
+      avatar: 'monsterid',
+      meta: 'nick,mail'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: true,
+      serverURLs: 'https://fw3q5wg7.lc-cn-n1-shared.com',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+      requiredFields: ["nick,mail"],
+      visitor: true
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
