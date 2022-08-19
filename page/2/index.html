@@ -1,1130 +1,286 @@
-
-
-<!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=auto>
-
-
-
-<head>
-  <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/icon.ico">
-  <link rel="icon" href="/img/icon.ico">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-  
-  <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="Rainux">
-  <meta name="keywords" content="前端；生活；美好；">
-  
-    <meta name="description" content="Good Done Good Luck.努力即幸运">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Rainux - Rainux的博客主页，分享生活分享美好</title><meta name="keywords" content="前端；生活；美好；"><meta name="author" content="Rainux"><meta name="copyright" content="Rainux"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Good Done Good Luck.努力即幸运">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Rainux">
 <meta property="og:url" content="https://rainuxs.github.io/rainuxs.github.io/page/2/index.html">
 <meta property="og:site_name" content="Rainux">
 <meta property="og:description" content="Good Done Good Luck.努力即幸运">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://rainuxs.github.io/rainuxs.github.io/img/avatar_img.png">
 <meta property="article:author" content="Rainux">
 <meta property="article:tag" content="前端；生活；美好；">
-<meta name="twitter:card" content="summary_large_image">
-  
-  
-  
-  <title>Rainux</title>
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
-
-
-
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-<!-- Do not modify the link that theme dependent icons -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
-
-
-
-<link rel="stylesheet" href="//at.alicdn.com/t/c/font_3594126_bonn2bzenac.css">
-
-
-<link  rel="stylesheet" href="/css/main.css" />
-
-
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
-  
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
-  
-
-
-
-
-  <script id="fluid-configs">
-    var Fluid = window.Fluid || {};
-    Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"rainuxs.github.io","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":166,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"63db8f33b048363f4e66f2747e8abd8b","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"fW3q5WG7pFToTqTLLKdzr574-gzGzoHsz","app_key":"gqGmBLPen7vYa524PBFUqDEq","server_url":"https://fw3q5wg7.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
-
-    if (CONFIG.web_analytics.follow_dnt) {
-      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
-      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://rainuxs.github.io/rainuxs.github.io/img/avatar_img.png"><link rel="shortcut icon" href="/img/icon.ico"><link rel="canonical" href="https://rainuxs.github.io/rainuxs.github.io/page/2/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#2d3035","position":"bottom-right"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
     }
-  </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
-  
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Rainux',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-08-19 09:51:04'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-  
-    <!-- Baidu Analytics -->
-    <script async>
-      if (!Fluid.ctx.dnt) {
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?63db8f33b048363f4e66f2747e8abd8b";
-          var s = document.getElementsByTagName("script")[0];
-          s.parentNode.insertBefore(hm, s);
-        })();
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
       }
-    </script>
+    }
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-  
-
-
-
-  
-<meta name="generator" content="Hexo 5.4.0"></head>
-
-
-<body>
-  
-
-  <header>
-    
-
-<div class="header-inner" style="height: 100vh;">
-  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="/">
-      <strong>Rainux</strong>
-    </a>
-
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/">
-                <i class="iconfont icon-homefill"></i>
-                首页
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/archives/">
-                <i class="iconfont icon-archive-fill"></i>
-                归档
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/categories/">
-                <i class="iconfont icon-category-fill"></i>
-                分类
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/tags/">
-                <i class="iconfont icon-tags-fill"></i>
-                标签
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/musics/">
-                <i class="iconfont icon-musicfill"></i>
-                音乐
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/videos/">
-                <i class="iconfont icon-video-fill"></i>
-                视频
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/tools/">
-                <i class="iconfont icon-tools-solid"></i>
-                工具
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-heart-fill"></i>
-                关于
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
-            </a>
-          </li>
-          
-        
-        
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
-                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
-
-  
-
-<div id="banner" class="banner" parallax=true
-     style="background: url('/img/pexels-min-an-1337975.jpg') no-repeat center center; background-size: cover;">
-  <div class="full-bg-img">
-    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-      <div class="banner-text text-center fade-in-up">
-        <div class="h2">
-          
-            <span id="subtitle" data-typed-text="云想衣裳花想容，春风拂槛露华浓~"></span>
-          
-        </div>
-
-        
-      </div>
-
-      
-        <div class="scroll-down-bar">
-          <i class="iconfont icon-arrowdown"></i>
-        </div>
-      
-    </div>
-  </div>
-</div>
-
-</div>
-
-  </header>
-
-  <main>
-    
-      <div class="container nopadding-x-md">
-        <div id="board"
-          style="margin-top: 0">
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/%E5%9C%A8html%E7%9A%84js%E4%B8%AD%E8%8E%B7%E5%8F%96%E5%A4%96%E9%83%A8js%E4%B8%AD%E7%9A%84%E5%A4%9A%E4%B8%AA%E5%8F%98%E9%87%8F%E5%92%8C%E6%95%B0%E6%8D%AE/" target="_self">
-          <img src="/img/pexels-sabeel-ahammed-68357.jpg" srcset="/img/loading.gif" lazyload alt="在html的js中获取外部js中的多个变量和数据">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/%E5%9C%A8html%E7%9A%84js%E4%B8%AD%E8%8E%B7%E5%8F%96%E5%A4%96%E9%83%A8js%E4%B8%AD%E7%9A%84%E5%A4%9A%E4%B8%AA%E5%8F%98%E9%87%8F%E5%92%8C%E6%95%B0%E6%8D%AE/" target="_self">
-          在html的js中获取外部js中的多个变量和数据
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/%E5%9C%A8html%E7%9A%84js%E4%B8%AD%E8%8E%B7%E5%8F%96%E5%A4%96%E9%83%A8js%E4%B8%AD%E7%9A%84%E5%A4%9A%E4%B8%AA%E5%8F%98%E9%87%8F%E5%92%8C%E6%95%B0%E6%8D%AE/" target="_self">
-        <div>
-          Code is never die ! 通常如果数据过多，我们会将数据单独拉出来存储到一个单独的 js 文件中，然后通过外部 js 引入进来使用数据。 目前比较简单而且用的比较多的是 ES6 语法规范的exports&amp;import方法。使用方法是： 1234567&#x2F;&#x2F; 外部定义dataList.jsexports.dataList &#x3D; &amp;#123;  	uname &#x3D; &amp;#x27;Rain
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-11-15 19:00" pubdate>
-              2021-11-15
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/Web/" class="category-chain-item">Web</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Web/">#Web</a>
-            
-              <a href="/tags/JavaScript/">#JavaScript</a>
-            
-              <a href="/tags/HTML/">#HTML</a>
-            
-              <a href="/tags/%E5%B0%81%E8%A3%85/">#封装</a>
-            
-              <a href="/tags/Import/">#Import</a>
-            
-              <a href="/tags/Script/">#Script</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/%E6%9C%80%E5%B8%B8%E8%A7%81%E7%9A%84%E5%89%8D%E7%AB%AF%E5%B0%8F%E6%A1%88%E4%BE%8B---%E7%AD%9B%E9%80%89%E5%95%86%E5%93%81/" target="_self">
-          <img src="/img/pexels-sabeel-ahammed-68357.jpg" srcset="/img/loading.gif" lazyload alt="最常见的前端小案例---筛选商品">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/%E6%9C%80%E5%B8%B8%E8%A7%81%E7%9A%84%E5%89%8D%E7%AB%AF%E5%B0%8F%E6%A1%88%E4%BE%8B---%E7%AD%9B%E9%80%89%E5%95%86%E5%93%81/" target="_self">
-          最常见的前端小案例---筛选商品
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/%E6%9C%80%E5%B8%B8%E8%A7%81%E7%9A%84%E5%89%8D%E7%AB%AF%E5%B0%8F%E6%A1%88%E4%BE%8B---%E7%AD%9B%E9%80%89%E5%95%86%E5%93%81/" target="_self">
-        <div>
-          Code is never die ! 1.0 定义数组对象数据1234567891011121314151617var data &#x3D; [&amp;#123;            id: 1，            pname: &amp;#x27;小米&amp;#x27;，            price: 3999        &amp;#125;， &amp;#123;            id: 2，
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-09-20 20:00" pubdate>
-              2021-09-20
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/Web/" class="category-chain-item">Web</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Web/">#Web</a>
-            
-              <a href="/tags/JavaScript/">#JavaScript</a>
-            
-              <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">#面向对象</a>
-            
-              <a href="/tags/%E7%AD%9B%E9%80%89/">#筛选</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/%E4%B8%8D%E5%BE%97%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E4%BA%8B%E5%84%BF---%E5%89%8D%E7%AB%AFGojs%E4%B9%8B%E5%8E%BB%E9%99%A4%E6%B0%B4%E5%8D%B0/" target="_self">
-          <img src="/img/pexels-sabeel-ahammed-68357.jpg" srcset="/img/loading.gif" lazyload alt="不得不知道的事儿---前端Gojs之去除水印">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/%E4%B8%8D%E5%BE%97%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E4%BA%8B%E5%84%BF---%E5%89%8D%E7%AB%AFGojs%E4%B9%8B%E5%8E%BB%E9%99%A4%E6%B0%B4%E5%8D%B0/" target="_self">
-          不得不知道的事儿---前端Gojs之去除水印
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/%E4%B8%8D%E5%BE%97%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E4%BA%8B%E5%84%BF---%E5%89%8D%E7%AB%AFGojs%E4%B9%8B%E5%8E%BB%E9%99%A4%E6%B0%B4%E5%8D%B0/" target="_self">
-        <div>
-          Code is never die !刚开始是这个样子的，带有水印，显得特别难看，太影响界面了吧 ！打开你项目引入的 go.js 文件，然后甭管其他的，直接ctrl+f 然后复制这段文字5da73c80a36755dc038e4972187c3cae51fd22，然后就能查找到图中所示位置了此时就是从 b[c]开始的内容，一直到 if(…)这里，全部注释掉！直接ctrl+s保存，本来将信将疑，然而
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-08-25 12:00" pubdate>
-              2021-08-25
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/Web/" class="category-chain-item">Web</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Vue/">#Vue</a>
-            
-              <a href="/tags/Web/">#Web</a>
-            
-              <a href="/tags/JavaScript/">#JavaScript</a>
-            
-              <a href="/tags/Gojs/">#Gojs</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/%E5%89%8D%E7%AB%AF%E7%9A%84%E5%B0%8F%E6%BF%80%E5%8A%A8%EF%BC%9ANodejs%E5%86%99%E7%AE%80%E5%8D%95%E6%8E%A5%E5%8F%A3%E6%95%99%E7%A8%8B/" target="_self">
-          <img src="/img/pexels-sabeel-ahammed-68357.jpg" srcset="/img/loading.gif" lazyload alt="前端的小激动：Nodejs写简单接口教程">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/%E5%89%8D%E7%AB%AF%E7%9A%84%E5%B0%8F%E6%BF%80%E5%8A%A8%EF%BC%9ANodejs%E5%86%99%E7%AE%80%E5%8D%95%E6%8E%A5%E5%8F%A3%E6%95%99%E7%A8%8B/" target="_self">
-          前端的小激动：Nodejs写简单接口教程
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/%E5%89%8D%E7%AB%AF%E7%9A%84%E5%B0%8F%E6%BF%80%E5%8A%A8%EF%BC%9ANodejs%E5%86%99%E7%AE%80%E5%8D%95%E6%8E%A5%E5%8F%A3%E6%95%99%E7%A8%8B/" target="_self">
-        <div>
-          Code is never die ! 写前端的朋友不知道如何拓展自己在后端的能力，那么 nodejs 是你的不二选择，废话不多说，直接进入正题。 这里我演示的是 nodejs+mysql，别的数据库也类似。 首先我们需要做两件事，下载 nodejs 和 mysql 安装，这些基本知识略过。 接着新建一个文件夹，在此文件夹下打开 cms,或者 vscode 的终端，输入 node init 初始化
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-08-19 19:00" pubdate>
-              2021-08-19
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/Web-Node/" class="category-chain-item">Web&amp;Node</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Web/">#Web</a>
-            
-              <a href="/tags/JavaScript/">#JavaScript</a>
-            
-              <a href="/tags/Node/">#Node</a>
-            
-              <a href="/tags/Nodejs/">#Nodejs</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/Gojs%E7%BB%84%E4%BB%B6------%E5%89%8D%E7%AB%AF%E5%9B%BE%E5%BD%A2%E5%8C%96%E6%8F%92%E4%BB%B6%E4%B9%8B%E5%88%A9%E5%99%A8/" target="_self">
-          <img src="/img/pexels-sabeel-ahammed-68357.jpg" srcset="/img/loading.gif" lazyload alt="Gojs组件------前端图形化插件之利器">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/Gojs%E7%BB%84%E4%BB%B6------%E5%89%8D%E7%AB%AF%E5%9B%BE%E5%BD%A2%E5%8C%96%E6%8F%92%E4%BB%B6%E4%B9%8B%E5%88%A9%E5%99%A8/" target="_self">
-          Gojs组件------前端图形化插件之利器
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/Gojs%E7%BB%84%E4%BB%B6------%E5%89%8D%E7%AB%AF%E5%9B%BE%E5%BD%A2%E5%8C%96%E6%8F%92%E4%BB%B6%E4%B9%8B%E5%88%A9%E5%99%A8/" target="_self">
-        <div>
-          Code is never die！ 前言使用 jsPlumb 这个组件本身还不错，使用方便、入门简单、轻量级，但是使用一段时间下来，发现一些弊病，比如组件不太稳定，初始进入页面的时候连线的样式有时会乱掉，刷新页面之后才能恢复正常，而且连线样式比较单一，容易让人产生视觉疲劳，加之最近公司在大力推行所谓的“工业 4.0”，除了对自动化控制要求的提高之外，对这种图形化界面的要求也随之提高，所以单纯的
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-07-01 10:00" pubdate>
-              2021-07-01
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/Web/" class="category-chain-item">Web</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Vue/">#Vue</a>
-            
-              <a href="/tags/Web/">#Web</a>
-            
-              <a href="/tags/JavaScript/">#JavaScript</a>
-            
-              <a href="/tags/Gojs/">#Gojs</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/reverse()%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E5%8F%8A%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" target="_self">
-          <img src="/img/pexels-sabeel-ahammed-68357.jpg" srcset="/img/loading.gif" lazyload alt="reverse()使用方法及常见问题">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/reverse()%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E5%8F%8A%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" target="_self">
-          reverse()使用方法及常见问题
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/reverse()%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E5%8F%8A%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" target="_self">
-        <div>
-          Header： 原创不易，还请大家不吝指导赐教，Code is never die！ ps：本着让更多人不止解决问题，更能够学到一点点方法的目的。 今天给大家分享一下 JavaScript 中最实用的方法之一——reverse()。 一、简单用法相信身为前端工程师或者正在成为前端工程师的小伙伴都对它并不陌生，甚至非常熟悉，主要作用就是用于颠倒数组中元素的顺序，这里举个例子： 1234var arr
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-05-01 10:00" pubdate>
-              2021-05-01
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/Web/" class="category-chain-item">Web</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Vue/">#Vue</a>
-            
-              <a href="/tags/Web/">#Web</a>
-            
-              <a href="/tags/JavaScript/">#JavaScript</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E6%9C%AC---%E7%90%86%E8%A7%A3%20%E2%80%9C%E7%B1%BB%E2%80%9C%E5%92%8C%20%E2%80%9C%E5%AF%B9%E8%B1%A1%E2%80%9C/" target="_self">
-          <img src="/img/pexels-sabeel-ahammed-68357.jpg" srcset="/img/loading.gif" lazyload alt="前端面试基本---理解 “类“和 “对象“">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E6%9C%AC---%E7%90%86%E8%A7%A3%20%E2%80%9C%E7%B1%BB%E2%80%9C%E5%92%8C%20%E2%80%9C%E5%AF%B9%E8%B1%A1%E2%80%9C/" target="_self">
-          前端面试基本---理解 “类“和 “对象“
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E6%9C%AC---%E7%90%86%E8%A7%A3%20%E2%80%9C%E7%B1%BB%E2%80%9C%E5%92%8C%20%E2%80%9C%E5%AF%B9%E8%B1%A1%E2%80%9C/" target="_self">
-        <div>
-          Code is never die ! 1. 对象对象是由属性和方法组成的：是一个无序键值对的集合,指的是一个具体的事物  属性：事物的特征，在对象中用属性来表示（常用名词） 方法：事物的行为，在对象中用方法来表示（常用动词）  2. 类2.1 类介绍 在 ES6 中新增加了类的概念，可以使用 class 关键字声明一个类，之后以这个类来实例化对象。  类抽象了对象的公共部分，它泛指某一大类（cl
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-04-08 03:00" pubdate>
-              2021-04-08
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/Web/" class="category-chain-item">Web</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Web/">#Web</a>
-            
-              <a href="/tags/JavaScript/">#JavaScript</a>
-            
-              <a href="/tags/ES6/">#ES6</a>
-            
-              <a href="/tags/%E7%B1%BB/">#类</a>
-            
-              <a href="/tags/%E5%AF%B9%E8%B1%A1/">#对象</a>
-            
-              <a href="/tags/Class/">#Class</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/TypeError_%20util.print%20is%20not%20a%20function%20%E7%94%A8node.js%E5%AE%89%E8%A3%85hotnode%E5%90%8E%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99/" target="_self">
-          <img src="/img/pexels-sabeel-ahammed-68357.jpg" srcset="/img/loading.gif" lazyload alt="TypeError_ util.print is not a function 用node.js安装hotnode后启动报错">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/TypeError_%20util.print%20is%20not%20a%20function%20%E7%94%A8node.js%E5%AE%89%E8%A3%85hotnode%E5%90%8E%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99/" target="_self">
-          TypeError_ util.print is not a function 用node.js安装hotnode后启动报错
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/TypeError_%20util.print%20is%20not%20a%20function%20%E7%94%A8node.js%E5%AE%89%E8%A3%85hotnode%E5%90%8E%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99/" target="_self">
-        <div>
-          Code is never die ! 12&#x2F;&#x2F;终端安装插件npm install -g hotnode  直接展示错误地方：点击下划线处部分进入 hotloader.js 中（长按 ctrl+鼠标点击）进入自动定位到下方位置修改代码util.print -&gt;console.log保存，重新跑项目 最终成功跑项目：Ending…
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-10 10:00" pubdate>
-              2021-03-10
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/Web/" class="category-chain-item">Web</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Web/">#Web</a>
-            
-              <a href="/tags/JavaScript/">#JavaScript</a>
-            
-              <a href="/tags/Node/">#Node</a>
-            
-              <a href="/tags/Nodejs/">#Nodejs</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/Vue%203%20%E6%8A%93%E4%BD%8F%E6%96%B0%E7%89%B9%E6%80%A7%C2%B7%C2%B7%C2%B7%E9%81%87%E8%A7%81%E6%96%B0%E5%89%8D%E7%AB%AF/" target="_self">
-          <img src="/img/pexels-sabeel-ahammed-68357.jpg" srcset="/img/loading.gif" lazyload alt="Vue 3 抓住新特性···遇见新前端">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/Vue%203%20%E6%8A%93%E4%BD%8F%E6%96%B0%E7%89%B9%E6%80%A7%C2%B7%C2%B7%C2%B7%E9%81%87%E8%A7%81%E6%96%B0%E5%89%8D%E7%AB%AF/" target="_self">
-          Vue 3 抓住新特性···遇见新前端
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/Vue%203%20%E6%8A%93%E4%BD%8F%E6%96%B0%E7%89%B9%E6%80%A7%C2%B7%C2%B7%C2%B7%E9%81%87%E8%A7%81%E6%96%B0%E5%89%8D%E7%AB%AF/" target="_self">
-        <div>
-          Header： Code is never die！ 本文主要介绍了 Vue 3 的设计过程。原文为英文版，对原文感兴趣的可查看（英文版）： Vue 3 Vue 3 的设计过程 重写 Vue.js 下个主版本的经验总结作者：尤雨溪创作日期：2020 年 5 月 在过去的一年里，Vue 团队一直在开发 Vue.js 的下一个主版本，我们打算在 2020 年上半年发布它（原文注释：在写作本文时，这个工
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-01-10 10:00" pubdate>
-              2021-01-10
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/Web/" class="category-chain-item">Web</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Vue3/">#Vue3</a>
-            
-              <a href="/tags/Vue/">#Vue</a>
-            
-              <a href="/tags/Web/">#Web</a>
-            
-              <a href="/tags/JavaScript/">#JavaScript</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-
-
-  <nav aria-label="navigation">
-    <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-    </span>
-  </nav>
-
-
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    
-
-    
-      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
-        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-      </a>
-    
-
-    
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-    
-
-    
-  </main>
-
-  <footer>
-    <div class="footer-inner">
-  
-  <div class="footer-content"> Hi, welcome to <a href="https://rainuxs.github.io/" style="text-decoration:none">Rainux blog</a> ! <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script><div><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41019702002937" target="_blank" style="text-decoration:none"><img class="icp-icon" src="/img/beian.png" srcset="/img/loading.gif" lazyload><span>豫公网安备 41019702002937号</span></a></div> </div>
-    <div class="statistics">
-  
-  
-
-  
-    
-      <span id="leancloud-site-pv-container" style="display: none">
-        总访问量 
-        <span id="leancloud-site-pv"></span>
-         次
-      </span>
-    
-    
-      <span id="leancloud-site-uv-container" style="display: none">
-        总访客数 
-        <span id="leancloud-site-uv"></span>
-         人
-      </span>
-    
-    
-
-  
-</div>
-   
-</div>
-
-  </footer>
-
-  <!-- Scripts -->
-  
-  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
-
-  <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
-    NProgress.start()
-    window.addEventListener('load', function() {
-      NProgress.done();
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
     })
-  </script>
-
-
-<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
-<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
-
-
-  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var subtitle = document.getElementById('subtitle');
-      if (!subtitle || !typing) {
-        return;
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
       }
-      var text = subtitle.getAttribute('data-typed-text');
-      
-        jQuery.ajax({
-          type: 'GET',
-          url: 'https://v1.hitokoto.cn',
-          headers: {},
-          dataType: 'json',
-          success: function(result) {
-            var apiText;
-            if (result) {
-              var keys = 'hitokoto'.split(',');
-              if (result instanceof Array) {
-                result = result[0];
-              }
-              for (const k of keys) {
-                var value = result[k];
-                if (typeof value === 'string') {
-                  apiText = value;
-                  break;
-                } else if (value instanceof Object) {
-                  result = value;
-                }
-              }
-            }
-            apiText ? typing(apiText) : typing(text);
-          },
-          error: function(xhr, status, error) {
-            if (error) {
-              console.error('Failed to request https://v1.hitokoto.cn:', error);
-            }
-            typing(text);
-          }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><link rel="stylesheet" href="/css/iconset.css" media="defer" onload="this.media='all'"><meta name="generator" content="Hexo 5.4.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/avatar_img.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">30</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></div><div class="menus_item"><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/img/bg_top.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Rainux</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></div><div class="menus_item"><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Rainux</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/rainuxs" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:18437804088@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://blog.csdn.net/weixin_49918657" target="_blank" title="CSDN"><i class="fab fa-cuttlefish"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/%E5%9C%A8html%E7%9A%84js%E4%B8%AD%E8%8E%B7%E5%8F%96%E5%A4%96%E9%83%A8js%E4%B8%AD%E7%9A%84%E5%A4%9A%E4%B8%AA%E5%8F%98%E9%87%8F%E5%92%8C%E6%95%B0%E6%8D%AE/" title="在html的js中获取外部js中的多个变量和数据">     <img class="post_bg" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://imgloc.com/i/TPG1w" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="在html的js中获取外部js中的多个变量和数据"></a></div><div class="recent-post-info"><a class="article-title" href="/%E5%9C%A8html%E7%9A%84js%E4%B8%AD%E8%8E%B7%E5%8F%96%E5%A4%96%E9%83%A8js%E4%B8%AD%E7%9A%84%E5%A4%9A%E4%B8%AA%E5%8F%98%E9%87%8F%E5%92%8C%E6%95%B0%E6%8D%AE/" title="在html的js中获取外部js中的多个变量和数据">在html的js中获取外部js中的多个变量和数据</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-11-15T11:00:00.000Z" title="发表于 2021-11-15 19:00:00">2021-11-15</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-08-16T09:42:05.676Z" title="更新于 2022-08-16 17:42:05">2022-08-16</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Web/">Web</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Web/">Web</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/JavaScript/">JavaScript</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/HTML/">HTML</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/%E5%B0%81%E8%A3%85/">封装</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/Import/">Import</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/Script/">Script</a></span></div><div class="content">Code is never die !
+通常如果数据过多，我们会将数据单独拉出来存储到一个单独的 js 文件中，然后通过外部 js 引入进来使用数据。
+目前比较简单而且用的比较多的是 ES6 语法规范的exports&amp;import方法。使用方法是：
+// 外部定义dataList.jsexports.dataList = &#123;  	uname = &#x27;Rain&#x27;,    uage = &#x27;18&#x27;,    year = &#x27;2021-04-22 09:30&#x27;,    hometown = &#x27;China&#x27;,&#125;
+
+使用数据的index.html文件&lt;script&gt;	import &#123; dataList &#125; from &#x27;./data.js&#x27;;	console.log(dataList);&lt;/script&gt;
+
+当然在项目中使用完全没有任何问题，但是当你测试或者单独两个文件这样使用的话就会出现问题，因为这种方法是 ES6 语法规范下的方法 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/%E6%9C%80%E5%B8%B8%E8%A7%81%E7%9A%84%E5%89%8D%E7%AB%AF%E5%B0%8F%E6%A1%88%E4%BE%8B---%E7%AD%9B%E9%80%89%E5%95%86%E5%93%81/" title="最常见的前端小案例---筛选商品">     <img class="post_bg" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://imgloc.com/i/TPCti" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="最常见的前端小案例---筛选商品"></a></div><div class="recent-post-info"><a class="article-title" href="/%E6%9C%80%E5%B8%B8%E8%A7%81%E7%9A%84%E5%89%8D%E7%AB%AF%E5%B0%8F%E6%A1%88%E4%BE%8B---%E7%AD%9B%E9%80%89%E5%95%86%E5%93%81/" title="最常见的前端小案例---筛选商品">最常见的前端小案例---筛选商品</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-09-20T12:00:00.000Z" title="发表于 2021-09-20 20:00:00">2021-09-20</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-08-16T09:41:15.084Z" title="更新于 2022-08-16 17:41:15">2022-08-16</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Web/">Web</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Web/">Web</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/JavaScript/">JavaScript</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">面向对象</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/%E7%AD%9B%E9%80%89/">筛选</a></span></div><div class="content">Code is never die !
+1.0 定义数组对象数据var data = [&#123;            id: 1，            pname: &#x27;小米&#x27;，            price: 3999        &#125;， &#123;            id: 2，            pname: &#x27;苹果&#x27;，            price: 999        &#125;， &#123;            id: 3，            pname: &#x27;华强北&#x27;，            price: 1299        &#125;， &#123;            id: 4，            pname: &#x27;华为&#x27;，            price: 1999        &#125;， ];
+
+2.0 使用 forEach 遍历数据并渲染到页面中data.forEach(function (value) &#123;	v ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/%E4%B8%8D%E5%BE%97%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E4%BA%8B%E5%84%BF---%E5%89%8D%E7%AB%AFGojs%E4%B9%8B%E5%8E%BB%E9%99%A4%E6%B0%B4%E5%8D%B0/" title="不得不知道的事儿---前端Gojs之去除水印">     <img class="post_bg" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://imgloc.com/i/TPG1w" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="不得不知道的事儿---前端Gojs之去除水印"></a></div><div class="recent-post-info"><a class="article-title" href="/%E4%B8%8D%E5%BE%97%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E4%BA%8B%E5%84%BF---%E5%89%8D%E7%AB%AFGojs%E4%B9%8B%E5%8E%BB%E9%99%A4%E6%B0%B4%E5%8D%B0/" title="不得不知道的事儿---前端Gojs之去除水印">不得不知道的事儿---前端Gojs之去除水印</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-08-25T04:00:00.000Z" title="发表于 2021-08-25 12:00:00">2021-08-25</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-08-16T09:45:38.383Z" title="更新于 2022-08-16 17:45:38">2022-08-16</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Web/">Web</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Web/">Web</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/JavaScript/">JavaScript</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/Vue/">Vue</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/Gojs/">Gojs</a></span></div><div class="content">Code is never die !刚开始是这个样子的，带有水印，显得特别难看，太影响界面了吧 ！打开你项目引入的 go.js 文件，然后甭管其他的，直接ctrl+f 然后复制这段文字5da73c80a36755dc038e4972187c3cae51fd22，然后就能查找到图中所示位置了此时就是从 b[c]开始的内容，一直到 if(…)这里，全部注释掉！直接ctrl+s保存，本来将信将疑，然而奇迹般地就出现了下图：附记录：今天发现这个地方可能长得不太一样，不过影响不大，都差不多，而且效果都能显示出来（以下亲测）Ending…
+</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/%E5%89%8D%E7%AB%AF%E7%9A%84%E5%B0%8F%E6%BF%80%E5%8A%A8%EF%BC%9ANodejs%E5%86%99%E7%AE%80%E5%8D%95%E6%8E%A5%E5%8F%A3%E6%95%99%E7%A8%8B/" title="前端的小激动：Nodejs写简单接口教程">     <img class="post_bg" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://imgloc.com/i/TP9ns" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端的小激动：Nodejs写简单接口教程"></a></div><div class="recent-post-info"><a class="article-title" href="/%E5%89%8D%E7%AB%AF%E7%9A%84%E5%B0%8F%E6%BF%80%E5%8A%A8%EF%BC%9ANodejs%E5%86%99%E7%AE%80%E5%8D%95%E6%8E%A5%E5%8F%A3%E6%95%99%E7%A8%8B/" title="前端的小激动：Nodejs写简单接口教程">前端的小激动：Nodejs写简单接口教程</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-08-19T11:00:00.000Z" title="发表于 2021-08-19 19:00:00">2021-08-19</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-08-16T09:45:14.312Z" title="更新于 2022-08-16 17:45:14">2022-08-16</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Web-Node/">Web&amp;Node</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Node/">Node</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/Nodejs/">Nodejs</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/Web/">Web</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/JavaScript/">JavaScript</a></span></div><div class="content">Code is never die !
+写前端的朋友不知道如何拓展自己在后端的能力，那么 nodejs 是你的不二选择，废话不多说，直接进入正题。
+这里我演示的是 nodejs+mysql，别的数据库也类似。
+首先我们需要做两件事，下载 nodejs 和 mysql 安装，这些基本知识略过。
+接着新建一个文件夹，在此文件夹下打开 cms,或者 vscode 的终端，输入 node init 初始化一个项目，输入一些基本信息。
+然后我们还需要安装以下包到–save 下
+express 和 mysql 这两个包是最主要的，稍后再讲其他包的作用。
+在这里我要阐明一个事实，这里的 mysql 是操作 mysql 数据库的一个 js 插件，并不是数据库软件，npm 下载的包都是一些 js 的插件包。
+好了，接下来和我一步步向下操作就可以了。
+在文件夹下新建一个 index.js 文件，当然别的名字也可以，这个文件是你整个程序的入口。
+键入以下代码：
+80 代表的是你的端口号，然后在终端或者 cms 输入 node index.js，在浏览器里打开 localhost 就可以看到了，或者 127. ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/Gojs%E7%BB%84%E4%BB%B6------%E5%89%8D%E7%AB%AF%E5%9B%BE%E5%BD%A2%E5%8C%96%E6%8F%92%E4%BB%B6%E4%B9%8B%E5%88%A9%E5%99%A8/" title="Gojs组件------前端图形化插件之利器">     <img class="post_bg" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://imgloc.com/i/TPadg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Gojs组件------前端图形化插件之利器"></a></div><div class="recent-post-info"><a class="article-title" href="/Gojs%E7%BB%84%E4%BB%B6------%E5%89%8D%E7%AB%AF%E5%9B%BE%E5%BD%A2%E5%8C%96%E6%8F%92%E4%BB%B6%E4%B9%8B%E5%88%A9%E5%99%A8/" title="Gojs组件------前端图形化插件之利器">Gojs组件------前端图形化插件之利器</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-07-01T02:00:00.000Z" title="发表于 2021-07-01 10:00:00">2021-07-01</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-08-16T09:40:52.692Z" title="更新于 2022-08-16 17:40:52">2022-08-16</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Web/">Web</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Web/">Web</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/JavaScript/">JavaScript</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/Vue/">Vue</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/Gojs/">Gojs</a></span></div><div class="content">Code is never die！
+前言使用 jsPlumb 这个组件本身还不错，使用方便、入门简单、轻量级，但是使用一段时间下来，发现一些弊病，比如组件不太稳定，初始进入页面的时候连线的样式有时会乱掉，刷新页面之后才能恢复正常，而且连线样式比较单一，容易让人产生视觉疲劳，加之最近公司在大力推行所谓的“工业 4.0”，除了对自动化控制要求的提高之外，对这种图形化界面的要求也随之提高，所以单纯的 jsPlumb 组件效果已经不能满足日益发展的公司业务。基于以上种种，最终找到了 Gojs 组件，它效果强大、api 丰富，唯一的不足就是这个组件是一个收费组件，可是在天朝，嘘…这是个不能说的秘密！
+一、组件效果预览先来两个炫酷点的效果：就最下面两个效果而言，就是 jsPlumb 无法实现的，可是这种效果在 MES 系统里面是很吸引人的，尤其是一些流程性的业务，用这种效果实现让可以一眼就感觉高大上了。并且咋一眼看上去，你根本都不相信这是一个 web 页面的效果。
+其他效果示例：可折叠的树：这是图片吗？竟然还可以生成图表！想抢 visio 的饭碗吗？更多示例可查看GoJS
+二、初次接触老规矩，还 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/reverse()%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E5%8F%8A%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" title="reverse()使用方法及常见问题">     <img class="post_bg" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://imgloc.com/i/TP5fn" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="reverse()使用方法及常见问题"></a></div><div class="recent-post-info"><a class="article-title" href="/reverse()%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E5%8F%8A%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" title="reverse()使用方法及常见问题">reverse()使用方法及常见问题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-05-01T02:00:00.000Z" title="发表于 2021-05-01 10:00:00">2021-05-01</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-08-16T09:40:38.726Z" title="更新于 2022-08-16 17:40:38">2022-08-16</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Web/">Web</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Web/">Web</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/JavaScript/">JavaScript</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/Vue/">Vue</a></span></div><div class="content">Header： 原创不易，还请大家不吝指导赐教，Code is never die！
+ps：本着让更多人不止解决问题，更能够学到一点点方法的目的。
+今天给大家分享一下 JavaScript 中最实用的方法之一——reverse()。
+一、简单用法相信身为前端工程师或者正在成为前端工程师的小伙伴都对它并不陌生，甚至非常熟悉，主要作用就是用于颠倒数组中元素的顺序，这里举个例子：
+var arrData = [&#x27;I&#x27;, &#x27;like&#x27;, &#x27;your&#x27;, &#x27;voice&#x27;];console.log(arrData); // [&quot;I&quot;,&quot;like&quot;,&quot;your&quot;,&quot;voice&quot;]var arrData2 = [&#x27;I&#x27;, &#x27;like&#x27;, &#x27;your&#x27;, &#x27;voice&#x27;];console.log(arrData2.reverse()); // [&quot;voice ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E6%9C%AC---%E7%90%86%E8%A7%A3%20%E2%80%9C%E7%B1%BB%E2%80%9C%E5%92%8C%20%E2%80%9C%E5%AF%B9%E8%B1%A1%E2%80%9C/" title="前端面试基本---理解 “类“和 “对象“">     <img class="post_bg" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://imgloc.com/i/TP1bh" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端面试基本---理解 “类“和 “对象“"></a></div><div class="recent-post-info"><a class="article-title" href="/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E6%9C%AC---%E7%90%86%E8%A7%A3%20%E2%80%9C%E7%B1%BB%E2%80%9C%E5%92%8C%20%E2%80%9C%E5%AF%B9%E8%B1%A1%E2%80%9C/" title="前端面试基本---理解 “类“和 “对象“">前端面试基本---理解 “类“和 “对象“</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-04-07T19:00:00.000Z" title="发表于 2021-04-08 03:00:00">2021-04-08</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-08-16T09:44:40.092Z" title="更新于 2022-08-16 17:44:40">2022-08-16</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Web/">Web</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Web/">Web</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/JavaScript/">JavaScript</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/ES6/">ES6</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/%E7%B1%BB/">类</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/%E5%AF%B9%E8%B1%A1/">对象</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/Class/">Class</a></span></div><div class="content">Code is never die !
+1. 对象对象是由属性和方法组成的：是一个无序键值对的集合,指的是一个具体的事物
+
+属性：事物的特征，在对象中用属性来表示（常用名词）
+方法：事物的行为，在对象中用方法来表示（常用动词）
+
+2. 类2.1 类介绍
+在 ES6 中新增加了类的概念，可以使用 class 关键字声明一个类，之后以这个类来实例化对象。
+
+类抽象了对象的公共部分，它泛指某一大类（class）对象特指某一个，通过类实例化一个具体的对象
+
+类，对象，面向对象总结：
+类抽象了对象的公共部分，它泛指某一大类（class）
+对象特指某一个，通过类实例化一个具体的对象
+面向对象的思维特点:
+
+抽取（抽象）对象共用的属性和行为组织(封装)成一个类(模板)
+对类进行实例化, 获取类的对象
+实例：实际的例子，对象
+实例化：通过类的构造函数，来创建对象，实例
+
+
+
+
+
+2.2 创建类//步骤1 定义类：使用class关键字class name &#123;	// class body&#125;//步骤2 创建实例：使用定义的类创建实例  注意new关键字var xx = new name( ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/TypeError_%20util.print%20is%20not%20a%20function%20%E7%94%A8node.js%E5%AE%89%E8%A3%85hotnode%E5%90%8E%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99/" title="TypeError_ util.print is not a function 用node.js安装hotnode后启动报错">     <img class="post_bg" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://imgloc.com/i/TPadg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="TypeError_ util.print is not a function 用node.js安装hotnode后启动报错"></a></div><div class="recent-post-info"><a class="article-title" href="/TypeError_%20util.print%20is%20not%20a%20function%20%E7%94%A8node.js%E5%AE%89%E8%A3%85hotnode%E5%90%8E%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99/" title="TypeError_ util.print is not a function 用node.js安装hotnode后启动报错">TypeError_ util.print is not a function 用node.js安装hotnode后启动报错</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-03-10T02:00:00.000Z" title="发表于 2021-03-10 10:00:00">2021-03-10</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-08-16T09:45:50.812Z" title="更新于 2022-08-16 17:45:50">2022-08-16</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Web/">Web</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Node/">Node</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/Nodejs/">Nodejs</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/Web/">Web</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/JavaScript/">JavaScript</a></span></div><div class="content">Code is never die !
+//终端安装插件npm install -g hotnode
+
+直接展示错误地方：点击下划线处部分进入 hotloader.js 中（长按 ctrl+鼠标点击）进入自动定位到下方位置修改代码util.print -&gt;console.log保存，重新跑项目
+最终成功跑项目：Ending…
+</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/Vue%203%20%E6%8A%93%E4%BD%8F%E6%96%B0%E7%89%B9%E6%80%A7%C2%B7%C2%B7%C2%B7%E9%81%87%E8%A7%81%E6%96%B0%E5%89%8D%E7%AB%AF/" title="Vue 3 抓住新特性···遇见新前端">     <img class="post_bg" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://imgloc.com/i/TPo2p" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Vue 3 抓住新特性···遇见新前端"></a></div><div class="recent-post-info"><a class="article-title" href="/Vue%203%20%E6%8A%93%E4%BD%8F%E6%96%B0%E7%89%B9%E6%80%A7%C2%B7%C2%B7%C2%B7%E9%81%87%E8%A7%81%E6%96%B0%E5%89%8D%E7%AB%AF/" title="Vue 3 抓住新特性···遇见新前端">Vue 3 抓住新特性···遇见新前端</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-01-10T02:00:00.000Z" title="发表于 2021-01-10 10:00:00">2021-01-10</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-08-16T09:40:02.190Z" title="更新于 2022-08-16 17:40:02">2022-08-16</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Web/">Web</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Web/">Web</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/JavaScript/">JavaScript</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/Vue3/">Vue3</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/Vue/">Vue</a></span></div><div class="content">Header： Code is never die！
+本文主要介绍了 Vue 3 的设计过程。原文为英文版，对原文感兴趣的可查看（英文版）： Vue 3
+Vue 3 的设计过程
+重写 Vue.js 下个主版本的经验总结作者：尤雨溪创作日期：2020 年 5 月
+在过去的一年里，Vue 团队一直在开发 Vue.js 的下一个主版本，我们打算在 2020 年上半年发布它（原文注释：在写作本文时，这个工作仍在继续）。与新的 Vue 主版本有关的想法是在 2018 年底成形的，那时 Vue 2 的代码库大约诞生了两年半。对于一个通用软件的整个生命周期来说，这个时间不算长，但是在这段时期内，前端技术已经发生了翻天覆地的变化。
+设计（和重写）Vue 的下一个主版本主要基于两点考虑：1. 主流浏览器中 JavaScript 新特性的普遍可用性；2. 随着时间的推移，当前代码库的设计和结构上的缺陷逐渐暴露了出来。
+为什么要重写？
+一、利用新的语言特性
+随着 ES2015 的标准化，以及 JavaScript（正式名称为 ECMAScript，缩写为 ES） 进行了重大升级，主流浏览器也开始对这些新特性 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/avatar_img.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Rainux</div><div class="author-info__description">Good Done Good Luck.努力即幸运</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">30</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/rainuxs"><i class="fab fa-github"></i><span>Follow Rainux's Github</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/rainuxs" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:18437804088@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://blog.csdn.net/weixin_49918657" target="_blank" title="CSDN"><i class="fab fa-cuttlefish"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">Rainux's blog ！前端工程师一小枚  <strong>原则：享受美好生活--认真对待事情</strong><br/>CSDN博客：<a style="color:skyblue;font-size:18px" target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_49918657?spm=1010.2135.3001.5343">rainux_rainux</a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E6%9C%AC---%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="前端面试基本---面向过程与面向对象"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://imgloc.com/i/TP9ns" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端面试基本---面向过程与面向对象"/></a><div class="content"><a class="title" href="/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9F%BA%E6%9C%AC---%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="前端面试基本---面向过程与面向对象">前端面试基本---面向过程与面向对象</a><time datetime="2022-08-16T04:00:00.000Z" title="发表于 2022-08-16 12:00:00">2022-08-16</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Web/"><span class="card-category-list-name">Web</span><span class="card-category-list-count">16</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Web-Node/"><span class="card-category-list-name">Web&Node</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%A4%A7%E5%AD%A6%E5%BE%80%E4%BA%8B-%E6%AF%95%E4%B8%9A%E5%AD%A3/"><span class="card-category-list-name">大学往事&毕业季</span><span class="card-category-list-count">1</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Node/" style="font-size: 1.3em; color: rgb(97, 145, 8)">Node</a><a href="/tags/Nodejs/" style="font-size: 1.3em; color: rgb(196, 83, 43)">Nodejs</a><a href="/tags/Web/" style="font-size: 1.45em; color: rgb(192, 107, 29)">Web</a><a href="/tags/JavaScript/" style="font-size: 1.45em; color: rgb(140, 153, 50)">JavaScript</a><a href="/tags/Vue3/" style="font-size: 1.15em; color: rgb(105, 52, 19)">Vue3</a><a href="/tags/Vue/" style="font-size: 1.38em; color: rgb(193, 153, 91)">Vue</a><a href="/tags/Array/" style="font-size: 1.15em; color: rgb(129, 53, 194)">Array</a><a href="/tags/forEach/" style="font-size: 1.15em; color: rgb(150, 134, 50)">forEach</a><a href="/tags/filter/" style="font-size: 1.15em; color: rgb(133, 26, 188)">filter</a><a href="/tags/some/" style="font-size: 1.15em; color: rgb(178, 97, 138)">some</a><a href="/tags/Gojs/" style="font-size: 1.22em; color: rgb(198, 15, 171)">Gojs</a><a href="/tags/%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F/" style="font-size: 1.15em; color: rgb(33, 188, 181)">严格模式</a><a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 1.15em; color: rgb(88, 26, 34)">面试</a><a href="/tags/Function/" style="font-size: 1.15em; color: rgb(45, 86, 178)">Function</a><a href="/tags/%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B/" style="font-size: 1.15em; color: rgb(26, 68, 104)">面向过程</a><a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" style="font-size: 1.22em; color: rgb(146, 13, 48)">面向对象</a><a href="/tags/this/" style="font-size: 1.15em; color: rgb(199, 149, 149)">this</a><a href="/tags/call/" style="font-size: 1.15em; color: rgb(43, 39, 1)">call</a><a href="/tags/apply/" style="font-size: 1.15em; color: rgb(42, 125, 145)">apply</a><a href="/tags/bind/" style="font-size: 1.15em; color: rgb(120, 9, 65)">bind</a><a href="/tags/ES6/" style="font-size: 1.15em; color: rgb(83, 75, 198)">ES6</a><a href="/tags/%E7%B1%BB/" style="font-size: 1.15em; color: rgb(141, 33, 12)">类</a><a href="/tags/%E5%AF%B9%E8%B1%A1/" style="font-size: 1.15em; color: rgb(135, 126, 59)">对象</a><a href="/tags/Class/" style="font-size: 1.15em; color: rgb(4, 154, 104)">Class</a><a href="/tags/HTML/" style="font-size: 1.15em; color: rgb(102, 162, 44)">HTML</a><a href="/tags/%E5%B0%81%E8%A3%85/" style="font-size: 1.15em; color: rgb(158, 64, 27)">封装</a><a href="/tags/Import/" style="font-size: 1.15em; color: rgb(56, 67, 157)">Import</a><a href="/tags/Script/" style="font-size: 1.15em; color: rgb(149, 174, 28)">Script</a><a href="/tags/%E6%9D%90%E4%B8%89/" style="font-size: 1.15em; color: rgb(85, 79, 133)">材三</a><a href="/tags/%E7%AD%9B%E9%80%89/" style="font-size: 1.15em; color: rgb(37, 82, 76)">筛选</a></div></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">19</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2021-01-10T16:00:00.000Z"></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">23.4k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-08-19T01:51:04.536Z"></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/bg_top.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2022 By Rainux</div><div class="footer_custom_text">Hi, welcome to <a href="https://rainuxs.github.io/" style="text-decoration:none">Rainux's blog</a> ! <div><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41019702002937" target="_blank" style="text-decoration:none"><img class="icp-icon" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/beian.png"><span>豫公网安备 41019702002937号</span></a></div></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function subtitleType () {
+  getScript('https://sdk.jinrishici.com/v2/browser/jinrishici.js').then(() => {
+    jinrishici.load(function (result) {
+      if (true) {
+        var sub = "Life Is The First &#44; Code Is Never Die ! --- Rainux".length == 0 ? new Array() : "Life Is The First &#44; Code Is Never Die ! --- Rainux".split(',')
+        var content = result.data.content
+        var both = sub.unshift(content)
+        var typed = new Typed('#subtitle', {
+          strings: sub,
+          startDelay: 300,
+          typeSpeed: 150,
+          loop: true,
+          backSpeed: 50,
         })
-      
-    })(window, document);
-  </script>
+      } else {
+        document.getElementById('subtitle').innerHTML = result.data.content
+      }
+    })
+  })
+}
 
-
-
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
-
-
-
-  <script defer src="/js/leancloud.js" ></script>
-
-  <script  src="/js/local-search.js" ></script>
-
-
-
-
-
-<!-- 主题的启动项，将它保持在最底部 -->
-<!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
-
-
-  
-
-  <noscript>
-    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
-  </noscript>
-</body>
-</html>
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}
+</script><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'default',
+      })
+      false && mermaid.init()
+    })
+  }
+}</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
