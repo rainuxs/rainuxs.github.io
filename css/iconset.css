@@ -1,6 +1,7 @@
 @font-face {
   font-family: 'arzhu';
-  src: url('https://cdn.jsdelivr.net/gh/caibhh/CDN@master/font/arzhu.ttf');
+  src: url('/js/dependCDN/arzhu.ttf');
+  /* src: url('https://cdn.jsdelivr.net/gh/caibhh/CDN@master/font/arzhu.ttf'); */
   /* 修改成你的字体 */
   font-display: swap
 }
