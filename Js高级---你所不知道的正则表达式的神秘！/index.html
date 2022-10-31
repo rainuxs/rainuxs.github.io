@@ -1,0 +1,378 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Js高级---你所不知道的正则表达式的神秘！ | Rainux</title><meta name="keywords" content="前端；生活；美好；"><meta name="author" content="Rainux"><meta name="copyright" content="Rainux"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Code Is Never Die ！ 今天我们一起揭开JS中正则表达式的神秘面纱！ 1. 正则表达式概述1.1 什么是正则表达式 正则表达式（ Regular Expression ）是用于匹配字符串中字符组合的模式 在JavaScript中，正则表达式也是对象 正则表通常被用来检索、替换那些符合某个模式（规则）的文本， 例如验证表单：用户名表单只能输入英文字母、数字或者下划线， 昵称输入框中可">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Js高级---你所不知道的正则表达式的神秘！">
+<meta property="og:url" content="https://rainuxs.github.io/rainuxs.github.io/Js%E9%AB%98%E7%BA%A7---%E4%BD%A0%E6%89%80%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E7%A5%9E%E7%A7%98%EF%BC%81/index.html">
+<meta property="og:site_name" content="Rainux">
+<meta property="og:description" content="Code Is Never Die ！ 今天我们一起揭开JS中正则表达式的神秘面纱！ 1. 正则表达式概述1.1 什么是正则表达式 正则表达式（ Regular Expression ）是用于匹配字符串中字符组合的模式 在JavaScript中，正则表达式也是对象 正则表通常被用来检索、替换那些符合某个模式（规则）的文本， 例如验证表单：用户名表单只能输入英文字母、数字或者下划线， 昵称输入框中可">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://rainuxs.github.io/rainuxs.github.io/img/pexels-christina-morillo-1181298.jpg">
+<meta property="article:published_time" content="2021-02-04T02:00:00.000Z">
+<meta property="article:modified_time" content="2022-10-31T02:12:45.494Z">
+<meta property="article:author" content="Rainux">
+<meta property="article:tag" content="前端；生活；美好；">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://rainuxs.github.io/rainuxs.github.io/img/pexels-christina-morillo-1181298.jpg"><link rel="shortcut icon" href="/img/icon.ico"><link rel="canonical" href="https://rainuxs.github.io/rainuxs.github.io/Js%E9%AB%98%E7%BA%A7---%E4%BD%A0%E6%89%80%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E7%A5%9E%E7%A7%98%EF%BC%81/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/js/dependCDN/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#2d3035","position":"bottom-right"},
+  source: {
+    jQuery: '/js/dependCDN/jquery.min.js',
+    justifiedGallery: {
+      js: '/js/dependCDN/jquery.justifiedGallery.min.js',
+      css: '/js/dependCDN/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: '/js/dependCDN/jquery.fancybox.min.js',
+      css: '/js/dependCDN/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Js高级---你所不知道的正则表达式的神秘！',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: ,
+  postUpdate: '2022-10-31 10:12:45'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><link rel="stylesheet" href="/css/iconset.css" media="defer" onload="this.media='all'"><meta name="generator" content="Hexo 5.4.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/avatar_img.png" onerror="onerror=null;src='/img/loading.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">52</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/musics/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书单</span></a></div><div class="menus_item"><a class="site-page" href="/tools/"><i class="fa-fw fas fa-tools"></i><span> 工具</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/pexels-christina-morillo-1181298.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Rainux</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/musics/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书单</span></a></div><div class="menus_item"><a class="site-page" href="/tools/"><i class="fa-fw fas fa-tools"></i><span> 工具</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Js高级---你所不知道的正则表达式的神秘！</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-02-04T02:00:00.000Z" title="发表于 2021-02-04 10:00:00">2021-02-04</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-10-31T02:12:45.494Z" title="更新于 2022-10-31 10:12:45">2022-10-31</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Web/">Web</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>13分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Js高级---你所不知道的正则表达式的神秘！"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><strong>Code Is Never Die ！</strong></p>
+<p>今天我们一起揭开JS中正则表达式的神秘面纱！</p>
+<h2 id="1-正则表达式概述"><a href="#1-正则表达式概述" class="headerlink" title="1. 正则表达式概述"></a>1. 正则表达式概述</h2><h3 id="1-1-什么是正则表达式"><a href="#1-1-什么是正则表达式" class="headerlink" title="1.1 什么是正则表达式"></a>1.1 什么是正则表达式</h3><ul>
+<li>正则表达式（ Regular Expression ）是<strong>用于匹配字符串中字符组合的模式</strong></li>
+<li>在JavaScript中，正则表达式也是对象</li>
+<li>正则表通常被用来检索、替换那些符合某个模式（规则）的文本，<ul>
+<li>例如验证表单：用户名表单只能输入英文字母、数字或者下划线， 昵称输入框中可以输入中文(<strong>匹配</strong>)。</li>
+<li>此外，正则表达式还常用于过滤掉页面内容中的一些敏感词(<strong>替换</strong>)，或从字符串中获取我们想要的特定部分(<strong>提取</strong>)等 。</li>
+</ul>
+</li>
+<li>其他语言也会使用正则表达式，本阶段我们主要是利用JavaScript 正则表达式完成表单验证。</li>
+<li>总结：正则表达式：<strong>是由特殊字符组成的式子，用于匹配字符串</strong>。</li>
+</ul>
+<h3 id="1-2-正则表达式的特点"><a href="#1-2-正则表达式的特点" class="headerlink" title="1.2 正则表达式的特点"></a>1.2 正则表达式的特点</h3><ol>
+<li>灵活性、逻辑性和功能性非常的强</li>
+<li>可以迅速地用极简单的方式达到字符串的复杂控制</li>
+<li>对于刚接触的人来说，比较晦涩难懂。比如：^\w+([-+.]\w+)*@\w+([-.]\w+)<em>.\w+([-.]\w+)</em>$</li>
+<li>实际开发，一般都是<strong>直接复制写好的正则表达式。</strong> 但是要求会使用正则表达式并且根据实际情况修改正则表达式比如用户名:   /^[a-z0-9_-]{3,16}$/</li>
+</ol>
+<h2 id="2-正则表达式在js中的使用"><a href="#2-正则表达式在js中的使用" class="headerlink" title="2. 正则表达式在js中的使用"></a>2. 正则表达式在js中的使用</h2><h3 id="2-1-正则表达式的创建"><a href="#2-1-正则表达式的创建" class="headerlink" title="2.1 正则表达式的创建"></a>2.1 正则表达式的创建</h3><p>在 JavaScript 中，可以通过两种方式创建一个正则表达式。</p>
+<p>方式一：通过<strong>调用RegExp对象的构造函数创建</strong> </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> regexp = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/123/</span>);</span><br><span class="line"><span class="built_in">console</span>.log(regexp);</span><br></pre></td></tr></table></figure>
+
+<p>方式二：利用<strong>字面量创建 正则表达式</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> rg = <span class="regexp">/123/</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-测试正则表达式"><a href="#2-2-测试正则表达式" class="headerlink" title="2.2 测试正则表达式"></a>2.2 测试正则表达式</h3><ul>
+<li>test() 正则对象方法，用于检测字符串是否符合该规则</li>
+<li>该对象会返回 true 或 false，其参数是测试字符串</li>
+<li>语法：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">regexObj.test(str)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>regexObj 是写的正则表达式</li>
+<li>str 我们要测试的文本</li>
+<li>就是检测str文本是否符合我们写的正则表达式规范</li>
+</ol>
+<ul>
+<li>代码：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> rg = <span class="regexp">/123/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(rg.test(<span class="number">123</span>));<span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(rg.test(<span class="string">&#x27;abc&#x27;</span>));<span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-正则表达式中的特殊字符"><a href="#3-正则表达式中的特殊字符" class="headerlink" title="3. 正则表达式中的特殊字符"></a>3. 正则表达式中的特殊字符</h2><h3 id="3-1-正则表达式的组成"><a href="#3-1-正则表达式的组成" class="headerlink" title="3.1 正则表达式的组成"></a>3.1 正则表达式的组成</h3><ul>
+<li><p>一个正则表达式可以<strong>由简单的字符构成</strong>，比如 /abc/</p>
+</li>
+<li><p><strong>也可以是简单和特殊字符的组合</strong>，比如 /ab*c/ </p>
+</li>
+<li><p>其中<strong>特殊字符也被称为元字符</strong>，在正则表达式中是具有特殊意义的专用符号，如 ^ 、$ 、+ 等</p>
+</li>
+<li><p>特殊字符非常多，可以参考： </p>
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions">MDN</a></p>
+<p>jQuery 手册：正则表达式部分</p>
+<p><a target="_blank" rel="noopener" href="http://tool.oschina.net/regex">正则测试工具</a></p>
+</li>
+</ul>
+<h3 id="3-2-边界符"><a href="#3-2-边界符" class="headerlink" title="3.2 边界符"></a>3.2 边界符</h3><p>正则表达式中的边界符（位置符）用来提示字符所处的位置，主要有两个字符</p>
+<table>
+<thead>
+<tr>
+<th>边界符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>^</td>
+<td>表示匹配行首的文本（以谁开始）</td>
+</tr>
+<tr>
+<td>$</td>
+<td>表示匹配行尾的文本（以谁结束）</td>
+</tr>
+</tbody></table>
+<p>如果 ^和 $ 在一起，表示必须是精确匹配。</p>
+<p>代码：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> rg = <span class="regexp">/abc/</span>; <span class="comment">// 正则表达式里面不需要加引号 不管是数字型还是字符串型</span></span><br><span class="line"><span class="comment">// /abc/ 只要包含有abc这个字符串返回的都是true</span></span><br><span class="line"><span class="built_in">console</span>.log(rg.test(<span class="string">&#x27;abc&#x27;</span>));<span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(rg.test(<span class="string">&#x27;abcd&#x27;</span>));<span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(rg.test(<span class="string">&#x27;aabcd&#x27;</span>));<span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;---------------------------&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^abc/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">&#x27;abc&#x27;</span>)); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">&#x27;abcd&#x27;</span>)); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">&#x27;aabcd&#x27;</span>)); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;---------------------------&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> reg1 = <span class="regexp">/^abc$/</span>; <span class="comment">// 精确匹配 要求必须是 abc字符串才符合规范</span></span><br><span class="line"><span class="built_in">console</span>.log(reg1.test(<span class="string">&#x27;abc&#x27;</span>)); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(reg1.test(<span class="string">&#x27;abcd&#x27;</span>)); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(reg1.test(<span class="string">&#x27;aabcd&#x27;</span>)); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(reg1.test(<span class="string">&#x27;abcabc&#x27;</span>)); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-字符类"><a href="#3-3-字符类" class="headerlink" title="3.3 字符类"></a>3.3 字符类</h3><ul>
+<li>字符类表示有一系列字符可供选择，只要匹配其中一个就可以了</li>
+<li>所有可供选择的字符都放在方括号内</li>
+</ul>
+<h4 id="3-3-1-方括号"><a href="#3-3-1-方括号" class="headerlink" title="3.3.1 [ ] 方括号"></a>3.3.1 [ ] 方括号</h4><p>表示有一系列字符可供选择，只要匹配其中一个就可以了</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> rg = <span class="regexp">/[abc]/</span>; <span class="comment">// 只要包含有a 或者 包含有b 或者包含有c 都返回为true</span></span><br><span class="line"><span class="built_in">console</span>.log(rg.test(<span class="string">&#x27;andy&#x27;</span>));<span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(rg.test(<span class="string">&#x27;baby&#x27;</span>));<span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(rg.test(<span class="string">&#x27;color&#x27;</span>));<span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(rg.test(<span class="string">&#x27;red&#x27;</span>));<span class="comment">//false</span></span><br><span class="line"><span class="keyword">var</span> rg1 = <span class="regexp">/^[abc]$/</span>; <span class="comment">// 三选一 只有是a 或者是 b  或者是c 这三个字母才返回 true</span></span><br><span class="line"><span class="built_in">console</span>.log(rg1.test(<span class="string">&#x27;aa&#x27;</span>));<span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(rg1.test(<span class="string">&#x27;a&#x27;</span>));<span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(rg1.test(<span class="string">&#x27;b&#x27;</span>));<span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(rg1.test(<span class="string">&#x27;c&#x27;</span>));<span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(rg1.test(<span class="string">&#x27;abc&#x27;</span>));<span class="comment">//true</span></span><br><span class="line">----------------------------------------------------------------------------------</span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^[a-z]$/</span> <span class="comment">//26个英文字母任何一个字母返回 true  - 表示的是a 到z 的范围  </span></span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">&#x27;a&#x27;</span>));<span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">&#x27;z&#x27;</span>));<span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">&#x27;A&#x27;</span>));<span class="comment">//false</span></span><br><span class="line">-----------------------------------------------------------------------------------</span><br><span class="line"><span class="comment">//字符组合</span></span><br><span class="line"><span class="keyword">var</span> reg1 = <span class="regexp">/^[a-zA-Z0-9]$/</span>; <span class="comment">// 26个英文字母(大写和小写都可以)任何一个字母返回 true  </span></span><br><span class="line">------------------------------------------------------------------------------------</span><br><span class="line"><span class="comment">//取反 方括号内部加上 ^ 表示取反，只要包含方括号内的字符，都返回 false 。</span></span><br><span class="line"><span class="keyword">var</span> reg2 = <span class="regexp">/^[^a-zA-Z0-9]$/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg2.test(<span class="string">&#x27;a&#x27;</span>));<span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(reg2.test(<span class="string">&#x27;B&#x27;</span>));<span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(reg2.test(<span class="number">8</span>));<span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(reg2.test(<span class="string">&#x27;!&#x27;</span>));<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+<p>总结：</p>
+<ul>
+<li>[ ]：区间符，只要在区间内，就匹配成功</li>
+<li>-：到</li>
+<li>[^]：取反符</li>
+</ul>
+<h4 id="3-3-2-量词符"><a href="#3-3-2-量词符" class="headerlink" title="3.3.2 量词符"></a>3.3.2 量词符</h4><p>量词符用来设定某个模式出现的次数。</p>
+<table>
+<thead>
+<tr>
+<th>量词</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>*</td>
+<td>重复0次或更多次（*<strong>，理解为任意</strong>）(0,1,n)</td>
+</tr>
+<tr>
+<td>+</td>
+<td>重复1次或更多次（+：代表大于等于1的数。以0为分界线，左边是负数-，右边是正数+）</td>
+</tr>
+<tr>
+<td>?</td>
+<td>重复0次或1次 （？问号，理解为有没有）</td>
+</tr>
+<tr>
+<td>{n}</td>
+<td>重复n次</td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td>重复n次或更多次(没有第二个数字,那就意味着是?,没有上界)</td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td>重复n到m次 （{}：区间符号，次数区间）</td>
+</tr>
+</tbody></table>
+<p>代码：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 1. * 相当于 &gt;= 0 可以出现0次或者很多次 </span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^a*$/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">&#x27;&#x27;</span>));</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">&#x27;a&#x27;</span>));</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">&#x27;aa&#x27;</span>));</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">&#x27;aaaaaa&#x27;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. + 相当于 &gt;= 1 可以出现1次或者很多次</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^a+$/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">&#x27;&#x27;</span>));</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">&#x27;a&#x27;</span>));</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">&#x27;aa&#x27;</span>));</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">&#x27;aaaaaa&#x27;</span>));</span><br><span class="line"><span class="comment">// 3. ?  相当于 1 || 0</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^a?$/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">&#x27;&#x27;</span>));</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">&#x27;a&#x27;</span>));</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">&#x27;aa&#x27;</span>));</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">&#x27;aaaaaa&#x27;</span>));</span><br><span class="line"><span class="comment">// 4. &#123;3 &#125; 就是重复3次</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^a&#123;3&#125;$/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">&#x27;&#x27;</span>));</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">&#x27;a&#x27;</span>));</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">&#x27;aa&#x27;</span>));</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">&#x27;aaaaaa&#x27;</span>));</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">&#x27;aaa&#x27;</span>));</span><br><span class="line"><span class="comment">// 5. &#123;3, &#125;  大于等于3</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^a&#123;3,&#125;$/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">&#x27;&#x27;</span>));</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">&#x27;a&#x27;</span>));</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">&#x27;aa&#x27;</span>));</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">&#x27;aaaaaa&#x27;</span>));</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">&#x27;aaa&#x27;</span>));</span><br><span class="line"><span class="comment">// 6. &#123;3, 16&#125;  大于等于3 并且 小于等于16</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^a&#123;3,16&#125;$/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">&#x27;&#x27;</span>));</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">&#x27;a&#x27;</span>));</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">&#x27;aa&#x27;</span>));</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">&#x27;aaaaaa&#x27;</span>));</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">&#x27;aaa&#x27;</span>));</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">&#x27;aaaaaaaaaaaaaaaaaaaaa&#x27;</span>));</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-3-3-用户名表单验证"><a href="#3-3-3-用户名表单验证" class="headerlink" title="3.3.3 用户名表单验证"></a>3.3.3 用户名表单验证</h4><p>功能需求:</p>
+<ol>
+<li>如果用户名输入合法, 则后面提示信息为:  用户名合法,并且颜色为绿色</li>
+<li>如果用户名输入不合法, 则后面提示信息为:  用户名不符合规范, 并且颜色为红色<br><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://img-blog.csdnimg.cn/20210707091818555.png" alt="在这里插入图片描述"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://img-blog.csdnimg.cn/20210707091830830.png" alt="在这里插入图片描述"></li>
+</ol>
+<p>分析:</p>
+<ol>
+<li>用户名只能为英文字母,数字,下划线或者短横线组成, 并且用户名长度为6~16位.</li>
+<li>首先准备好这种正则表达式模式/^[a-zA-Z0-9-_]{6,16}$/</li>
+<li>当表单失去焦点就开始验证. </li>
+<li>如果符合正则规范, 则让后面的span标签添加 right类.</li>
+<li>如果不符合正则规范, 则让后面的span标签添加 wrong类.</li>
+</ol>
+<p>代码：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;input type=<span class="string">&quot;text&quot;</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;uname&quot;</span>&gt; <span class="xml"><span class="tag">&lt;<span class="name">span</span>&gt;</span>请输入用户名<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"> <span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span></span><br><span class="line"><span class="javascript"><span class="xml"> <span class="comment">//  量词是设定某个模式出现的次数</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml"> <span class="keyword">var</span> reg = <span class="regexp">/^[a-zA-Z0-9_-]&#123;6,16&#125;$/</span>; <span class="comment">// 这个模式用户只能输入英文字母 数字 下划线 中划线</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml"> <span class="keyword">var</span> uname = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.uname&#x27;</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml"> <span class="keyword">var</span> span = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;span&#x27;</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml"> uname.onblur = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">   <span class="keyword">if</span> (reg.test(<span class="built_in">this</span>.value)) &#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">   <span class="built_in">console</span>.log(<span class="string">&#x27;正确的&#x27;</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">   span.className = <span class="string">&#x27;right&#x27;</span>;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">   span.innerHTML = <span class="string">&#x27;用户名格式输入正确&#x27;</span>;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">   &#125; <span class="keyword">else</span> &#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">   <span class="built_in">console</span>.log(<span class="string">&#x27;错误的&#x27;</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">   span.className = <span class="string">&#x27;wrong&#x27;</span>;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">   span.innerHTML = <span class="string">&#x27;用户名格式输入不正确&#x27;</span>;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">   &#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml"> &#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3-3-4-括号总结"><a href="#3-3-4-括号总结" class="headerlink" title="3.3.4 括号总结"></a>3.3.4 括号总结</h4><p>1.大括号  量词符.  里面表示重复次数</p>
+<p>2.中括号 字符集合。匹配方括号中的任意字符. </p>
+<p>3.小括号表示优先级</p>
+<p><a target="_blank" rel="noopener" href="https://c.runoob.com/">正则表达式在线测试</a></p>
+<h3 id="3-4-预定义类"><a href="#3-4-预定义类" class="headerlink" title="3.4 预定义类"></a>3.4 预定义类</h3><p>预定义类指的是<strong>某些常见模式的简写方式</strong><br><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://img-blog.csdnimg.cn/20210707091904904.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80OTkxODY1Nw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>理解：</p>
+<p>d：digit ，数字</p>
+<p>w：word，单词</p>
+<p>s：space，空白，间隔</p>
+<p><strong>案例:验证座机号码</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^\d&#123;3&#125;-\d&#123;8&#125;|\d&#123;4&#125;-\d&#123;7&#125;$/</span>;</span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^\d&#123;3,4&#125;-\d&#123;7,8&#125;$/</span>;</span><br><span class="line"><span class="comment">//注意座机号码老师写错了，如果按照上述的方式发现以下问题：</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^\d&#123;3&#125;-\d&#123;8&#125;|\d&#123;4&#125;-\d&#123;7&#125;$/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">&#x27;010-123456789&#x27;</span>));<span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">&#x27;010-1234567890&#x27;</span>));<span class="comment">//true</span></span><br><span class="line"><span class="comment">//需要改为：</span></span><br><span class="line"><span class="keyword">var</span> exp = <span class="regexp">/^\d&#123;3&#125;-\d&#123;8&#125;$|^\d&#123;4&#125;-\d&#123;7&#125;$/</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>表单验证案例</strong></p>
+<p>（表单验证(上)）</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//手机号验证:/^1[3|4|5|7|8][0-9]&#123;9&#125;$/;</span></span><br><span class="line"><span class="comment">//验证通过与不通过更换元素的类名与元素中的内容</span></span><br><span class="line"> <span class="keyword">if</span> (reg.test(<span class="built_in">this</span>.value)) &#123;</span><br><span class="line">    <span class="comment">// console.log(&#x27;正确的&#x27;);</span></span><br><span class="line">    <span class="built_in">this</span>.nextElementSibling.className = <span class="string">&#x27;success&#x27;</span>;</span><br><span class="line">    <span class="built_in">this</span>.nextElementSibling.innerHTML = <span class="string">&#x27;&lt;i class=&quot;success_icon&quot;&gt;&lt;/i&gt; 恭喜您输入正确&#x27;</span>;</span><br><span class="line">   &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">       <span class="comment">// console.log(&#x27;不正确&#x27;);</span></span><br><span class="line">      <span class="built_in">this</span>.nextElementSibling.className = <span class="string">&#x27;error&#x27;</span>;</span><br><span class="line">      <span class="built_in">this</span>.nextElementSibling.innerHTML = <span class="string">&#x27;&lt;i class=&quot;error_icon&quot;&gt;&lt;/i&gt;格式不正确,请从新输入 &#x27;</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>（表单验证(中)）</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//QQ号验证: /^[1-9]\d&#123;4,&#125;$/; </span></span><br><span class="line"><span class="comment">//昵称验证:/^[\u4e00-\u9fa5]&#123;2,8&#125;$/</span></span><br><span class="line"><span class="comment">//验证通过与不通过更换元素的类名与元素中的内容 ,将上一步的匹配代码进行封装,多次调用即可</span></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">regexp</span>(<span class="params">ele, reg</span>) </span>&#123;</span><br><span class="line">    ele.onblur = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (reg.test(<span class="built_in">this</span>.value)) &#123;</span><br><span class="line">        <span class="comment">// console.log(&#x27;正确的&#x27;);</span></span><br><span class="line">        <span class="built_in">this</span>.nextElementSibling.className = <span class="string">&#x27;success&#x27;</span>;</span><br><span class="line">        <span class="built_in">this</span>.nextElementSibling.innerHTML = <span class="string">&#x27;&lt;i class=&quot;success_icon&quot;&gt;&lt;/i&gt; 恭喜您输入正确&#x27;</span>;</span><br><span class="line">   &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">     <span class="comment">// console.log(&#x27;不正确&#x27;);</span></span><br><span class="line">     <span class="built_in">this</span>.nextElementSibling.className = <span class="string">&#x27;error&#x27;</span>;</span><br><span class="line">     <span class="built_in">this</span>.nextElementSibling.innerHTML = <span class="string">&#x27;&lt;i class=&quot;error_icon&quot;&gt;&lt;/i&gt; 格式不正确,请从新输入 &#x27;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"> &#125;;</span><br></pre></td></tr></table></figure>
+
+<p>（表单验证(下)）</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//密码验证:/^[a-zA-Z0-9_-]&#123;6,16&#125;$/</span></span><br><span class="line"><span class="comment">//再次输入密码只需匹配与上次输入的密码值 是否一致</span></span><br><span class="line">完整代码：</span><br><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> regtel = <span class="regexp">/^1[3|4|5|7|8]\d&#123;9&#125;$/</span>; <span class="comment">// 手机号码的正则表达式</span></span><br><span class="line">    <span class="keyword">var</span> regqq = <span class="regexp">/^[1-9]\d&#123;4,&#125;$/</span>; <span class="comment">// 10000</span></span><br><span class="line">    <span class="keyword">var</span> regnc = <span class="regexp">/^[\u4e00-\u9fa5]&#123;2,8&#125;$/</span>;</span><br><span class="line">    <span class="keyword">var</span> regmsg = <span class="regexp">/^\d&#123;6&#125;$/</span>;</span><br><span class="line">    <span class="keyword">var</span> regpwd = <span class="regexp">/^[a-zA-Z0-9_-]&#123;6,16&#125;$/</span>;</span><br><span class="line">    <span class="keyword">var</span> tel = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;#tel&#x27;</span>);</span><br><span class="line">    <span class="keyword">var</span> qq = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;#qq&#x27;</span>);</span><br><span class="line">    <span class="keyword">var</span> nc = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;#nc&#x27;</span>);</span><br><span class="line">    <span class="keyword">var</span> msg = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;#msg&#x27;</span>);</span><br><span class="line">    <span class="keyword">var</span> pwd = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;#pwd&#x27;</span>);</span><br><span class="line">    <span class="keyword">var</span> surepwd = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;#surepwd&#x27;</span>);</span><br><span class="line">    regexp(tel, regtel); <span class="comment">// 手机号码</span></span><br><span class="line">    regexp(qq, regqq); <span class="comment">// qq号码</span></span><br><span class="line">    regexp(nc, regnc); <span class="comment">// 昵称</span></span><br><span class="line">    regexp(msg, regmsg); <span class="comment">// 短信验证</span></span><br><span class="line">    regexp(pwd, regpwd); <span class="comment">// 密码框</span></span><br><span class="line">    <span class="comment">// 表单验证的函数</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">regexp</span>(<span class="params">ele, reg</span>) </span>&#123;</span><br><span class="line">        ele.onblur = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (reg.test(<span class="built_in">this</span>.value)) &#123;</span><br><span class="line">                <span class="comment">// console.log(&#x27;正确的&#x27;);</span></span><br><span class="line">                <span class="built_in">this</span>.nextElementSibling.className = <span class="string">&#x27;success&#x27;</span>;</span><br><span class="line">                <span class="built_in">this</span>.nextElementSibling.innerHTML = <span class="string">&#x27;&lt;i class=&quot;success_icon&quot;&gt;&lt;/i&gt; 恭喜您输入正确&#x27;</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// console.log(&#x27;不正确&#x27;);</span></span><br><span class="line">                <span class="built_in">this</span>.nextElementSibling.className = <span class="string">&#x27;error&#x27;</span>;</span><br><span class="line">                <span class="built_in">this</span>.nextElementSibling.innerHTML = <span class="string">&#x27;&lt;i class=&quot;error_icon&quot;&gt;&lt;/i&gt; 格式不正确，请从新输入 &#x27;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    surepwd.onblur = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">this</span>.value == pwd.value) &#123;</span><br><span class="line">            <span class="built_in">this</span>.nextElementSibling.className = <span class="string">&#x27;success&#x27;</span>;</span><br><span class="line">            <span class="built_in">this</span>.nextElementSibling.innerHTML = <span class="string">&#x27;&lt;i class=&quot;success_icon&quot;&gt;&lt;/i&gt; 恭喜您输入正确&#x27;</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">this</span>.nextElementSibling.className = <span class="string">&#x27;error&#x27;</span>;</span><br><span class="line">            <span class="built_in">this</span>.nextElementSibling.innerHTML = <span class="string">&#x27;&lt;i class=&quot;error_icon&quot;&gt;&lt;/i&gt; 两次密码输入不一致&#x27;</span>;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-5-正则替换replace"><a href="#3-5-正则替换replace" class="headerlink" title="3.5 正则替换replace"></a>3.5 正则替换replace</h3><p>replace() 方法可以实现替换字符串操作，用来替换的参数可以是一个字符串或是一个正则表达式。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">&#x27;andy和red&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> newStr = str.replace(<span class="string">&#x27;andy&#x27;</span>, <span class="string">&#x27;baby&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(newStr)<span class="comment">//baby和red</span></span><br><span class="line"><span class="comment">//等同于 此处的andy可以写在正则表达式内</span></span><br><span class="line"><span class="keyword">var</span> newStr2 = str.replace(<span class="regexp">/andy/</span>, <span class="string">&#x27;baby&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(newStr2)<span class="comment">//baby和red</span></span><br><span class="line"><span class="comment">//全部替换</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">&#x27;abcabc&#x27;</span></span><br><span class="line"><span class="keyword">var</span> nStr = str.replace(<span class="regexp">/a/</span>,<span class="string">&#x27;哈哈&#x27;</span>)</span><br><span class="line"><span class="built_in">console</span>.log(nStr) <span class="comment">//哈哈bcabc</span></span><br><span class="line"><span class="comment">//全部替换g</span></span><br><span class="line"><span class="keyword">var</span> nStr = str.replace(<span class="regexp">/a/</span>a,<span class="string">&#x27;哈哈&#x27;</span>)</span><br><span class="line"><span class="built_in">console</span>.log(nStr) <span class="comment">//哈哈bc哈哈bc</span></span><br><span class="line"><span class="comment">//忽略大小写i</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">&#x27;aAbcAba&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> newStr = str.replace(<span class="regexp">/a/gi</span>,<span class="string">&#x27;哈哈&#x27;</span>)<span class="comment">//&quot;哈哈哈哈bc哈哈b哈哈&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>案例:过滤敏感词汇</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;textarea name=<span class="string">&quot;&quot;</span> id=<span class="string">&quot;message&quot;</span>&gt;&lt;<span class="regexp">/textarea&gt; &lt;button&gt;提交&lt;/</span>button&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="keyword">var</span> text = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;textarea&#x27;</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;button&#x27;</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="keyword">var</span> div = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;div&#x27;</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    	div.innerHTML = text.value.replace(<span class="regexp">/激情|gay/g</span>, <span class="string">&#x27;**&#x27;</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    &#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p><strong>PS:</strong><a target="_blank" rel="noopener" href="https://rainux.top/"> 博主博客主页(Rainux)，精彩继续，欢迎来访！</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Rainux</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://rainuxs.github.io/rainuxs.github.io/Js%E9%AB%98%E7%BA%A7---%E4%BD%A0%E6%89%80%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E7%A5%9E%E7%A7%98%EF%BC%81/">https://rainuxs.github.io/rainuxs.github.io/Js%E9%AB%98%E7%BA%A7---%E4%BD%A0%E6%89%80%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E7%A5%9E%E7%A7%98%EF%BC%81/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://rainuxs.github.io/rainuxs.github.io" target="_blank">Rainux</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/pexels-christina-morillo-1181298.jpg" data-sites="facebook,twitter,wechat,qq"></div><link rel="stylesheet" href="/js/dependCDN/share.min.css" media="print" onload="this.media='all'"><script src="/js/dependCDN/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/Js%E9%AB%98%E7%BA%A7---%E4%BD%A0%E6%89%80%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84ES6%E7%9A%84%E8%A7%84%E8%8C%83%EF%BC%81/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/pexels-christina-morillo-1181298.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Js高级---你所不知道的ES6的规范！</div></div></a></div><div class="next-post pull-right"><a href="/TypeError_%20util.print%20is%20not%20a%20function%20%E7%94%A8node.js%E5%AE%89%E8%A3%85hotnode%E5%90%8E%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99/"><img class="next-cover" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/pexels-christina-morillo-1181298.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">TypeError_ util.print is not a function 用node.js安装hotnode后启动报错</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/avatar_img.png" onerror="this.onerror=null;this.src='/img/loading.gif'" alt="avatar"/><div class="author-info__name">Rainux</div><div class="author-info__description">Good Done Good Luck.努力即幸运</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">52</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/rainuxs"><i class="fab fa-github"></i><span>Follow Rainux's Github</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/rainuxs" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:rainuxzhu@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://blog.csdn.net/weixin_49918657" target="_blank" title="CSDN"><i class="fab fa-cuttlefish"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">Rainux's blog ！前端工程师一小枚  <strong>原则：享受美好生活--认真对待事情</strong><br/>CSDN博客：<a style="color:skyblue;font-size:18px" target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_49918657?spm=1010.2135.3001.5343">rainux_rainux</a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/%E5%85%B3%E4%BA%8Enode%E7%9A%84%E4%B8%8D%E5%90%8C%E5%8F%96%E5%8F%82%E6%96%B9%E5%BC%8F/" title="关于node的不同取参方式"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/pexels-christina-morillo-1181298.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="关于node的不同取参方式"/></a><div class="content"><a class="title" href="/%E5%85%B3%E4%BA%8Enode%E7%9A%84%E4%B8%8D%E5%90%8C%E5%8F%96%E5%8F%82%E6%96%B9%E5%BC%8F/" title="关于node的不同取参方式">关于node的不同取参方式</a><time datetime="2022-10-20T11:00:00.000Z" title="发表于 2022-10-20 19:00:00">2022-10-20</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/pexels-min-an-1337975.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2022 By Rainux</div><div class="footer_custom_text">Hi, welcome to <a href="https://rainuxs.github.io/" style="text-decoration:none">Rainux's blog</a> ! <div><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41019702002937" target="_blank" style="text-decoration:none"><img class="icp-icon" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/beian.png"><span>豫公网安备 41019702002937号 </span></a><a href="https://beian.miit.gov.cn/" target="_blank" style="text-decoration:none"><span> 豫ICP备2021012820号-1</span></a></div></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="/js/dependCDN/medium-zoom.min.js"></script><script src="/js/dependCDN/lazyload.iife.min.js"></script><script src="/js/dependCDN/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('/js/dependCDN/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    getScript('/js/dependCDN/mermaid.min.js').then(() => {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'default',
+      })
+      false && mermaid.init()
+    })
+  }
+}</script><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'fW3q5WG7pFToTqTLLKdzr574-gzGzoHsz',
+      appKey: 'gqGmBLPen7vYa524PBFUqDEq',
+      placeholder: 'Please leave your footprints',
+      avatar: 'monsterid',
+      meta: 'nick,mail'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: true,
+      serverURLs: 'https://fw3q5wg7.lc-cn-n1-shared.com',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+      requiredFields: ["nick,mail"],
+      visitor: true
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('/js/dependCDN/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script async data-pjax src="/js/dependCDN/busuanzi.pure.mini.js"></script></div></body></html>
