@@ -1,7 +1,7 @@
 ﻿---
 title: Vue 3 抓住新特性···遇见新前端
 type: 'tags'
-categories: ['Web']
+categories: ['Vue']
 date: 2021-01-10 10:00:00
 ---
 
